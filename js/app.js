@@ -1,4 +1,4 @@
-const APP_VERSION = '8.2.2';
+const APP_VERSION = '8.2.3';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';
@@ -279,13 +279,35 @@ function cleanupOldServiceWorkers(){
 }
 
 
-/* ===== v8.0 image path safety ===== */
+/* ===== v8.2.3 mobile-safe image loading ===== */
+function repoBaseUrl(){
+  const base = new URL('.', document.baseURI);
+  return base.href;
+}
 function assetUrl(path){
   const clean = String(path || '').replace(/^\.?\//, '');
-  return `${clean}?v=${encodeURIComponent(APP_VERSION)}`;
+  return new URL(clean, repoBaseUrl()).href + `?v=${encodeURIComponent(APP_VERSION)}`;
+}
+function jpgFallbackUrl(src){
+  try{
+    const u = new URL(src, document.baseURI);
+    u.pathname = u.pathname.replace(/\.webp$/i, '.jpg');
+    u.searchParams.set('v', APP_VERSION);
+    return u.href;
+  }catch(e){
+    return String(src || '').replace(/\.webp(\?.*)?$/i, '.jpg?v=' + APP_VERSION);
+  }
 }
 function imageFallback(img, label='圖片載入失敗'){
-  if(!img || img.dataset.fallbackApplied) return;
+  if(!img) return;
+
+  if(!img.dataset.jpgTried && /\.webp(?:\?|$)/i.test(img.currentSrc || img.src || '')){
+    img.dataset.jpgTried = '1';
+    img.src = jpgFallbackUrl(img.currentSrc || img.src);
+    return;
+  }
+
+  if(img.dataset.fallbackApplied) return;
   img.dataset.fallbackApplied = '1';
   const wrap = document.createElement('div');
   wrap.className = 'image-fallback';
@@ -294,6 +316,8 @@ function imageFallback(img, label='圖片載入失敗'){
 }
 function bindImageFallbacks(scope=document){
   scope.querySelectorAll('img').forEach(img=>{
+    img.loading = img.closest('dialog') ? 'eager' : 'lazy';
+    img.decoding = 'async';
     img.onerror = () => imageFallback(img, img.alt || '圖片載入失敗');
   });
 }
@@ -462,7 +486,7 @@ function renderQuestion(){
   $('#nextBtn').disabled=false;
   $('#nextBtn').textContent='下一題';
   const q = quiz[current];
-  let html = `${q.image?`<img src="${q.image}" alt="question image">`:''}<div class="badge-row"><span class="badge">每日第 ${current+1}/${quiz.length} 題</span><span class="badge">${q.source||'memory'}</span>${(q.tags||[]).slice(0,2).map(t=>`<span class="badge">${t}</span>`).join('')}</div><h3>${q.question}</h3>`;
+  let html = `${q.image?`<img src="${assetUrl(q.image)}" alt="question image">`:''}<div class="badge-row"><span class="badge">每日第 ${current+1}/${quiz.length} 題</span><span class="badge">${q.source||'memory'}</span>${(q.tags||[]).slice(0,2).map(t=>`<span class="badge">${t}</span>`).join('')}</div><h3>${q.question}</h3>`;
   if(q.type==='open'){
     html += `<textarea class="option" rows="4" placeholder="寫下你的答案，等等可以問對方是不是也這樣想。"></textarea><button class="option" data-open="1">收藏這題</button>`;
   } else if(q.type==='sequence'){

@@ -618,3 +618,29 @@ input[type="date"]{
     grid-template-columns:1fr !important;
   }
 }
+
+
+/* ===== V8.2.3 mobile image stability ===== */
+img{
+  max-width:100%;
+  height:auto;
+}
+.feature-img,
+.pretty-shun-card img,
+.period-popup-card img,
+.kapi-slide img,
+.album-card img,
+.photo-card img{
+  display:block;
+  width:100%;
+  background:rgba(255,255,255,.06);
+}
+@media(max-width:430px){
+  .feature-img,
+  .pretty-shun-card img,
+  .period-popup-card img{
+    min-height:240px;
+    max-height:58vh;
+    object-fit:cover;
+  }
+}
