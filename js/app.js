@@ -1,4 +1,4 @@
-const APP_VERSION = '8.2.1';
+const APP_VERSION = '8.2.2';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';

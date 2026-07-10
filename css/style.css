@@ -472,3 +472,149 @@
 .anger-grid{
   display:none !important;
 }
+
+/* V8.2.2 mobile overflow and spacing fix */
+.page,.page>*,
+.glass,.tracker-card,.feature-card,.period-table,.record-list,
+.month-accordion,.daily-couple-card,.game-top,
+#kapiCard,#periodCard,#kapiHistory,#periodTable{
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  box-sizing:border-box;
+}
+input,textarea,select,button{
+  max-width:100%;
+  min-width:0;
+  box-sizing:border-box;
+}
+.page{
+  padding-left:18px !important;
+  padding-right:18px !important;
+  padding-bottom:130px !important;
+}
+.tracker-card,.feature-card,.daily-couple-card,.game-top,
+.period-table,#kapiCard,#periodCard{
+  margin-left:0 !important;
+  margin-right:0 !important;
+  border-radius:28px !important;
+}
+.page>article,.page>.record-list,.page>.section-head,
+.page>.stats-grid,.page>.game-grid,.page>.care-summary{
+  margin-top:22px !important;
+  margin-bottom:22px !important;
+}
+.tracker-form,.daily-couple-form{
+  display:grid !important;
+  gap:20px !important;
+}
+.tracker-form label,.daily-couple-form label{
+  display:grid !important;
+  gap:10px !important;
+  width:100% !important;
+  min-width:0 !important;
+}
+.tracker-form input,.tracker-form textarea,.tracker-form select,
+.daily-couple-form input,.daily-couple-form textarea,.daily-couple-form select{
+  width:100% !important;
+  min-width:0 !important;
+  padding:16px 18px !important;
+  border-radius:20px !important;
+  line-height:1.5 !important;
+}
+input[type="date"]{
+  display:block !important;
+  width:100% !important;
+  min-width:0 !important;
+  -webkit-appearance:none;
+  appearance:none;
+}
+.tracker-form button,.daily-couple-form button,
+#periodSaveBtn,#periodDailyLogBtn,#kapiAteBtn,#kapiRefusedBtn{
+  width:100% !important;
+  min-height:54px !important;
+  padding:14px 18px !important;
+  margin-top:2px !important;
+  border-radius:20px !important;
+}
+.tracker-actions,.button-row,.action-row{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:12px !important;
+  width:100% !important;
+}
+.month-accordion{
+  margin:14px 0 !important;
+  border-radius:22px !important;
+}
+.month-accordion summary{
+  padding:18px !important;
+  gap:8px !important;
+}
+.record-row{
+  padding:16px 18px !important;
+  gap:14px !important;
+  align-items:flex-start !important;
+}
+.record-row>div{
+  min-width:0 !important;
+  flex:1 1 auto !important;
+}
+.record-row p,.record-row small{
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+#kapi .tracker-card,#period .tracker-card{
+  padding:22px !important;
+}
+.daily-couple-card{
+  padding:22px !important;
+}
+.daily-couple-head{
+  margin-bottom:14px !important;
+}
+.daily-answer-status{
+  gap:12px !important;
+  margin:20px 0 !important;
+}
+.daily-answer-status span{
+  padding:14px 10px !important;
+  min-height:48px !important;
+}
+.bottom-nav{
+  left:50% !important;
+  transform:translateX(-50%) !important;
+  width:calc(100% - 24px) !important;
+  max-width:680px !important;
+  grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+  gap:4px !important;
+  padding:8px !important;
+}
+.bottom-nav button{
+  width:100% !important;
+  min-width:0 !important;
+  padding:11px 2px !important;
+  text-align:center !important;
+}
+@media(max-width:430px){
+  .page{
+    padding-left:14px !important;
+    padding-right:14px !important;
+  }
+  .tracker-card,.feature-card,.daily-couple-card,.game-top,
+  .period-table,#kapiCard,#periodCard{
+    border-radius:24px !important;
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+  .tracker-form,.daily-couple-form{
+    gap:18px !important;
+  }
+  .tracker-form input,.tracker-form textarea,.tracker-form select,
+  .daily-couple-form input,.daily-couple-form textarea,.daily-couple-form select{
+    padding:15px 16px !important;
+  }
+  .tracker-actions,.button-row,.action-row{
+    grid-template-columns:1fr !important;
+  }
+}
