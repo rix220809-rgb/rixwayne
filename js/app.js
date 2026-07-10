@@ -1,4 +1,4 @@
-const APP_VERSION = '8.0';
+const APP_VERSION = '8.1';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';
@@ -361,6 +361,7 @@ async function init(){
     await renderDailyCoupleChallenge();
     startGame('all');
     bindImageFallbacks();
+    setTimeout(()=>showHomePeriodPopup(), 700);
 
     try {
       const after = sessionStorage.getItem('ourMemories.afterReloadTab');
@@ -411,6 +412,7 @@ function showTab(id){
   $$('.page').forEach(p=>p.classList.toggle('active', p.id===id));
   $$('.bottom-nav button').forEach(b=>b.classList.toggle('active', b.dataset.tab===id));
   try { window.scrollTo({top:0, behavior:'smooth'}); } catch(e) { window.scrollTo(0,0); }
+  if(id==='home') showHomePeriodPopup();
   if(id==='kapi') renderKapi();
   if(id==='period') renderPeriod();
   if(id==='mood') renderMoodBoard();
@@ -760,15 +762,45 @@ async function deletePeriodRecord(idOrStart){
 function getPeriodWarning(){ return pickFromDate(periodWarnings, todayISO(), 7) || periodWarnings[0]; }
 function getDailyAngryPhoto(){ return pickFromDate(angryPhotos, todayISO(), 13) || angryPhotos[0]; }
 function isPeriodAlertActive(info, active){ return (info.warningDays >= 0 && info.warningDays <= 3) || !!active; }
-function showPeriodAlertPopup(mood, warningText){
-  const key = `ourMemories.periodPopupSeen.v6.${todayISO()}`;
-  if(localStorage.getItem(key)) return;
-  localStorage.setItem(key,'1');
+function showPeriodAlertPopup(mood, warningText, force=false){
+  if(!mood || !$('#modal') || !$('#modalContent')) return;
+  const key = `ourMemories.periodPopupSeen.v8.1.${todayISO()}`;
+  if(!force && sessionStorage.getItem(key)) return;
+  sessionStorage.setItem(key,'1');
   setTimeout(()=>{
-    $('#modalContent').innerHTML = `<div class="period-popup-card"><img src="${assetUrl(mood.src)}" alt="${mood.title}"><div class="period-popup-body"><div class="badge-row"><span class="badge">小舜警報</span><span class="badge">前三天 / 經期中</span></div><h2>${mood.title}</h2><p>${warningText}</p><div class="story">${mood.caption}</div></div></div>`;
+    $('#modalContent').innerHTML = `<div class="period-popup-card">
+      <img src="${assetUrl(mood.src)}" alt="${mood.title}">
+      <div class="period-popup-body">
+        <div class="badge-row">
+          <span class="badge">🚨 小舜警報</span>
+          <span class="badge">前三天 / 經期中</span>
+        </div>
+        <h2>${mood.title}</h2>
+        <p>${warningText}</p>
+        <div class="story">${mood.caption}</div>
+        <button type="button" class="period-popup-close" onclick="document.querySelector('#modal')?.close()">收到，立刻切換照顧模式</button>
+      </div>
+    </div>`;
     $('#modal').showModal();
-  }, 700);
+    bindImageFallbacks($('#modal'));
+  }, 450);
 }
+
+async function showHomePeriodPopup(force=false){
+  try{
+    const info = await getPeriodPrediction();
+    info.records = dedupePeriodRecords(info.records);
+    const active = findActivePeriod(info.records);
+    const alertActive = isPeriodAlertActive(info, active);
+    if(!alertActive) return;
+    const mood = getDailyAngryPhoto();
+    const warningText = getPeriodWarning();
+    showPeriodAlertPopup(mood, warningText, force);
+  }catch(e){
+    console.warn('首頁經期警報載入失敗', e);
+  }
+}
+
 function openAngryPhoto(index){
   const p = angryPhotos[index];
   if(!p) return;
@@ -802,7 +834,6 @@ async function renderPeriod(){
     moodHead?.classList.remove('hidden-alert');
     moodWall?.classList.remove('hidden-alert');
     renderPeriodMoodWall(moodIndex);
-    showPeriodAlertPopup(mood, warningText);
   } else {
     moodHead?.classList.add('hidden-alert');
     moodWall?.classList.add('hidden-alert');
@@ -1531,7 +1562,6 @@ async function renderPeriod(){
     moodHead?.classList.remove('hidden-alert');
     moodWall?.classList.remove('hidden-alert');
     renderPeriodMoodWall(moodIndex);
-    showPeriodAlertPopup(mood, warningText);
   } else {
     moodHead?.classList.add('hidden-alert');
     moodWall?.classList.add('hidden-alert');

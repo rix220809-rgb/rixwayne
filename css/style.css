@@ -426,3 +426,28 @@
   .daily-couple-head{gap:10px !important}
   .daily-answer-status{gap:8px !important}
 }
+
+
+/* ===== V8.1 homepage period alert popup ===== */
+.period-popup-card{
+  overflow:hidden;
+}
+.period-popup-card img{
+  width:100%;
+  max-height:52vh;
+  object-fit:cover;
+  display:block;
+}
+.period-popup-body{
+  padding:20px;
+}
+.period-popup-close{
+  width:100%;
+  min-height:48px;
+  margin-top:14px;
+  border:0;
+  border-radius:16px;
+  font-weight:800;
+  background:linear-gradient(135deg,#5ee7f7,#ffd36d);
+  color:#07162f;
+}
