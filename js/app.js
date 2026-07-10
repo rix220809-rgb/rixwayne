@@ -1,4 +1,4 @@
-const APP_VERSION = '8.1';
+const APP_VERSION = '8.2';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';
@@ -298,6 +298,16 @@ function bindImageFallbacks(scope=document){
   });
 }
 
+
+const dailyHeroLines = ["今天也是值得紀念的一天。", "謝謝你們一起走到了現在。", "每一張照片，都是未來會懷念的現在。", "今天也請好好珍惜彼此。", "卡皮今天也在幫你們見證回憶。"];
+function getDailyHeroLine(){
+  return pickFromDate(dailyHeroLines, todayISO(), 121) || dailyHeroLines[0];
+}
+function renderDailyHeroLine(){
+  const el = $('#todayLine');
+  if(el) el.textContent = getDailyHeroLine();
+}
+
 function daysTogether(){
   const start = localDate(START_DATE);
   const today = new Date();
@@ -351,6 +361,7 @@ async function init(){
     $('#flashbackTitle').textContent = daily.title;
     $('#todayLine').textContent = `${daily.title}：${daily.event.title}`;
     renderFlashback(daily.event);
+    renderDailyHeroLine();
     renderStats();
     renderMemories();
     renderAlbum();
@@ -801,15 +812,7 @@ async function showHomePeriodPopup(force=false){
   }
 }
 
-function openAngryPhoto(index){
-  const p = angryPhotos[index];
-  if(!p) return;
-  $('#modalContent').innerHTML=`<img class="modal-img" src="${assetUrl(p.src)}" alt="${p.title}"><div class="modal-body"><div class="badge-row"><span class="badge">小舜警報照片</span><span class="badge">Mood Archive</span></div><h2>${p.title}</h2><p>${p.caption}</p><div class="story">這些照片只會在小舜經期將近前三天或經期中出現。</div></div>`;
-  $('#modal').showModal();
-}
-function renderPeriodMoodWall(activeIndex){
-  $('#periodMoodWall').innerHTML = angryPhotos.map((p,i)=>`<button class="anger-tile ${i===activeIndex?'active':''}" onclick="openAngryPhoto(${i})"><img src="${assetUrl(p.src)}" alt="${p.title}"><b>${p.title}</b><small>${p.caption}</small></button>`).join('');
-}
+
 async function renderPeriod(){
   const info=await getPeriodPrediction();
   info.records = dedupePeriodRecords(info.records);
@@ -819,7 +822,6 @@ async function renderPeriod(){
   const dayOfActive = active ? dayDiff(today, active.start)+1 : null;
   const pillReminder = active && dayOfActive===5;
   const mood = getDailyAngryPhoto();
-  const moodIndex = angryPhotos.findIndex(x=>x.src===mood?.src);
   const warningText = getPeriodWarning();
   $('#periodCard').innerHTML = `${alertActive ? `<div class="period-img-wrap"><img class="feature-img" src="${assetUrl(mood.src)}" alt="小舜警報照片"><div class="period-alert-chip">🚨 PERIOD ALERT</div></div>` : renderCutePeriodImage()}
     <div class="feature-body"><div class="badge-row"><span class="badge">平均週期 ${info.cycle} 天</span><span class="badge">平均經期 ${info.avgDays} 天</span><span class="badge">下次 ${fmt(info.nextStart)}～${fmt(info.nextEnd)}</span></div><h3>${alertActive?'小舜警報已啟動':'小舜平時是如此乖巧可愛！'}</h3><p>${alertActive ? warningText : `過去月份現在只作為統計資料，不會再每天確認。小舜警報圖庫與 popup 只會在預估經期前三天，或經期已開始時出現。`}</p>${alertActive?`<div class="period-alert-note"><b>${mood.title}</b>：${mood.caption}</div>`:''}${pillReminder?`<div class="danger-story">第 5 天提醒：記得開始吃避孕藥！但請以醫囑與藥袋標示為準。</div>`:`<div class="story">${cloudReady?'資料會同步到 Supabase；換瀏覽器也能讀到相同紀錄。':'目前使用本機備援；請確認 Supabase SQL 權限。'}</div>`}</div>`;
@@ -828,17 +830,6 @@ async function renderPeriod(){
     return `<div class="record-row"><div><b>${fmt(r.start)}～${fmt(r.end)}</b><p>${days} 天${r.note?`・${r.note}`:''}</p></div><button onclick="deletePeriodRecord('${r.id||r.start}')">刪除</button></div>`;
   }).join('');
   $('#periodTable').innerHTML = `<div class="period-table glass"><div class="period-table-head"><b>經期歷史數據</b><span>固定週期 ${info.cycle} 天 / 平均 ${info.avgDays} 天</span></div>${rows || '<div class="empty-card">尚無經期紀錄。</div>'}</div>`;
-  const moodHead = $('#periodMoodHead');
-  const moodWall = $('#periodMoodWall');
-  if (alertActive) {
-    moodHead?.classList.remove('hidden-alert');
-    moodWall?.classList.remove('hidden-alert');
-    renderPeriodMoodWall(moodIndex);
-  } else {
-    moodHead?.classList.add('hidden-alert');
-    moodWall?.classList.add('hidden-alert');
-    if (moodWall) moodWall.innerHTML = '';
-  }
 }
 
 
@@ -1527,11 +1518,10 @@ async function renderPeriod(){
   const dayOfActive = active ? dayDiff(today, active.start)+1 : null;
   const pillReminder = active && dayOfActive===5;
   const mood = getDailyAngryPhoto();
-  const moodIndex = angryPhotos.findIndex(x=>x.src===mood?.src);
   const warningText = getPeriodWarning();
 
   $('#periodCard').innerHTML = `${alertActive ? `<div class="period-img-wrap"><img class="feature-img" src="${mood.src}?v=${APP_VERSION}" alt="小舜警報照片"><div class="period-alert-chip">🚨 PERIOD ALERT</div></div>` : renderCutePeriodImage()}
-    <div class="feature-body"><div class="badge-row"><span class="badge">智慧預估週期 ${info.cycle} 天</span><span class="badge">平均經期 ${info.avgDays} 天</span><span class="badge">下次 ${fmt(info.nextStart)}～${fmt(info.nextEnd)}</span></div><h3>${alertActive?'小舜警報已啟動':'小舜平時是如此漂亮可愛！'}</h3><p>${alertActive ? warningText : `小舜就是這麼漂亮可愛，看看懷寶多幸運！系統會依照過去經期開始日智慧預估下一次，不再強制固定 30 天。`}</p>${alertActive?`<div class="period-alert-note"><b>${mood.title}</b>：${mood.caption}</div>`:''}${pillReminder?`<div class="danger-story">第 5 天提醒：記得開始吃避孕藥！但請以醫囑與藥袋標示為準。</div>`:`<div class="story">${cloudReady?'資料會同步到 Supabase；換瀏覽器也能讀到相同紀錄。':'目前使用本機備援；請確認 Supabase SQL 權限。'}</div>`}</div>`;
+    <div class="feature-body"><div class="badge-row"><span class="badge">智慧預估週期 ${info.cycle} 天</span><span class="badge">平均經期 ${info.avgDays} 天</span><span class="badge">下次 ${fmt(info.nextStart)}～${fmt(info.nextEnd)}</span></div><h3>${alertActive?'🚨 今日警報':'🌸 漂亮小舜'}</h3><p>${alertActive ? warningText : `小舜就是這麼漂亮可愛，看看懷寶多幸運！系統會依照過去經期開始日智慧預估下一次，不再強制固定 30 天。`}</p>${alertActive?`<div class="period-alert-note"><b>${mood.title}</b>：${mood.caption}</div>`:''}${pillReminder?`<div class="danger-story">第 5 天提醒：記得開始吃避孕藥！但請以醫囑與藥袋標示為準。</div>`:`<div class="story">${cloudReady?'資料會同步到 Supabase；換瀏覽器也能讀到相同紀錄。':'目前使用本機備援；請確認 Supabase SQL 權限。'}</div>`}</div>`;
 
   const logForm = $('#periodDailyLogForm');
   if(logForm){

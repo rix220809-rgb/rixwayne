@@ -451,3 +451,15 @@
   background:linear-gradient(135deg,#5ee7f7,#ffd36d);
   color:#07162f;
 }
+
+/* ===== V8.2 single daily Shun card ===== */
+#periodMoodHead,
+#periodMoodWall{display:none !important;}
+#periodCard .feature-img,
+.pretty-shun-card img{
+  width:100%;
+  max-height:62vh;
+  object-fit:cover;
+  display:block;
+}
+#periodCard .feature-body{padding-top:18px;}
