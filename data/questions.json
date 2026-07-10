@@ -501,14 +501,14 @@
   {
     "id": "Q-0029",
     "type": "choice",
-    "question": "這趟旅行的重要里程碑是？",
+    "question": "2026/5 這趟旅行的沒去什麼地方？",
     "options": [
-      "第一次見小舜家人",
-      "第一次看 NANA 展",
-      "第一次買盲盒",
-      "第一次看花"
+      "咖啡廳",
+      "博物館",
+      "餐廳",
+      "KTV"
     ],
-    "answer": 0,
+    "answer": 3,
     "image": "images/photo0007.webp",
     "story": "台南療癒之旅。",
     "tags": [
