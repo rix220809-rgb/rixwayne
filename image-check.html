@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>V8 圖片檢查</title><style>
+body{font-family:-apple-system,sans-serif;background:#08162f;color:#fff;padding:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{background:#ffffff12;border:1px solid #ffffff22;border-radius:16px;padding:8px}
+img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px}.ok{color:#66ffbb}.bad{color:#ff9988}
+</style></head><body>
+<h1>V8 圖片檢查</h1><p>這頁會測試網站圖片資料夾是否真的上傳成功。</p>
+<div id="status"></div><div class="grid" id="grid"></div>
+<script>
+const paths=['images/photo0001.webp','images/photo0033.webp','images/photo0069.webp',
+'images/shun_pretty01.webp','images/shun_pretty25.webp','images/anger01.webp','images/anger31.webp','images/kapi01.webp'];
+let ok=0, bad=0;
+const grid=document.querySelector('#grid'), status=document.querySelector('#status');
+paths.forEach(path=>{
+ const card=document.createElement('div'); card.className='card';
+ const img=document.createElement('img'); img.src=path+'?v=8.0';
+ const p=document.createElement('p'); p.textContent=path;
+ img.onload=()=>{ok++; p.className='ok'; p.textContent='✅ '+path; update()};
+ img.onerror=()=>{bad++; p.className='bad'; p.textContent='❌ '+path; update()};
+ card.append(img,p); grid.append(card);
+});
+function update(){status.innerHTML=`成功：<b class="ok">${ok}</b>　失敗：<b class="bad">${bad}</b>`}
+</script></body></html>
