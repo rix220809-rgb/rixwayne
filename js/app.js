@@ -1,4 +1,4 @@
-const APP_VERSION = '8.2';
+const APP_VERSION = '8.2.1';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';
@@ -1546,17 +1546,6 @@ async function renderPeriod(){
     }).join('') : '<div class="empty-card">尚無經期紀錄。</div>'}
   </div>`;
 
-  const moodHead = $('#periodMoodHead');
-  const moodWall = $('#periodMoodWall');
-  if (alertActive) {
-    moodHead?.classList.remove('hidden-alert');
-    moodWall?.classList.remove('hidden-alert');
-    renderPeriodMoodWall(moodIndex);
-  } else {
-    moodHead?.classList.add('hidden-alert');
-    moodWall?.classList.add('hidden-alert');
-    if (moodWall) moodWall.innerHTML = '';
-  }
 }
 
 async function renderKapi(){

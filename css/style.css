@@ -463,3 +463,12 @@
   display:block;
 }
 #periodCard .feature-body{padding-top:18px;}
+
+/* V8.2.1: permanently remove the warning gallery */
+#periodMoodHead,
+#periodMoodWall,
+.period-mood-head,
+.period-mood-wall,
+.anger-grid{
+  display:none !important;
+}
