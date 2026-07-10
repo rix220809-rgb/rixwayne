@@ -1,0 +1,1737 @@
+[
+  {
+    "id": "PH-0001",
+    "eventId": "EV-0001",
+    "title": "認識後的第一張合照",
+    "description": "名義前的起點／鏡子自拍",
+    "src": "images/photo0001.webp",
+    "date": "2026-01-09",
+    "rank": "legendary",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "32846C9E-9554-4638-A972-25D441D0A1D1.jpeg",
+      "displayFile": "photo0001.webp",
+      "originalBytes": 475440,
+      "webpBytes": 92568,
+      "originalSize": "1152 × 1536",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        102,
+        92,
+        80
+      ],
+      "aiSceneHint": "名義前的起點／鏡子自拍"
+    },
+    "featured": true
+  },
+  {
+    "id": "PH-0002",
+    "eventId": "EV-0002",
+    "title": "抽到喜歡的排球少年菅原學長",
+    "description": "一起抽到喜歡的排球少年菅原學長",
+    "src": "images/photo0002.webp",
+    "date": "",
+    "rank": "rare",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "DCEA7998-F37C-4D9A-B830-46FE14D59CCF.jpeg",
+      "displayFile": "photo0002.webp",
+      "originalBytes": 353819,
+      "webpBytes": 60858,
+      "originalSize": "864 × 1536",
+      "webSize": "720 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.562,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        139,
+        121,
+        104
+      ],
+      "aiSceneHint": "一起抽到喜歡的排球少年菅原學長"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0003",
+    "eventId": "EV-0003",
+    "title": "第一次兩個人去畫畫",
+    "description": "第一次一起去畫畫，共同創作的約會",
+    "src": "images/photo0003.webp",
+    "date": "",
+    "rank": "legendary",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "9EEC3BE7-7EF9-448D-A9D1-32DB2396DC88.jpeg",
+      "displayFile": "photo0003.webp",
+      "originalBytes": 3943607,
+      "webpBytes": 168352,
+      "originalSize": "3456 × 4608",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        138,
+        119,
+        104
+      ],
+      "aiSceneHint": "第一次一起去畫畫，共同創作的約會"
+    },
+    "featured": true
+  },
+  {
+    "id": "PH-0004",
+    "eventId": "EV-0004",
+    "title": "張懷在舜寶聚餐跑來唱歌",
+    "description": "聚餐時張懷跑來唱歌的回憶",
+    "src": "images/photo0004.webp",
+    "date": "",
+    "rank": "rare",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "886E4F20-0D29-4986-BE2F-9023392D1EFD.jpeg",
+      "displayFile": "photo0004.webp",
+      "originalBytes": 259291,
+      "webpBytes": 30838,
+      "originalSize": "864 × 1536",
+      "webSize": "720 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.562,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        36,
+        29,
+        21
+      ],
+      "aiSceneHint": "聚餐時張懷跑來唱歌的回憶"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0005",
+    "eventId": "EV-0005",
+    "title": "第一次一起溜滑板",
+    "description": "第一次一起嘗試滑板",
+    "src": "images/photo0005.webp",
+    "date": "",
+    "rank": "legendary",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "1FB38F16-CF87-4E53-8A34-0860125516D1.jpeg",
+      "displayFile": "photo0005.webp",
+      "originalBytes": 2001700,
+      "webpBytes": 57634,
+      "originalSize": "3456 × 4608",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        92,
+        79,
+        61
+      ],
+      "aiSceneHint": "第一次一起嘗試滑板"
+    },
+    "featured": true
+  },
+  {
+    "id": "PH-0006",
+    "eventId": "EV-0006",
+    "title": "一起聽 Daniel Caesar",
+    "description": "和芬恩、靈驗、家宏一起聽 Daniel Caesar",
+    "src": "images/photo0006.webp",
+    "date": "",
+    "rank": "epic",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "A581FBE5-0E52-4FBA-91F4-F0B2A39E6597.jpeg",
+      "displayFile": "photo0006.webp",
+      "originalBytes": 472580,
+      "webpBytes": 101760,
+      "originalSize": "896 × 1536",
+      "webSize": "746 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.583,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        123,
+        115,
+        104
+      ],
+      "aiSceneHint": "和芬恩、靈驗、家宏一起聽 Daniel Caesar"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0007",
+    "eventId": "EV-0007",
+    "title": "台南療癒之旅",
+    "description": "第一次跟小舜家人見面，台南療癒之旅",
+    "src": "images/photo0007.webp",
+    "date": "",
+    "rank": "legendary",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "E05F3815-DD8A-4828-8B2B-8E4D3C64BD21.jpeg",
+      "displayFile": "photo0007.webp",
+      "originalBytes": 346795,
+      "webpBytes": 57310,
+      "originalSize": "890 × 1536",
+      "webSize": "741 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.579,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        139,
+        132,
+        122
+      ],
+      "aiSceneHint": "第一次跟小舜家人見面，台南療癒之旅"
+    },
+    "featured": true
+  },
+  {
+    "id": "PH-0008",
+    "eventId": "EV-0008",
+    "title": "第一次去貓咖",
+    "description": "第一次一起去貓咖",
+    "src": "images/photo0008.webp",
+    "date": "",
+    "rank": "epic",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "0A2D3834-D642-4540-A726-8A98B091D389.jpeg",
+      "displayFile": "photo0008.webp",
+      "originalBytes": 506571,
+      "webpBytes": 82972,
+      "originalSize": "1536 × 1152",
+      "webSize": "1280 × 960",
+      "orientation": "橫式",
+      "aspectRatio": 1.333,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        160,
+        140,
+        126
+      ],
+      "aiSceneHint": "第一次一起去貓咖"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0009",
+    "eventId": "EV-0009",
+    "title": "陪小舜聽 Deca Joins",
+    "description": "張懷陪小舜聽 Deca Joins",
+    "src": "images/photo0009.webp",
+    "date": "",
+    "rank": "epic",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "056E3732-F9B2-4CF9-86A7-10C1C5147010.jpeg",
+      "displayFile": "photo0009.webp",
+      "originalBytes": 2471396,
+      "webpBytes": 71964,
+      "originalSize": "3456 × 4608",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        150,
+        137,
+        123
+      ],
+      "aiSceneHint": "張懷陪小舜聽 Deca Joins"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0010",
+    "eventId": "EV-0010",
+    "title": "在一起 100 天",
+    "description": "交往 100 天的紀念",
+    "src": "images/photo0010.webp",
+    "date": "2026-04-18",
+    "rank": "legendary",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "23294E93-E79A-4FF7-9181-9913B600E8DB.jpeg",
+      "displayFile": "photo0010.webp",
+      "originalBytes": 245713,
+      "webpBytes": 53638,
+      "originalSize": "1108 × 1477",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        46,
+        41,
+        38
+      ],
+      "aiSceneHint": "交往 100 天的紀念"
+    },
+    "featured": true
+  },
+  {
+    "id": "PH-0011",
+    "eventId": "EV-0011",
+    "title": "小舜去看 NANA 展",
+    "description": "小舜去看 NANA 展覽",
+    "src": "images/photo0011.webp",
+    "date": "",
+    "rank": "rare",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "41A48029-8BBC-4829-83DF-773F4FA26480.jpeg",
+      "displayFile": "photo0011.webp",
+      "originalBytes": 3415972,
+      "webpBytes": 121480,
+      "originalSize": "3456 × 4608",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        143,
+        138,
+        130
+      ],
+      "aiSceneHint": "小舜去看 NANA 展覽"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0012",
+    "eventId": "EV-0012",
+    "title": "小舜在張懷家貼的貼紙",
+    "description": "蕭小舜在張懷家留下的小貼紙",
+    "src": "images/photo0012.webp",
+    "date": "",
+    "rank": "rare",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "54B6F82D-7886-4A63-91FE-C9E19A23396E.jpeg",
+      "displayFile": "photo0012.webp",
+      "originalBytes": 3487774,
+      "webpBytes": 58382,
+      "originalSize": "3456 × 4608",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        108,
+        91,
+        77
+      ],
+      "aiSceneHint": "蕭小舜在張懷家留下的小貼紙"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0013",
+    "eventId": "EV-0013",
+    "title": "名義上第一張合照",
+    "description": "你們名義上的第一張合照",
+    "src": "images/photo0013.webp",
+    "date": "2026-01-09",
+    "rank": "legendary",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "9C40C1F2-1B5F-42EF-A8E5-4BB0E006360E.jpeg",
+      "displayFile": "photo0013.webp",
+      "originalBytes": 3717833,
+      "webpBytes": 125708,
+      "originalSize": "3456 × 4608",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        131,
+        131,
+        127
+      ],
+      "aiSceneHint": "你們名義上的第一張合照"
+    },
+    "featured": true
+  },
+  {
+    "id": "PH-0014",
+    "eventId": "EV-0014",
+    "title": "小舜幫張懷拍形象照",
+    "description": "出去玩時小舜幫張懷拍的形象照",
+    "src": "images/photo0014.webp",
+    "date": "",
+    "rank": "epic",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "BDD8ADA0-0AA2-4770-8680-6340F50882D9.jpeg",
+      "displayFile": "photo0014.webp",
+      "originalBytes": 785611,
+      "webpBytes": 208462,
+      "originalSize": "1023 × 1536",
+      "webSize": "852 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.666,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        112,
+        115,
+        108
+      ],
+      "aiSceneHint": "出去玩時小舜幫張懷拍的形象照"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0015",
+    "eventId": "EV-0015",
+    "title": "第二次約會去海邊",
+    "description": "第二次約會在海邊幫張懷拍照",
+    "src": "images/photo0015.webp",
+    "date": "",
+    "rank": "legendary",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "4DAD3D5B-A3CA-486B-9B8A-5A1619A6E878.jpeg",
+      "displayFile": "photo0015.webp",
+      "originalBytes": 535746,
+      "webpBytes": 80258,
+      "originalSize": "1536 × 1038",
+      "webSize": "1280 × 865",
+      "orientation": "橫式",
+      "aspectRatio": 1.48,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        176,
+        192,
+        201
+      ],
+      "aiSceneHint": "第二次約會在海邊幫張懷拍照"
+    },
+    "featured": true
+  },
+  {
+    "id": "PH-0016",
+    "eventId": "EV-0016",
+    "title": "張懷真正傾心的那天",
+    "description": "張懷真正對蕭小舜傾心的那一天",
+    "src": "images/photo0016.webp",
+    "date": "",
+    "rank": "legendary",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "DDB5BC7E-C55F-46A4-846E-16E7BDE3C5A3.jpeg",
+      "displayFile": "photo0016.webp",
+      "originalBytes": 449845,
+      "webpBytes": 66438,
+      "originalSize": "1152 × 1536",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        166,
+        150,
+        151
+      ],
+      "aiSceneHint": "張懷真正對蕭小舜傾心的那一天"
+    },
+    "featured": true
+  },
+  {
+    "id": "PH-0017",
+    "eventId": "EV-0017",
+    "title": "偷偷請店員插蠟燭",
+    "description": "偷偷去餐廳請店員幫張懷插蠟燭",
+    "src": "images/photo0017.webp",
+    "date": "2026-01-21",
+    "rank": "legendary",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "3FEA3FD5-9DF0-4FA3-9446-E202410EE561.jpeg",
+      "displayFile": "photo0017.webp",
+      "originalBytes": 364390,
+      "webpBytes": 61454,
+      "originalSize": "864 × 1536",
+      "webSize": "720 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.562,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        121,
+        90,
+        78
+      ],
+      "aiSceneHint": "偷偷去餐廳請店員幫張懷插蠟燭"
+    },
+    "featured": true
+  },
+  {
+    "id": "PH-0018",
+    "eventId": "EV-0018",
+    "title": "1/21 張懷生日",
+    "description": "1/21 張懷生日",
+    "src": "images/photo0018.webp",
+    "date": "2026-01-21",
+    "rank": "legendary",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "820A69E7-F277-487A-B387-5C0B43D08F28.jpeg",
+      "displayFile": "photo0018.webp",
+      "originalBytes": 396301,
+      "webpBytes": 75856,
+      "originalSize": "1152 × 1536",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        75,
+        73,
+        71
+      ],
+      "aiSceneHint": "1/21 張懷生日"
+    },
+    "featured": true
+  },
+  {
+    "id": "PH-0019",
+    "eventId": "EV-0019",
+    "title": "生日形象照",
+    "description": "生日一起完成張懷想拍很久的形象照",
+    "src": "images/photo0019.webp",
+    "date": "2026-01-21",
+    "rank": "epic",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "C6ED5EBB-5E43-4308-8332-9132EA17DDAC.jpeg",
+      "displayFile": "photo0019.webp",
+      "originalBytes": 2675849,
+      "webpBytes": 53902,
+      "originalSize": "3072 × 4608",
+      "webSize": "853 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.667,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        67,
+        68,
+        80
+      ],
+      "aiSceneHint": "生日一起完成張懷想拍很久的形象照"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0020",
+    "eventId": "EV-0020",
+    "title": "張懷照顧生病的小舜",
+    "description": "張懷照顧生病的小舜",
+    "src": "images/photo0020.webp",
+    "date": "",
+    "rank": "legendary",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "AC2DBE3B-5A24-444F-9DDC-B0AA2252189D.jpeg",
+      "displayFile": "photo0020.webp",
+      "originalBytes": 570011,
+      "webpBytes": 90496,
+      "originalSize": "1024 × 1536",
+      "webSize": "853 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.667,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        133,
+        123,
+        110
+      ],
+      "aiSceneHint": "張懷照顧生病的小舜"
+    },
+    "featured": true
+  },
+  {
+    "id": "PH-0021",
+    "eventId": "EV-0021",
+    "title": "盲腸炎開刀的小舜",
+    "description": "小舜盲腸炎開刀的重要回憶",
+    "src": "images/photo0021.webp",
+    "date": "",
+    "rank": "legendary",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "5268F684-BA93-45AC-AC1C-09EA758DDD55.jpeg",
+      "displayFile": "photo0021.webp",
+      "originalBytes": 3510152,
+      "webpBytes": 109416,
+      "originalSize": "3456 × 4608",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        102,
+        98,
+        92
+      ],
+      "aiSceneHint": "小舜盲腸炎開刀的重要回憶"
+    },
+    "featured": true
+  },
+  {
+    "id": "PH-0022",
+    "eventId": "EV-0022",
+    "title": "一起包下阪本日常一番賞",
+    "description": "一起把阪本的日常一番賞整套包下來",
+    "src": "images/photo0022.webp",
+    "date": "",
+    "rank": "epic",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "26ABF75B-7966-4197-AABF-F64415A24C07.jpeg",
+      "displayFile": "photo0022.webp",
+      "originalBytes": 628571,
+      "webpBytes": 124714,
+      "originalSize": "1024 × 1536",
+      "webSize": "853 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.667,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        112,
+        105,
+        97
+      ],
+      "aiSceneHint": "一起把阪本的日常一番賞整套包下來"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0023",
+    "eventId": "EV-0023",
+    "title": "張懷的車牌",
+    "description": "張懷的 Gogoro 與車牌 EPD-2976",
+    "src": "images/photo0023.webp",
+    "date": "",
+    "rank": "rare",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "7C44F852-672D-4103-87D8-E4EC5118972E.jpeg",
+      "displayFile": "photo0023.webp",
+      "originalBytes": 3698738,
+      "webpBytes": 77924,
+      "originalSize": "3456 × 4608",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        125,
+        105,
+        68
+      ],
+      "aiSceneHint": "張懷的 Gogoro 與車牌 EPD-2976"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0024",
+    "eventId": "EV-0024",
+    "title": "大吵過後過情人節",
+    "description": "大吵過後仍然一起過情人節",
+    "src": "images/photo0024.webp",
+    "date": "2026-02-14",
+    "rank": "legendary",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "FA513BDE-5613-4D67-A9C8-2DA0B99F4625.jpeg",
+      "displayFile": "photo0024.webp",
+      "originalBytes": 365506,
+      "webpBytes": 56290,
+      "originalSize": "864 × 1536",
+      "webSize": "720 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.562,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        136,
+        113,
+        104
+      ],
+      "aiSceneHint": "大吵過後仍然一起過情人節"
+    },
+    "featured": true
+  },
+  {
+    "id": "PH-0025",
+    "eventId": "EV-0025",
+    "title": "跟秀芬一起拍照",
+    "description": "和秀芬一起拍照",
+    "src": "images/photo0025.webp",
+    "date": "",
+    "rank": "epic",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "B8CF5FE4-9DA3-40DC-99FF-0100FEDC3503.jpeg",
+      "displayFile": "photo0025.webp",
+      "originalBytes": 2696913,
+      "webpBytes": 67048,
+      "originalSize": "3456 × 4608",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        126,
+        113,
+        99
+      ],
+      "aiSceneHint": "和秀芬一起拍照"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0026",
+    "eventId": "EV-0026",
+    "title": "去古亭看花花",
+    "description": "一起去古亭看花花",
+    "src": "images/photo0026.webp",
+    "date": "",
+    "rank": "epic",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "A864CC86-ED8D-40D1-A20B-5A57C039F103.jpeg",
+      "displayFile": "photo0026.webp",
+      "originalBytes": 2597264,
+      "webpBytes": 67556,
+      "originalSize": "3456 × 4608",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        139,
+        127,
+        128
+      ],
+      "aiSceneHint": "一起去古亭看花花"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0027",
+    "eventId": "EV-0027",
+    "title": "水塔壞掉住旅館",
+    "description": "家裡水塔壞掉，被迫去住旅館",
+    "src": "images/photo0027.webp",
+    "date": "",
+    "rank": "epic",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "89F37729-04E8-41E8-A336-B2F7D5A603D6.jpeg",
+      "displayFile": "photo0027.webp",
+      "originalBytes": 3399802,
+      "webpBytes": 117682,
+      "originalSize": "3456 × 4608",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        121,
+        115,
+        108
+      ],
+      "aiSceneHint": "家裡水塔壞掉，被迫去住旅館"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0028",
+    "eventId": "EV-0028",
+    "title": "買歐拉夫盲盒",
+    "description": "一起去買歐拉夫盲盒",
+    "src": "images/photo0028.webp",
+    "date": "",
+    "rank": "rare",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "F6F34080-9F7A-432C-BF46-82CAE6F2E6F1.jpeg",
+      "displayFile": "photo0028.webp",
+      "originalBytes": 3731497,
+      "webpBytes": 109338,
+      "originalSize": "3456 × 4608",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        144,
+        128,
+        117
+      ],
+      "aiSceneHint": "一起去買歐拉夫盲盒"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0029",
+    "eventId": "EV-0029",
+    "title": "張懷送的七海建人",
+    "description": "張懷送給小舜的七海建人",
+    "src": "images/photo0029.webp",
+    "date": "",
+    "rank": "epic",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "E2D18043-4988-43C9-93EC-8DBF2001E178.jpeg",
+      "displayFile": "photo0029.webp",
+      "originalBytes": 255012,
+      "webpBytes": 43578,
+      "originalSize": "710 × 1537",
+      "webSize": "591 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.462,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        101,
+        80,
+        67
+      ],
+      "aiSceneHint": "張懷送給小舜的七海建人"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0030",
+    "eventId": "EV-0030",
+    "title": "幫張懷敷面膜",
+    "description": "小舜幫張懷敷面膜",
+    "src": "images/photo0030.webp",
+    "date": "",
+    "rank": "rare",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "9E5A32E2-15C4-48E0-B970-7E13050941A2.jpeg",
+      "displayFile": "photo0030.webp",
+      "originalBytes": 2208451,
+      "webpBytes": 32880,
+      "originalSize": "3456 × 4608",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        177,
+        145,
+        109
+      ],
+      "aiSceneHint": "小舜幫張懷敷面膜"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0031",
+    "eventId": "EV-0031",
+    "title": "跟小玫見面",
+    "description": "和小玫見面",
+    "src": "images/photo0031.webp",
+    "date": "",
+    "rank": "rare",
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "metadata": {
+      "originalFile": "BC7DDF28-9A7B-4F0C-9386-3FE2BF146083.jpeg",
+      "displayFile": "photo0031.webp",
+      "originalBytes": 3739359,
+      "webpBytes": 145614,
+      "originalSize": "3456 × 4608",
+      "webSize": "960 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        103,
+        91,
+        82
+      ],
+      "aiSceneHint": "和小玫見面"
+    },
+    "featured": false
+  },
+  {
+    "id": "PH-0032",
+    "eventId": "EV-0032",
+    "title": "卡皮登場",
+    "description": "你們的寵物守宮：卡皮",
+    "src": "images/photo0032.webp",
+    "date": "2026-07-01",
+    "rank": "legendary",
+    "tags": [
+      "照片",
+      "回憶",
+      "卡皮",
+      "守宮",
+      "寵物"
+    ],
+    "metadata": {
+      "originalFile": "E1DF4579-5D89-43E6-95C7-5FD2EA6C9D87.jpeg",
+      "displayFile": "photo0032.webp",
+      "originalBytes": 595547,
+      "webpBytes": 105734,
+      "originalSize": "1024 × 1536",
+      "webSize": "853 × 1280",
+      "orientation": "直式",
+      "aspectRatio": 0.667,
+      "exifDateTime": "未提供／已被社群平台移除",
+      "dominantColorRGB": [
+        133,
+        122,
+        106
+      ],
+      "aiSceneHint": "你們的寵物守宮：卡皮"
+    },
+    "featured": true
+  },
+  {
+    "id": "P-0033",
+    "src": "images/photo0033.webp",
+    "title": "吵到要分手最後哭著要和好哇哇哇｡ﾟヽ(ﾟ´Д`)ﾉﾟ｡",
+    "date": "2026-05-11",
+    "description": "吵到要分手最後哭著要和好哇哇哇｡ﾟヽ(ﾟ´Д`)ﾉﾟ｡",
+    "eventId": "",
+    "rank": "normal",
+    "featured": true,
+    "metadata": {
+      "originalFilename": "000003.jpeg",
+      "originalSize": "1818x1228",
+      "webSize": "1600x1081",
+      "orientation": "landscape",
+      "aspectRatio": "1600:1081",
+      "exifDateTime": "2026-05-11",
+      "originalBytes": null,
+      "webpBytes": 213090
+    }
+  },
+  {
+    "id": "P-0034",
+    "src": "images/photo0034.webp",
+    "title": "張懷最有自信唱歌的部分。",
+    "date": "2026-05-11",
+    "description": "張懷最有自信唱歌的部分。",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "000021 2.jpeg",
+      "originalSize": "1818x1228",
+      "webSize": "1600x1081",
+      "orientation": "landscape",
+      "aspectRatio": "1600:1081",
+      "exifDateTime": "2026-05-11",
+      "originalBytes": null,
+      "webpBytes": 399110
+    }
+  },
+  {
+    "id": "P-0035",
+    "src": "images/photo0035.webp",
+    "title": "超憨ㄉ張懷寶ლ（╹ε╹ლ）",
+    "date": "2026-03-05",
+    "description": "超憨ㄉ張懷寶ლ（╹ε╹ლ）",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_0916.jpeg",
+      "originalSize": "1980x3520",
+      "webSize": "900x1600",
+      "orientation": "portrait",
+      "aspectRatio": "9:16",
+      "exifDateTime": "2026-03-05",
+      "originalBytes": null,
+      "webpBytes": 77360
+    }
+  },
+  {
+    "id": "P-0036",
+    "src": "images/photo0036.webp",
+    "title": "張懷跟他喜歡的毛帽最後一張合照（還是我們第一次約會買ㄉ）",
+    "date": "",
+    "description": "張懷跟他喜歡的毛帽最後一張合照（還是我們第一次約會買ㄉ）",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_0934.jpeg",
+      "originalSize": "960x1706",
+      "webSize": "900x1600",
+      "orientation": "portrait",
+      "aspectRatio": "9:16",
+      "exifDateTime": "待補",
+      "originalBytes": null,
+      "webpBytes": 93616
+    }
+  },
+  {
+    "id": "P-0037",
+    "src": "images/photo0037.webp",
+    "title": "張懷帶飯糰公主去飯糰神社⛩️",
+    "date": "",
+    "description": "張懷帶飯糰公主去飯糰神社⛩️",
+    "eventId": "",
+    "rank": "normal",
+    "featured": true,
+    "metadata": {
+      "originalFilename": "IMG_1195.jpeg",
+      "originalSize": "1108x1477",
+      "webSize": "1108x1477",
+      "orientation": "portrait",
+      "aspectRatio": "1108:1477",
+      "exifDateTime": "待補",
+      "originalBytes": null,
+      "webpBytes": 160058
+    }
+  },
+  {
+    "id": "P-0038",
+    "src": "images/photo0038.webp",
+    "title": "飯糰公主剛張懷去日本玩🇯🇵",
+    "date": "",
+    "description": "飯糰公主剛張懷去日本玩🇯🇵",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_1639.jpeg",
+      "originalSize": "1108x1477",
+      "webSize": "1108x1477",
+      "orientation": "portrait",
+      "aspectRatio": "1108:1477",
+      "exifDateTime": "待補",
+      "originalBytes": null,
+      "webpBytes": 155744
+    }
+  },
+  {
+    "id": "P-0039",
+    "src": "images/photo0039.webp",
+    "title": "每天睡超醜任務（1/N)",
+    "date": "",
+    "description": "每天睡超醜任務（1/N)",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_1712.jpeg",
+      "originalSize": "1554x1054",
+      "webSize": "1554x1054",
+      "orientation": "landscape",
+      "aspectRatio": "777:527",
+      "exifDateTime": "待補",
+      "originalBytes": null,
+      "webpBytes": 96946
+    }
+  },
+  {
+    "id": "P-0040",
+    "src": "images/photo0040.webp",
+    "title": "Theresa帶小舜小懷去他前公司限定景觀咖啡廳！",
+    "date": "",
+    "description": "Theresa帶小舜小懷去他前公司限定景觀咖啡廳！",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_2301.jpeg",
+      "originalSize": "1477x1108",
+      "webSize": "1477x1108",
+      "orientation": "landscape",
+      "aspectRatio": "1477:1108",
+      "exifDateTime": "待補",
+      "originalBytes": null,
+      "webpBytes": 154000
+    }
+  },
+  {
+    "id": "P-0041",
+    "src": "images/photo0041.webp",
+    "title": "去吃好吃ㄉ漢堡🍔",
+    "date": "2026-06-10",
+    "description": "去吃好吃ㄉ漢堡🍔",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_2715.jpeg",
+      "originalSize": "3024x4032",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "2026-06-10",
+      "originalBytes": null,
+      "webpBytes": 207254
+    }
+  },
+  {
+    "id": "P-0042",
+    "src": "images/photo0042.webp",
+    "title": "猜猜看這是哪間泰式料理呀！",
+    "date": "2026-06-11",
+    "description": "猜猜看這是哪間泰式料理呀！",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_2728.jpeg",
+      "originalSize": "3024x4032",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "2026-06-11",
+      "originalBytes": null,
+      "webpBytes": 228976
+    }
+  },
+  {
+    "id": "P-0043",
+    "src": "images/photo0043.webp",
+    "title": "跟小舜打架被打倒的張懷（遜爆了）",
+    "date": "2026-06-16",
+    "description": "跟小舜打架被打倒的張懷（遜爆了）",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_2739.jpeg",
+      "originalSize": "1980x3520",
+      "webSize": "900x1600",
+      "orientation": "portrait",
+      "aspectRatio": "9:16",
+      "exifDateTime": "2026-06-16",
+      "originalBytes": null,
+      "webpBytes": 61456
+    }
+  },
+  {
+    "id": "P-0044",
+    "src": "images/photo0044.webp",
+    "title": "先大吵一架然後再和可愛ㄉ愛茉包水餃",
+    "date": "2026-02-13",
+    "description": "先大吵一架然後再和可愛ㄉ愛茉包水餃",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_2776.jpeg",
+      "originalSize": "3024x4032",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "2026-02-13",
+      "originalBytes": null,
+      "webpBytes": 167196
+    }
+  },
+  {
+    "id": "P-0045",
+    "src": "images/photo0045.webp",
+    "title": "張懷送給他最愛ㄉ兩個女人花(´,,•ω•,,)♡",
+    "date": "2026-02-13",
+    "description": "張懷送給他最愛ㄉ兩個女人花(´,,•ω•,,)♡",
+    "eventId": "",
+    "rank": "normal",
+    "featured": true,
+    "metadata": {
+      "originalFilename": "IMG_2783.jpeg",
+      "originalSize": "4284x5712",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "2026-02-13",
+      "originalBytes": null,
+      "webpBytes": 117608
+    }
+  },
+  {
+    "id": "P-0046",
+    "src": "images/photo0046.webp",
+    "title": "第一次嘗試Y2K（算是有成功）",
+    "date": "2026-06-27",
+    "description": "第一次嘗試Y2K（算是有成功）",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_2899.jpeg",
+      "originalSize": "3024x4032",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "2026-06-27",
+      "originalBytes": null,
+      "webpBytes": 314774
+    }
+  },
+  {
+    "id": "P-0047",
+    "src": "images/photo0047.webp",
+    "title": "小舜失眠啦！跟一直擠他睡覺的懷寶拍照(｡ŏ_ŏ)",
+    "date": "2026-06-28",
+    "description": "小舜失眠啦！跟一直擠他睡覺的懷寶拍照(｡ŏ_ŏ)",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_2907.jpeg",
+      "originalSize": "3024x4032",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "2026-06-28",
+      "originalBytes": null,
+      "webpBytes": 218536
+    }
+  },
+  {
+    "id": "P-0048",
+    "src": "images/photo0048.webp",
+    "title": "張懷一直說很好吃的南門飯店（確實不錯）",
+    "date": "2026-07-04",
+    "description": "張懷一直說很好吃的南門飯店（確實不錯）",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_2996.jpeg",
+      "originalSize": "3024x4032",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "2026-07-04",
+      "originalBytes": null,
+      "webpBytes": 257080
+    }
+  },
+  {
+    "id": "P-0049",
+    "src": "images/photo0049.webp",
+    "title": "去飯店住！泡澡泡澡🛁",
+    "date": "2026-07-06",
+    "description": "去飯店住！泡澡泡澡🛁",
+    "eventId": "",
+    "rank": "normal",
+    "featured": true,
+    "metadata": {
+      "originalFilename": "IMG_3041.jpeg",
+      "originalSize": "3024x4032",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "2026-07-06",
+      "originalBytes": null,
+      "webpBytes": 145510
+    }
+  },
+  {
+    "id": "P-0050",
+    "src": "images/photo0050.webp",
+    "title": "睡覺直接給小舜位置睡掉（poor小舜）",
+    "date": "2026-07-09",
+    "description": "睡覺直接給小舜位置睡掉（poor小舜）",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_3067.jpeg",
+      "originalSize": "4032x3024",
+      "webSize": "1600x1200",
+      "orientation": "landscape",
+      "aspectRatio": "4:3",
+      "exifDateTime": "2026-07-09",
+      "originalBytes": null,
+      "webpBytes": 171990
+    }
+  },
+  {
+    "id": "P-0051",
+    "src": "images/photo0051.webp",
+    "title": "某天張懷長針眼小舜為了二次確認是不是針眼就拍了照",
+    "date": "2026-07-09",
+    "description": "某天張懷長針眼小舜為了二次確認是不是針眼就拍了照",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_3068.jpeg",
+      "originalSize": "4032x3024",
+      "webSize": "1600x1200",
+      "orientation": "landscape",
+      "aspectRatio": "4:3",
+      "exifDateTime": "2026-07-09",
+      "originalBytes": null,
+      "webpBytes": 84122
+    }
+  },
+  {
+    "id": "P-0052",
+    "src": "images/photo0052.webp",
+    "title": "去買了睡覺歐拉夫！超口愛心臟爆擊(´,,•ω•,,)♡",
+    "date": "2026-03-16",
+    "description": "去買了睡覺歐拉夫！超口愛心臟爆擊(´,,•ω•,,)♡",
+    "eventId": "",
+    "rank": "normal",
+    "featured": true,
+    "metadata": {
+      "originalFilename": "IMG_3183.jpeg",
+      "originalSize": "3024x4032",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "2026-03-16",
+      "originalBytes": null,
+      "webpBytes": 132546
+    }
+  },
+  {
+    "id": "P-0053",
+    "src": "images/photo0053.webp",
+    "title": "小舜：這段感情都我在扛，衛生紙也是。",
+    "date": "2026-03-30",
+    "description": "小舜：這段感情都我在扛，衛生紙也是。",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_3657.jpeg",
+      "originalSize": "3024x4032",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "2026-03-30",
+      "originalBytes": null,
+      "webpBytes": 387764
+    }
+  },
+  {
+    "id": "P-0054",
+    "src": "images/photo0054.webp",
+    "title": "我們在比超靠近不笑比賽（超好笑哈）",
+    "date": "2026-04-02",
+    "description": "我們在比超靠近不笑比賽（超好笑哈）",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_3679.jpeg",
+      "originalSize": "4284x5712",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "2026-04-02",
+      "originalBytes": null,
+      "webpBytes": 56318
+    }
+  },
+  {
+    "id": "P-0055",
+    "src": "images/photo0055.webp",
+    "title": "Real舜小寶寶👼",
+    "date": "2026-04-21",
+    "description": "Real舜小寶寶👼",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_3890.jpeg",
+      "originalSize": "4284x5712",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "2026-04-21",
+      "originalBytes": null,
+      "webpBytes": 126112
+    }
+  },
+  {
+    "id": "P-0056",
+    "src": "images/photo0056.webp",
+    "title": "Real懷小寶寶👶",
+    "date": "2026-04-21",
+    "description": "Real懷小寶寶👶",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_3892.jpeg",
+      "originalSize": "3024x4032",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "2026-04-21",
+      "originalBytes": null,
+      "webpBytes": 241118
+    }
+  },
+  {
+    "id": "P-0057",
+    "src": "images/photo0057.webp",
+    "title": "去印度料理店畫畫很荒謬但很有趣（懷Ver.)",
+    "date": "2026-04-27",
+    "description": "去印度料理店畫畫很荒謬但很有趣（懷Ver.)",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_3926.jpeg",
+      "originalSize": "4284x5712",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "2026-04-27",
+      "originalBytes": null,
+      "webpBytes": 145982
+    }
+  },
+  {
+    "id": "P-0058",
+    "src": "images/photo0058.webp",
+    "title": "去印度料理店畫畫很荒謬但很有趣（舜Ver.)",
+    "date": "2026-04-27",
+    "description": "去印度料理店畫畫很荒謬但很有趣（舜Ver.)",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_3927.jpeg",
+      "originalSize": "4284x5712",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "2026-04-27",
+      "originalBytes": null,
+      "webpBytes": 92540
+    }
+  },
+  {
+    "id": "P-0059",
+    "src": "images/photo0059.webp",
+    "title": "回台南去奇美博物館寄信給自己📮",
+    "date": "2026-05-28",
+    "description": "回台南去奇美博物館寄信給自己📮",
+    "eventId": "",
+    "rank": "normal",
+    "featured": true,
+    "metadata": {
+      "originalFilename": "IMG_4248.jpeg",
+      "originalSize": "1980x3520",
+      "webSize": "900x1600",
+      "orientation": "portrait",
+      "aspectRatio": "9:16",
+      "exifDateTime": "2026-05-28",
+      "originalBytes": null,
+      "webpBytes": 55092
+    }
+  },
+  {
+    "id": "P-0060",
+    "src": "images/photo0060.webp",
+    "title": "在玩轉圈圈不能拍到對方遊戲",
+    "date": "2026-06-22",
+    "description": "在玩轉圈圈不能拍到對方遊戲",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_4915.jpeg",
+      "originalSize": "4284x5712",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "2026-06-22",
+      "originalBytes": null,
+      "webpBytes": 64356
+    }
+  },
+  {
+    "id": "P-0061",
+    "src": "images/photo0061.webp",
+    "title": "舜寶跟顏紫去探懷的班（奇怪怎麼每次都是跟顏紫）",
+    "date": "2026-07-05",
+    "description": "舜寶跟顏紫去探懷的班（奇怪怎麼每次都是跟顏紫）",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_6415.jpeg",
+      "originalSize": "2268x4032",
+      "webSize": "900x1600",
+      "orientation": "portrait",
+      "aspectRatio": "9:16",
+      "exifDateTime": "2026-07-05",
+      "originalBytes": null,
+      "webpBytes": 202818
+    }
+  },
+  {
+    "id": "P-0062",
+    "src": "images/photo0062.webp",
+    "title": "舜寶只是想炫耀他有跟蛋堡合照（´◔ ₃ ◔`)",
+    "date": "",
+    "description": "舜寶只是想炫耀他有跟蛋堡合照（´◔ ₃ ◔`)",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_9588.jpeg",
+      "originalSize": "1108x1478",
+      "webSize": "1108x1478",
+      "orientation": "portrait",
+      "aspectRatio": "554:739",
+      "exifDateTime": "待補",
+      "originalBytes": null,
+      "webpBytes": 94148
+    }
+  },
+  {
+    "id": "P-0063",
+    "src": "images/photo0063.webp",
+    "title": "去探懷的班試穿動物方城市ㄉ童裝（懷不買給我嗚嗚ＱＱ）",
+    "date": "2026-01-24",
+    "description": "去探懷的班試穿動物方城市ㄉ童裝（懷不買給我嗚嗚ＱＱ）",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "IMG_9962.jpeg",
+      "originalSize": "3024x4032",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "2026-01-24",
+      "originalBytes": null,
+      "webpBytes": 90448
+    }
+  },
+  {
+    "id": "P-0064",
+    "src": "images/photo0064.webp",
+    "title": "Double小飯糰合照🍙",
+    "date": "",
+    "description": "Double小飯糰合照🍙",
+    "eventId": "",
+    "rank": "normal",
+    "featured": true,
+    "metadata": {
+      "originalFilename": "beauty_1773131435816.jpeg",
+      "originalSize": "2160x2880",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "待補",
+      "originalBytes": null,
+      "webpBytes": 190576
+    }
+  },
+  {
+    "id": "P-0065",
+    "src": "images/photo0065.webp",
+    "title": "去貓咖跟一堆貓貓工作嘻嘻ฅ^•ﻌ•^ฅ",
+    "date": "",
+    "description": "去貓咖跟一堆貓貓工作嘻嘻ฅ^•ﻌ•^ฅ",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "beauty_1779191991435.jpeg",
+      "originalSize": "2160x2880",
+      "webSize": "1200x1600",
+      "orientation": "portrait",
+      "aspectRatio": "3:4",
+      "exifDateTime": "待補",
+      "originalBytes": null,
+      "webpBytes": 105102
+    }
+  },
+  {
+    "id": "P-0066",
+    "src": "images/photo0066.webp",
+    "title": "幫張懷拍帥照（芬恩送給張懷ㄉ生日禮物）",
+    "date": "2025-12-31",
+    "description": "幫張懷拍帥照（芬恩送給張懷ㄉ生日禮物）",
+    "eventId": "",
+    "rank": "normal",
+    "featured": true,
+    "metadata": {
+      "originalFilename": "classicu 2025-12-31 200607.656.jpeg",
+      "originalSize": "2688x4032",
+      "webSize": "1067x1600",
+      "orientation": "portrait",
+      "aspectRatio": "1067:1600",
+      "exifDateTime": "2025-12-31",
+      "originalBytes": null,
+      "webpBytes": 242200
+    }
+  },
+  {
+    "id": "P-0067",
+    "src": "images/photo0067.webp",
+    "title": "住在張懷家的好時光（那時候沒事做好爽(≖ᴗ≖๑)",
+    "date": "2026-01-27",
+    "description": "住在張懷家的好時光（那時候沒事做好爽(≖ᴗ≖๑)",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "classicu 2026-01-27 222057C1CABCACE6E6.jpeg",
+      "originalSize": "2689x4033",
+      "webSize": "1067x1600",
+      "orientation": "portrait",
+      "aspectRatio": "1067:1600",
+      "exifDateTime": "2026-01-27",
+      "originalBytes": null,
+      "webpBytes": 144390
+    }
+  },
+  {
+    "id": "P-0068",
+    "src": "images/photo0068.webp",
+    "title": "小舜好廚藝(๑´ڡ`๑)！",
+    "date": "2026-04-16",
+    "description": "小舜好廚藝(๑´ڡ`๑)！",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "classicu 2026-04-16 00030752D4F775BF9C.jpeg",
+      "originalSize": "2688x4032",
+      "webSize": "1067x1600",
+      "orientation": "portrait",
+      "aspectRatio": "1067:1600",
+      "exifDateTime": "2026-04-16",
+      "originalBytes": null,
+      "webpBytes": 251202
+    }
+  },
+  {
+    "id": "P-0069",
+    "src": "images/photo0069.webp",
+    "title": "帥氣舜直接投籃拿下兩隻大娃",
+    "date": "2026-05-27",
+    "description": "帥氣舜直接投籃拿下兩隻大娃",
+    "eventId": "",
+    "rank": "normal",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "classicu 2026-05-27 001118CAA87CDD7A27.jpeg",
+      "originalSize": "2688x4032",
+      "webSize": "1067x1600",
+      "orientation": "portrait",
+      "aspectRatio": "1067:1600",
+      "exifDateTime": "2026-05-27",
+      "originalBytes": null,
+      "webpBytes": 278322
+    }
+  }
+]

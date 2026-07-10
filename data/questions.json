@@ -1,0 +1,2018 @@
+[
+  {
+    "id": "Q-0001",
+    "type": "choice",
+    "question": "小舜說「我們從 Pingu 照片吵到現在」後，懷寶承諾過完年休假後第一個要做什麼？",
+    "options": [
+      "去吃牛肉麵",
+      "Pingu 拍照",
+      "去貓咖",
+      "買歐拉夫盲盒"
+    ],
+    "answer": 1,
+    "image": "",
+    "story": "Pingu 拍照成為「要把事情一件一件實現」的第一件事。",
+    "tags": [
+      "對話",
+      "Pingu"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0002",
+    "type": "choice",
+    "question": "你們討論理想連假時，小舜提出「去露營」要看哪一部？",
+    "options": [
+      "排球少年",
+      "愛在山林間",
+      "NANA",
+      "相反的你和我"
+    ],
+    "answer": 1,
+    "image": "",
+    "story": "這段後來變成「愛愛在山林間」的梗。",
+    "tags": [
+      "對話",
+      "動漫"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0003",
+    "type": "choice",
+    "question": "小舜轉給懷寶的壓歲錢金額是？",
+    "options": [
+      "100",
+      "200",
+      "520",
+      "1314"
+    ],
+    "answer": 2,
+    "image": "",
+    "story": "半夜確認有沒有轉錯，懷寶說有收到 520。",
+    "tags": [
+      "對話",
+      "禮物"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0004",
+    "type": "choice",
+    "question": "用顏色、季節、鮮花、動物形容小舜時，懷寶給出的組合是？",
+    "options": [
+      "藍色／秋天／玫瑰／法鬥",
+      "黃色／夏天／向日葵／很笨的哈巴狗",
+      "白色／冬天／滿天星／貓",
+      "橘色／春天／鬱金香／柴犬"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "這是你們的心理測驗梗之一。",
+    "tags": [
+      "對話",
+      "默契"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0005",
+    "type": "choice",
+    "question": "小舜形容懷寶的動物是？",
+    "options": [
+      "法鬥",
+      "哈巴狗",
+      "海豹",
+      "守宮"
+    ],
+    "answer": 1,
+    "image": "",
+    "story": "完整組合是一下深一下淺的藍色、秋天、玫瑰、法鬥。",
+    "tags": [
+      "對話",
+      "默契"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0006",
+    "type": "choice",
+    "question": "小舜開始看《排球少年》時，最早提到目前可能喜歡哪位角色？",
+    "options": [
+      "日向",
+      "影山",
+      "菅原學長",
+      "田中"
+    ],
+    "answer": 2,
+    "image": "",
+    "story": "後來又抽到喜歡的菅原學長，變成照片事件。",
+    "tags": [
+      "對話",
+      "排球少年"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0007",
+    "type": "choice",
+    "question": "小舜在生理期底幾天要吃避孕藥？",
+    "options": [
+      "第一天",
+      "第五天",
+      "經期結束再吃",
+      "經期結束一個禮拜"
+    ],
+    "answer": 2,
+    "image": "",
+    "story": "經期專區有寫！",
+    "tags": [
+      "對話",
+      "照顧"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0008",
+    "type": "choice",
+    "question": "小舜在屏東看到什麼，吐槽「屏東根本沒有開通」？",
+    "options": [
+      "YouBike",
+      "GoShare",
+      "捷運",
+      "貓纜"
+    ],
+    "answer": 1,
+    "image": "",
+    "story": "這是一個很生活感的旅途中小吐槽。",
+    "tags": [
+      "對話",
+      "旅行"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0009",
+    "type": "choice",
+    "question": "小舜變成哥哥的什麼角色，寫了很多春聯？",
+    "options": [
+      "公關畫家",
+      "攝影師",
+      "司機",
+      "剪輯師"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "懷寶還說她可以壟斷春聯市場。",
+    "tags": [
+      "對話",
+      "家人"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0010",
+    "type": "choice",
+    "question": "小舜問「你會覺得我是好煩寶寶嗎」時，懷寶怎麼回？",
+    "options": [
+      "希望她少說一點",
+      "希望她一直跟他說話",
+      "叫她先睡覺",
+      "說等下再回"
+    ],
+    "answer": 1,
+    "image": "",
+    "story": "懷寶說喜歡她分享所有想分享的事情。",
+    "tags": [
+      "對話",
+      "安全感"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0011",
+    "type": "choice",
+    "question": "小舜提醒平日睡眠模式電話規則時說：要打幾通？",
+    "options": [
+      "一通",
+      "兩通",
+      "三通",
+      "不用打"
+    ],
+    "answer": 1,
+    "image": "",
+    "story": "因為睡眠模式，平日需要打兩通才比較會通。",
+    "tags": [
+      "對話",
+      "電話"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0012",
+    "type": "choice",
+    "question": "小舜的「使用守則」裡，她真正需要的是哪一種承諾？",
+    "options": [
+      "記憶型承諾",
+      "理解型承諾",
+      "沉默型承諾",
+      "拖延型承諾"
+    ],
+    "answer": 1,
+    "image": "",
+    "story": "她不只是要對方記得，而是要理解為什麼需要那樣做。",
+    "tags": [
+      "對話",
+      "關係"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0013",
+    "type": "choice",
+    "question": "小舜最喜歡吃什麼水果？",
+    "options": [
+      "芒果",
+      "櫻桃",
+      "草莓",
+      "芭樂"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "回台南的時候她可是吃到超多芒果開心的勒",
+    "tags": [
+      "對話",
+      "陪伴"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0014",
+    "type": "choice",
+    "question": "小舜在燭光面試後傳訊息說發生什麼事？",
+    "options": [
+      "直接錄取了",
+      "沒有錄取",
+      "改成二面",
+      "老闆請假"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "懷寶也說機票訂好了，今天是順順的一天。",
+    "tags": [
+      "對話",
+      "工作"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0015",
+    "type": "choice",
+    "question": "小舜列出「張懷懷的 10 個優點」，以下哪一個有在裡面？",
+    "options": [
+      "不拘泥小節",
+      "超會煮飯",
+      "很會開車",
+      "很會養貓"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "其他還有努力、樂觀、音樂品味好、不輕易放棄等。",
+    "tags": [
+      "對話",
+      "稱讚"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0016",
+    "type": "choice",
+    "question": "小舜半夜問的怪問題是？",
+    "options": [
+      "你為什麼不吃早餐",
+      "我出生的時候你為什麼沒有來醫院看我",
+      "你為什麼沒有養貓",
+      "你為什麼不會飛"
+    ],
+    "answer": 1,
+    "image": "",
+    "story": "懷寶說寶寶最近很愛問怪問題。",
+    "tags": [
+      "對話",
+      "梗"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0017",
+    "type": "choice",
+    "question": "燭光第一天有營業的上班，小舜提到有客人訂了誰的作品？",
+    "options": [
+      "Joji",
+      "J.Cole",
+      "Daniel Caesar",
+      "Deca Joins"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "她一開始打成 jojo，後來修正成 Joji。",
+    "tags": [
+      "對話",
+      "工作"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0018",
+    "type": "choice",
+    "question": "小舜說如果一輩子都不用做任何事，就都只要做什麼？",
+    "options": [
+      "旅行",
+      "抱抱",
+      "唱歌",
+      "看展"
+    ],
+    "answer": 1,
+    "image": "",
+    "story": "懷寶回她：希望一起遇到未知的事情，好的不好的都一起度過。",
+    "tags": [
+      "對話",
+      "感情"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0019",
+    "type": "quote",
+    "question": "「我就是希望妮一直跟我說話ㄚ」這句是誰說的？",
+    "options": [
+      "蕭小舜",
+      "懷寶",
+      "秀芬",
+      "小玫"
+    ],
+    "answer": 1,
+    "image": "",
+    "story": "這是「好煩寶寶」事件的核心回應。",
+    "tags": [
+      "誰說的",
+      "對話"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0020",
+    "type": "quote",
+    "question": "「小舜最受不了張懷做什麼事？",
+    "options": [
+      "放臭屁",
+      "搞不清楚狀況",
+      "愛討抱抱",
+      "吃掉小舜的東西"
+    ],
+    "answer": 1,
+    "image": "",
+    "story": "但是張小懷屁還是很臭",
+    "tags": [
+      "對話",
+      "生活"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0021",
+    "type": "quote",
+    "question": "「再臭也不可能有我的臭」出現在哪個事件？",
+    "options": [
+      "自由座回程有人放屁",
+      "第一次去貓咖",
+      "貼面膜",
+      "看花花"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "這句把恐慌車程變成很荒謬可愛的回憶。",
+    "tags": [
+      "對話",
+      "梗"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0022",
+    "type": "open",
+    "question": "默契題：如果只能回到一個「吵架後仍然修復」的回憶，你覺得對方會選哪一天？",
+    "options": [],
+    "answer": null,
+    "image": "",
+    "story": "這題沒有標準答案，適合兩個人一起回答。",
+    "tags": [
+      "默契",
+      "開放題"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0023",
+    "type": "open",
+    "question": "默契題：看到「只要抱抱就好」這句，另一半最可能想到哪一張照片？",
+    "options": [],
+    "answer": null,
+    "image": "",
+    "story": "選一張照片，再說理由。",
+    "tags": [
+      "默契",
+      "照片"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0025",
+    "type": "choice",
+    "question": "這張照片裡的角色／主題和哪部作品有關？",
+    "options": [
+      "排球少年",
+      "NANA",
+      "咒術迴戰",
+      "坂本日常"
+    ],
+    "answer": 0,
+    "image": "images/photo0002.webp",
+    "story": "你們抽到喜歡的菅原學長。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0026",
+    "type": "choice",
+    "question": "這是哪一個第一次？",
+    "options": [
+      "第一次一起畫畫",
+      "第一次去貓咖",
+      "第一次住旅館",
+      "第一次一起聽演唱會"
+    ],
+    "answer": 0,
+    "image": "images/photo0003.webp",
+    "story": "共同創作型約會。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0027",
+    "type": "choice",
+    "question": "這是哪一個活動回憶？",
+    "options": [
+      "第一次一起溜滑板",
+      "第一次看花",
+      "第一次吃火鍋",
+      "第一次敷面膜"
+    ],
+    "answer": 0,
+    "image": "images/photo0005.webp",
+    "story": "身體記憶也變成題目。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0028",
+    "type": "choice",
+    "question": "這場音樂回憶是誰的演出？",
+    "options": [
+      "Daniel Caesar",
+      "Deca Joins",
+      "Leo王",
+      "夏之禹"
+    ],
+    "answer": 0,
+    "image": "images/photo0006.webp",
+    "story": "一起聽 Daniel Caesar。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0029",
+    "type": "choice",
+    "question": "這趟旅行的重要里程碑是？",
+    "options": [
+      "第一次見小舜家人",
+      "第一次看 NANA 展",
+      "第一次買盲盒",
+      "第一次看花"
+    ],
+    "answer": 0,
+    "image": "images/photo0007.webp",
+    "story": "台南療癒之旅。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0030",
+    "type": "choice",
+    "question": "這張是哪個紀念日？",
+    "options": [
+      "在一起 100 天",
+      "張懷生日",
+      "情人節",
+      "交往第一天"
+    ],
+    "answer": 0,
+    "image": "images/photo0010.webp",
+    "story": "100 天里程碑。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0031",
+    "type": "choice",
+    "question": "小舜在張懷家留下了什麼小彩蛋？",
+    "options": [
+      "貼紙",
+      "鑰匙圈",
+      "花束",
+      "票根"
+    ],
+    "answer": 0,
+    "image": "images/photo0012.webp",
+    "story": "像把自己偷偷放進對方生活裡。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0032",
+    "type": "choice",
+    "question": "第二次約會去了哪裡拍照？",
+    "options": [
+      "海邊",
+      "古亭公園",
+      "貓咖",
+      "旅館"
+    ],
+    "answer": 0,
+    "image": "images/photo0015.webp",
+    "story": "第二次約會海邊照。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0033",
+    "type": "choice",
+    "question": "這張代表哪個情感里程碑？",
+    "options": [
+      "張懷真正對小舜傾心的那天",
+      "第一次吵架",
+      "第一次搭高鐵",
+      "第一次買福袋"
+    ],
+    "answer": 0,
+    "image": "images/photo0016.webp",
+    "story": "Love Timeline 的重要節點。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0034",
+    "type": "choice",
+    "question": "1/21 的生日驚喜，小舜偷偷請誰幫忙？",
+    "options": [
+      "店員",
+      "醫生",
+      "司機",
+      "老師"
+    ],
+    "answer": 0,
+    "image": "images/photo0017.webp",
+    "story": "請店員幫張懷插蠟燭。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0035",
+    "type": "choice",
+    "question": "這是哪一個健康／照顧事件？",
+    "options": [
+      "盲腸炎開刀",
+      "感冒買藥",
+      "滑板跌倒",
+      "牙痛看醫生"
+    ],
+    "answer": 0,
+    "image": "images/photo0021.webp",
+    "story": "人生事件與陪伴。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0036",
+    "type": "choice",
+    "question": "你們一起包下哪部作品的一番賞？",
+    "options": [
+      "坂本的日常",
+      "排球少年",
+      "NANA",
+      "咒術迴戰"
+    ],
+    "answer": 0,
+    "image": "images/photo0022.webp",
+    "story": "收藏系大事件。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0037",
+    "type": "choice",
+    "question": "張懷車牌細節題：車牌是？",
+    "options": [
+      "EPD-2976",
+      "EPO-2976",
+      "EPD-2796",
+      "EBD-2976"
+    ],
+    "answer": 0,
+    "image": "images/photo0023.webp",
+    "story": "只有你們知道的細節題。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0038",
+    "type": "choice",
+    "question": "這是哪一個節日／修復事件？",
+    "options": [
+      "大吵過後的情人節",
+      "生日",
+      "聖誕節",
+      "中秋節"
+    ],
+    "answer": 0,
+    "image": "images/photo0024.webp",
+    "story": "不是沒有吵架，而是願意修復。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0039",
+    "type": "choice",
+    "question": "一起去古亭看什麼？",
+    "options": [
+      "花花",
+      "海",
+      "貓",
+      "電影"
+    ],
+    "answer": 0,
+    "image": "images/photo0026.webp",
+    "story": "古亭散步回憶。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0040",
+    "type": "choice",
+    "question": "家裡水塔壞掉後，你們被迫去做什麼？",
+    "options": [
+      "住旅館",
+      "去露營",
+      "去看展",
+      "去唱歌"
+    ],
+    "answer": 0,
+    "image": "images/photo0027.webp",
+    "story": "意外小旅行。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0041",
+    "type": "choice",
+    "question": "張懷送給小舜的是哪位角色？",
+    "options": [
+      "七海建人",
+      "菅原孝支",
+      "歐拉夫",
+      "田中"
+    ],
+    "answer": 0,
+    "image": "images/photo0029.webp",
+    "story": "咒術迴戰禮物回憶。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0042",
+    "type": "choice",
+    "question": "這張居家照顧題：是誰幫誰敷面膜？",
+    "options": [
+      "小舜幫張懷",
+      "張懷幫小舜",
+      "秀芬幫張懷",
+      "小玫幫小舜"
+    ],
+    "answer": 0,
+    "image": "images/photo0030.webp",
+    "story": "居家照顧系回憶。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0043",
+    "type": "choice",
+    "question": "新加入的寵物卡皮是什麼品種？",
+    "options": [
+      "豹紋守宮",
+      "肥尾守宮",
+      "睫角守宮",
+      "蓋勾亞守宮"
+    ],
+    "answer": 0,
+    "image": "images/photo0032.webp",
+    "story": "卡皮從 v4 起加入寵物頁與題庫。",
+    "tags": [
+      "照片題"
+    ],
+    "source": "photo"
+  },
+  {
+    "id": "Q-0045",
+    "type": "choice",
+    "question": "卡皮的基因缺陷『謎』不會出現哪個症狀？",
+    "options": [
+      "寵瞄準食物時常常失準",
+      "無法保持平衡",
+      "原地打轉",
+      "食慾不佳"
+    ],
+    "answer": 3,
+    "image": "images/photo0032.webp",
+    "story": "卡皮可是很勇敢的小女生呢！。",
+    "tags": [
+      "卡皮",
+      "寵物"
+    ],
+    "source": "pet"
+  },
+  {
+    "id": "Q-KAPI-043",
+    "type": "choice",
+    "source": "pet",
+    "tags": [
+      "卡皮"
+    ],
+    "question": "卡皮的生日是哪一天？",
+    "options": [
+      "4/19",
+      "1/09",
+      "7/01",
+      "5/14"
+    ],
+    "answer": 0,
+    "story": "卡皮生日是 4/19，卡皮專區會固定顯示。",
+    "image": ""
+  },
+  {
+    "id": "Q-KAPI-044",
+    "type": "choice",
+    "source": "pet",
+    "tags": [
+      "卡皮"
+    ],
+    "question": "如果 7/1 卡皮有吃飯，下一次大約什麼時候提醒餵食？",
+    "options": [
+      "7/2～7/3",
+      "7/4～7/5",
+      "7/6～7/7",
+      "8/1"
+    ],
+    "answer": 1,
+    "story": "有吃飯時，卡皮雷達會用 N＋3～4 天推估下一次餵食區間。",
+    "image": ""
+  },
+  {
+    "id": "Q-0049",
+    "type": "choice",
+    "question": "張懷最喜歡吃的水果？",
+    "options": [
+      "草莓",
+      "西瓜",
+      "哈蜜瓜",
+      "芭樂"
+    ],
+    "answer": 3,
+    "image": "",
+    "story": "你這個芭樂怪獸！",
+    "tags": [
+      "生活"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0053",
+    "type": "choice",
+    "question": "最接近小舜理想類型的男生是？",
+    "options": [
+      "很會穿搭",
+      "戴眼鏡很聰明",
+      "愛聽音樂",
+      "強壯健身男"
+    ],
+    "answer": 1,
+    "image": "",
+    "story": "嘻嘻！最愛Sakamoto桑。",
+    "tags": [
+      "理想型",
+      "小舜"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0054",
+    "type": "choice",
+    "question": "張懷因為什麼事惹小舜生大氣還罵小舜？",
+    "options": [
+      "騎車亂騎",
+      "跟前曖昧對象聊天",
+      "放屁太臭",
+      "一直不吃飯"
+    ],
+    "answer": 1,
+    "image": "",
+    "story": "這可是氣死小舜了呢！",
+    "tags": [
+      "生活",
+      "小舜"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0055",
+    "type": "choice",
+    "question": "每日遊戲現在限制幾題？",
+    "options": [
+      "5題",
+      "10題",
+      "30題",
+      "無限題"
+    ],
+    "answer": 1,
+    "image": "",
+    "story": "為了避免一直重複，遊戲每日每模式 10 題。",
+    "tags": [
+      "遊戲"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0056",
+    "type": "choice",
+    "question": "你們一起包下的一番賞是哪部作品？",
+    "options": [
+      "NANA",
+      "排球少年",
+      "阪本日常",
+      "咒術迴戰"
+    ],
+    "answer": 2,
+    "image": "",
+    "story": "一起包下《阪本日常》一番賞，變成收藏里程碑。",
+    "tags": [
+      "收藏"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0057",
+    "type": "choice",
+    "question": "張懷離職那天小舜送的花包裝紙是什麼顏色？",
+    "options": [
+      "橘色",
+      "藍色",
+      "綠色",
+      "粉色"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "因為小懷最愛橘色跟藍色哩。",
+    "tags": [
+      "細節"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0058",
+    "type": "choice",
+    "question": "張懷生日是哪一天？",
+    "options": [
+      "1/9",
+      "1/21",
+      "2/14",
+      "4/19"
+    ],
+    "answer": 1,
+    "image": "",
+    "story": "1/21 是張懷生日，也是生日驚喜回憶。",
+    "tags": [
+      "生日"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0059",
+    "type": "choice",
+    "question": "小舜第一次見張懷家人／一起去台南療癒之旅，重點是？",
+    "options": [
+      "第一次見小舜家人",
+      "第一次去貓咖",
+      "療癒受傷的小舜",
+      "第一次買盲盒"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "台南療癒之旅是小舜重生的日子。",
+    "tags": [
+      "旅行",
+      "家人"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0060",
+    "type": "choice",
+    "question": "以下為張懷哪個騎車沒有做的危險行為？",
+    "options": [
+      "逆向騎車",
+      "時速超過80",
+      "闖紅燈",
+      "蛇行"
+    ],
+    "answer": 3,
+    "image": "",
+    "story": "你再給我這麼危險試看看（怒）",
+    "tags": [
+      "生活"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0061",
+    "type": "choice",
+    "question": "張懷送小舜的咒術角色禮物是？",
+    "options": [
+      "五條悟",
+      "七海建人",
+      "虎杖悠仁",
+      "乙骨憂太"
+    ],
+    "answer": 1,
+    "image": "",
+    "story": "七海建人被收進禮物回憶。",
+    "tags": [
+      "禮物"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0062",
+    "type": "choice",
+    "question": "大吵過後仍一起過的是哪個節日？",
+    "options": [
+      "情人節",
+      "中秋節",
+      "聖誕節",
+      "端午節"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "不是沒吵架，是沒有放棄彼此。",
+    "tags": [
+      "感情"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0064",
+    "type": "choice",
+    "question": "張懷喜歡的排球少年角色是？",
+    "options": [
+      "菅原學長",
+      "及川徹",
+      "田中",
+      "影山"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "張懷可是還把田中刺在手上了呢。",
+    "tags": [
+      "動漫"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0065",
+    "type": "choice",
+    "question": "一起去買的迪士尼盲盒角色是？",
+    "options": [
+      "歐拉夫",
+      "史迪奇",
+      "小美人魚",
+      "米奇米妮"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "歐拉夫盲盒是收藏／購物回憶。",
+    "tags": [
+      "盲盒"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0066",
+    "type": "choice",
+    "question": "小舜生病時，張懷做了什麼？",
+    "options": [
+      "照顧小舜",
+      "去打球不理",
+      "只傳貼圖",
+      "取消所有回憶"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "照顧生病的小舜是 Through Sickness 成就。",
+    "tags": [
+      "照顧"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0067",
+    "type": "choice",
+    "question": "盲腸炎那時候小舜跑了幾家診所？",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "哇哈哈！陷阱題，只有張振榮跟婦產科是診所，其他是醫院",
+    "tags": [
+      "健康"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0068",
+    "type": "choice",
+    "question": "小舜在張懷家貼的貼紙是哪個動漫？",
+    "options": [
+      "膽大黨",
+      "排球少年",
+      "咒術迴戰",
+      "我的英雄學院"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "問了三次都沒有一次記得！。",
+    "tags": [
+      "日常"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0069",
+    "type": "choice",
+    "question": "小舜家是什麼路？",
+    "options": [
+      "永和路",
+      "中和路",
+      "福美路",
+      "中原路"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "我們都待在這你還不記得的話我會揍人。",
+    "tags": [
+      "生活"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0070",
+    "type": "choice",
+    "question": "懷寶說希望小舜一直跟他做什麼？",
+    "options": [
+      "分享想分享的事情",
+      "做愛",
+      "一起打遊戲",
+      "煮飯給他吃"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "張懷是好寶寶嗎？",
+    "tags": [
+      "對話"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0071",
+    "type": "choice",
+    "question": "哪個是不可以叫小舜的暱稱？",
+    "options": [
+      "蕭舜心",
+      "蕭小舜",
+      "小寶寶",
+      "蕭小舜小寶寶"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "叫他全名就死定啦！",
+    "tags": [
+      "對話"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0072",
+    "type": "choice",
+    "question": "懷寶離開UQ的最初原因是什麼？",
+    "options": [
+      "跟老頭起衝突",
+      "太常請假",
+      "勾引同事",
+      "衣服穿太寬鬆"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "沒關係的！一切都是轉機唷。",
+    "tags": [
+      "對話",
+      "工作"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0073",
+    "type": "choice",
+    "question": "小舜提到候選人拜年送了一箱什麼？",
+    "options": [
+      "痠痛貼布",
+      "泡麵",
+      "鮮花",
+      "黑膠"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "候選人印大頭的痠痛貼布很荒謬但實用。",
+    "tags": [
+      "對話"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0074",
+    "type": "choice",
+    "question": "520 在你們對話裡代表什麼？",
+    "options": [
+      "壓歲錢",
+      "車牌",
+      "生日",
+      "經期天數"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "小舜確認懷寶有沒有收到 520 壓歲錢。",
+    "tags": [
+      "對話"
+    ],
+    "source": "line"
+  },
+  {
+    "id": "Q-0075",
+    "type": "choice",
+    "question": "第一次一起溜的是什麼？",
+    "options": [
+      "滑板",
+      "直排輪",
+      "腳踏車",
+      "GoShare"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "第一次一起溜滑板被收進 First Skate 回憶。",
+    "tags": [
+      "第一次"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0077",
+    "type": "choice",
+    "question": "張懷沒有加入哪種運動的隊伍？",
+    "options": [
+      "棒球",
+      "足球",
+      "排球",
+      "以上皆是"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "他還有加入籃球隊。",
+    "tags": [
+      "運動boy"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0078",
+    "type": "choice",
+    "question": "小舜沒有買什麼播放器？",
+    "options": [
+      "黑膠",
+      "卡帶",
+      "CD",
+      "以上皆無"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "黑膠是『老闆』借的。",
+    "tags": [
+      "音樂"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0080",
+    "type": "choice",
+    "question": "如果小舜今天選「想被抱抱」，懷寶最適合怎麼回？",
+    "options": [
+      "我在，等等抱抱妳",
+      "妳不要想太多",
+      "我不知道",
+      "明天再說"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "這是 Our Memories 的生存題。",
+    "tags": [
+      "默契",
+      "心情"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0081",
+    "type": "choice",
+    "question": "小舜有幾個前男友？",
+    "options": [
+      "4.5",
+      "3",
+      "5",
+      "3.5"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "0.5是指交往兩個禮拜的夏日戀情。",
+    "tags": [
+      "小舜",
+      "感情"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0083",
+    "type": "choice",
+    "question": "你什麼時候第一次覺得『我就是要跟蕭小舜在一起的？",
+    "options": [
+      "2026/01/09",
+      "2026/02/14",
+      "2025/12/25",
+      "2026/03/01"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "那天是性感聖誕女郎",
+    "tags": [
+      "聖誕節"
+    ],
+    "source": "memory"
+  },
+  {
+    "id": "Q-0084",
+    "type": "choice",
+    "question": "IG 對話一開始，懷寶問「這樣需要罰錢嗎」時，小舜接著問了什麼？",
+    "options": [
+      "請問好笑在哪",
+      "你今天歌單是什麼",
+      "你要不要吃飯",
+      "卡皮在哪裡"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "來自 2025/11/28 的 IG 對話，一開始就很像你們的吐槽節奏。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0085",
+    "type": "choice",
+    "question": "懷寶拿到 10 吋特殊尺寸黑膠後，說那是他最喜歡的哪位饒舌歌手出的 jazz 黑膠？",
+    "options": [
+      "Mac Miller",
+      "Kendrick Lamar",
+      "Tyler, The Creator",
+      "MF DOOM"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "懷寶很認真介紹 Mac Miller，還分享了 live performance。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0086",
+    "type": "choice",
+    "question": "懷寶說 Mac Miller 的哪首 live performance 最後一首是他最喜歡的？",
+    "options": [
+      "2009",
+      "Self Care",
+      "Dang!",
+      "Good News"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "IG 對話裡懷寶提到最喜歡那場表演的最後一首〈2009〉。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0087",
+    "type": "choice",
+    "question": "懷寶說自己身上有幾個 Mac Miller 的刺青？",
+    "options": [
+      "兩個",
+      "一個",
+      "三個",
+      "沒有"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "他說自己身上有兩個 Mac Miller 的刺青，還說自己的小腿很帥。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0088",
+    "type": "choice",
+    "question": "小舜在 IG 推薦懷寶聽楊世暄哪張專輯？",
+    "options": [
+      "《普通活著》",
+      "《再想想》",
+      "《城市》",
+      "《Wake Up》"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "小舜說最近大推薦：楊世暄《普通活著》。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0089",
+    "type": "choice",
+    "question": "小舜推薦的 schoolgirl byebye 歌名是？",
+    "options": [
+      "無緣卻不捨",
+      "普通活著",
+      "2009",
+      "逆向崩潰"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "2025/11/30 小舜傳了今日推薦：schoolgirl byebye〈無緣卻不捨〉。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0090",
+    "type": "choice",
+    "question": "聽完 schoolgirl byebye 後，懷寶說 MV 很像什麼？",
+    "options": [
+      "電影",
+      "廣告",
+      "遊戲",
+      "紀錄片"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "懷寶說 MV 好像電影，還說很有情書的感覺。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0091",
+    "type": "choice",
+    "question": "小舜問「你今天歌單是什麼」是在什麼平台對話裡？",
+    "options": [
+      "Instagram",
+      "LINE",
+      "Gmail",
+      "Google Calendar"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "這題是從 IG wayne_86121 對話新增的。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0092",
+    "type": "choice",
+    "question": "小舜心的星座是",
+    "options": [
+      "天秤座",
+      "巨蟹座",
+      "射手座",
+      "雙魚座"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "我是天秤寶寶",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0093",
+    "type": "choice",
+    "question": "小舜心出生的城市是？？",
+    "options": [
+      "台南縣",
+      "台中市",
+      "台南市",
+      "高雄市"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "哇哈！身分證開頭是Ｒ唷。",
+    "tags": [
+      "秘密",
+      "基本認識"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0094",
+    "type": "choice",
+    "question": "懷寶說自己請樓下姊姊水餃加多一點什麼？",
+    "options": [
+      "香菜",
+      "辣椒",
+      "蔥花",
+      "起司"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "2025/12/15 的 IG 對話裡，懷寶提到水餃加多一點香菜。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0095",
+    "type": "choice",
+    "question": "小舜最害怕感情裡哪種感覺？？",
+    "options": [
+      "對方不懂自己，也不願意再理解",
+      "約會太浪漫",
+      "吃飯花太多錢",
+      "太常聊天"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "IG 對話裡的生活節奏題。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0096",
+    "type": "choice",
+    "question": "小舜很累的時候，最需要被記得的是？？",
+    "options": [
+      "她不是麻煩，她只是需要被好好接住",
+      "她好愛抱怨",
+      "不用理她給他空間",
+      "她永遠不會難過"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "小舜是個敏感的孩子",
+    "tags": [
+      "理解",
+      "小舜的情緒"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0097",
+    "type": "choice",
+    "question": "卡皮大約幾歲？",
+    "options": [
+      "8 歲左右",
+      "1",
+      "3",
+      "20 歲"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "小舜很怕卡皮死掉所以一直問何浚碩",
+    "tags": [
+      "卡皮"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0098",
+    "type": "choice",
+    "question": "小舜為了搭配小懷的穿搭，一直買什麼顏色的衣服？",
+    "options": [
+      "藍色",
+      "橘色",
+      "白色",
+      "牛仔系列"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "2025/12/30 小舜分享 Pingu 拍照相關貼文。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0099",
+    "type": "choice",
+    "question": "懷寶和小舜在交友軟體第一個聊話題是什麼？",
+    "options": [
+      "推薦音樂",
+      "看再見繪梨",
+      "討論蕾潔",
+      "討論黑膠"
+    ],
+    "answer": 2,
+    "image": "",
+    "story": "誒嘿嘿！這很陷阱題ㄛ",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0100",
+    "type": "choice",
+    "question": "懷寶說自己立志當什麼老師？",
+    "options": [
+      "日文小老師",
+      "數學小老師",
+      "卡皮小老師",
+      "黑膠小老師"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "2026/01/03 懷寶說立志當日文小老師。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0101",
+    "type": "choice",
+    "question": "懷寶提到在國外上課時，甚至做過什麼？",
+    "options": [
+      "一個報告",
+      "一張黑膠",
+      "一個網站",
+      "一份菜單"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "接在日文小老師話題附近的 IG 對話。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0102",
+    "type": "choice",
+    "question": "懷寶用的化妝水是哪種化妝水？",
+    "options": [
+      "薏仁化妝水",
+      "草本化妝水",
+      "去痘化妝水",
+      "我不知道..."
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "每天用還不知道嗎？",
+    "tags": [
+      "Daily",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0103",
+    "type": "choice",
+    "question": "小舜說自己手機丟在哪裡，找了半小時？",
+    "options": [
+      "廁所",
+      "捷運",
+      "唱片行",
+      "貓咖"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "2026/01/06 小舜說手機丟在廁所又找了半小時。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0104",
+    "type": "choice",
+    "question": "小舜分享宜蘭礁溪雙人溫泉套房時，貼文提到還可以進哪裡？",
+    "options": [
+      "貓室嚕貓",
+      "卡皮房餵蟲",
+      "黑膠倉庫",
+      "錄音室"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "2026/01/07 小舜分享礁溪住宿貼文，提到貓室。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0105",
+    "type": "choice",
+    "question": "小舜平常抽哪一牌的煙超過兩年？",
+    "options": [
+      "LD藍",
+      "七星藍莓",
+      "Kent",
+      "維珍尼"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "IG 日常對話題。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0106",
+    "type": "choice",
+    "question": "小舜分享草莓芋泥球貼文時，價格大約是多少？",
+    "options": [
+      "600 多",
+      "60",
+      "1600",
+      "6000"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "2026/01/15 小舜分享在櫥窗猶豫後買了 600 多的甜點。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0107",
+    "type": "choice",
+    "question": "小舜分享螞蟻人、甜點人、麵包超人會發瘋的寶藏店，在哪裏？",
+    "options": [
+      "宜蘭",
+      "花蓮",
+      "新竹",
+      "高雄"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "2026/01/22 小舜分享宜蘭寶藏店貼文。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0108",
+    "type": "choice",
+    "question": "懷寶最愛的饒舌歌手是？",
+    "options": [
+      "Mac Miller",
+      "Big L",
+      "馬思唯",
+      "Teezy"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "2026/02/10 的 IG 對話，延續你們常聊音樂的模式。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0109",
+    "type": "choice",
+    "question": "懷寶問「寶寶我有說過我超愛孜然ㄉ嗎」，後來小舜做了什麼？",
+    "options": [
+      "帶他去吃新疆料理",
+      "煮菜加孜然",
+      "買羊肉串給他",
+      "給他孜然香味的吊飾"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "後來去吃了好吃的新疆宴席呢。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0110",
+    "type": "choice",
+    "question": "小舜分享水果市場貼文時，提到哪種水果價格來到五年內低點？",
+    "options": [
+      "聖女小番茄",
+      "芒果",
+      "西瓜",
+      "奇異果"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "2026/03/04 小舜分享每週水果市場評價。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0111",
+    "type": "choice",
+    "question": "小舜推薦 8TM 的哪首歌給懷寶？",
+    "options": [
+      "逆向崩潰",
+      "普通活著",
+      "2009",
+      "無緣卻不捨"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "2026/03/14 小舜說先推 8TM 的〈逆向崩潰〉。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0112",
+    "type": "choice",
+    "question": "小舜分享去誠品換的是什麼？",
+    "options": [
+      "初春年曆",
+      "卡皮飼料",
+      "黑膠唱針",
+      "Pingu 玩偶"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "2026/03/15 小舜分享誠品初春年曆。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0113",
+    "type": "choice",
+    "question": "懷寶說「我…有些歌ㄉ經驗…」比較像你們哪類對話？",
+    "options": [
+      "聽歌後的個人經驗分享",
+      "做歌曲的經驗",
+      "寫過音樂專欄的經驗",
+      "去中國河堤唱歌的經驗"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "2026/03/15 的 IG 對話延伸成音樂默契題。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0114",
+    "type": "choice",
+    "question": "懷寶問「Good am嗎」可以理解成什麼？",
+    "options": [
+      "早安的可愛變體",
+      "晚安",
+      "午餐",
+      "資料庫欄位"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "2026/04/02 的 IG 對話小梗。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0115",
+    "type": "choice",
+    "question": "小舜分享台北免費 VR 電影時，貼文說整個過程很怎樣？",
+    "options": [
+      "沈浸",
+      "無聊",
+      "昂貴",
+      "卡住"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "2026/04/14 小舜分享免費 VR 電影，提到很沈浸。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0116",
+    "type": "choice",
+    "question": "小舜分享中山站捐血活動時，是送什麼東西？",
+    "options": [
+      "口紅",
+      "一袋米",
+      "200元全聯禮券",
+      "香水"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "2026/04/14 的 IG 貼文分享。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0117",
+    "type": "choice",
+    "question": "小舜沒有什麼證照？",
+    "options": [
+      "TQC powerpoint",
+      "TQC word",
+      "濳水證照",
+      "色彩規劃師證照"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "小舜可厲害的呢",
+    "tags": [
+      "日常"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0118",
+    "type": "choice",
+    "question": "懷寶說「我會變帥勾妮會變超大美女！」是在表達什麼？",
+    "options": [
+      "張小懷用甜言蜜語騙人",
+      "說小舜醜",
+      "覺得自己超帥的",
+      "手機被盜用"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "2026/04/24 的 IG 對話。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  },
+  {
+    "id": "Q-0119",
+    "type": "choice",
+    "question": "IG 對話裡 Wayne 最後一則附近說「我有看！是一隻小豬！我會回！」，他說看到的是什麼？",
+    "options": [
+      "一隻小豬",
+      "卡皮",
+      "一張黑膠",
+      "一個reels"
+    ],
+    "answer": 0,
+    "image": "",
+    "story": "這是 IG 匯出中接近 2026/07/01 的訊息。",
+    "tags": [
+      "IG對話",
+      "wayne_86121"
+    ],
+    "source": "instagram"
+  }
+]

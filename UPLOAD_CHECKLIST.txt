@@ -1,0 +1,11 @@
+Our Memories V8.0 新專案上傳清單
+
+□ 建立新的空白 GitHub Repository
+□ 用 GitHub Desktop Clone
+□ 把本壓縮包解壓縮
+□ 複製「解壓縮後裡面的所有內容」到 Clone 資料夾
+□ GitHub Desktop：Commit to main
+□ GitHub Desktop：Push origin
+□ GitHub Settings → Pages → main / root
+□ Supabase SQL Editor 執行 supabase_setup.sql
+□ 打開 image-check.html 確認圖片

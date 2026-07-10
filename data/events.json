@@ -1,0 +1,931 @@
+[
+  {
+    "id": "EV-0001",
+    "title": "認識後的第一張合照",
+    "date": "2026-01-09",
+    "cover": "images/photo0001.webp",
+    "rank": "legendary",
+    "category": "紀念日",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "你們認識後的重要合照起點。它會被放進 Legendary 回憶，作為整個 Our Memories 的序章。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0002",
+    "title": "抽到喜歡的排球少年菅原學長",
+    "date": "",
+    "cover": "images/photo0002.webp",
+    "rank": "rare",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "一起抽到喜歡的排球少年菅原學長，從動漫收藏變成共同回憶。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0003",
+    "title": "第一次兩個人去畫畫",
+    "date": "",
+    "cover": "images/photo0003.webp",
+    "rank": "legendary",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "第一次兩個人去畫畫，這是共同創作型約會的起點。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0004",
+    "title": "張懷在舜寶聚餐跑來唱歌",
+    "date": "",
+    "cover": "images/photo0004.webp",
+    "rank": "rare",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "張懷在舜寶聚餐時跑來唱歌，是朋友與戀人交會的熱鬧時刻。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0005",
+    "title": "第一次一起溜滑板",
+    "date": "",
+    "cover": "images/photo0005.webp",
+    "rank": "legendary",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "第一次一起溜滑板，把身體記憶也放進你們的戀愛遊戲。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0006",
+    "title": "一起聽 Daniel Caesar",
+    "date": "",
+    "cover": "images/photo0006.webp",
+    "rank": "epic",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "一起聽 Daniel Caesar，也和芬恩、靈驗、家宏一起共享音樂現場。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0007",
+    "title": "台南療癒之旅",
+    "date": "",
+    "cover": "images/photo0007.webp",
+    "rank": "legendary",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "台南療癒之旅，第一次跟小舜家人見面，是關係裡非常重要的里程碑。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0008",
+    "title": "第一次去貓咖",
+    "date": "",
+    "cover": "images/photo0008.webp",
+    "rank": "epic",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "第一次一起去貓咖，動物與約會一起收藏。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0009",
+    "title": "陪小舜聽 Deca Joins",
+    "date": "",
+    "cover": "images/photo0009.webp",
+    "rank": "epic",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "張懷陪小舜聽 Deca Joins，音樂成為你們的共同場景。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0010",
+    "title": "在一起 100 天",
+    "date": "2026-04-18",
+    "cover": "images/photo0010.webp",
+    "rank": "legendary",
+    "category": "紀念日",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "在一起 100 天，從此變成網站裡的一個紀念節點。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0011",
+    "title": "小舜去看 NANA 展",
+    "date": "",
+    "cover": "images/photo0011.webp",
+    "rank": "rare",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "小舜去看 NANA 展覽，動漫與展覽記憶被放進相簿。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0012",
+    "title": "小舜在張懷家貼的貼紙",
+    "date": "",
+    "cover": "images/photo0012.webp",
+    "rank": "rare",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "小舜在張懷家貼的貼紙，像是把自己偷偷放進對方生活裡。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0013",
+    "title": "名義上第一張合照",
+    "date": "2026-01-09",
+    "cover": "images/photo0013.webp",
+    "rank": "legendary",
+    "category": "紀念日",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "名義上的第一張合照，是 First Memories 裡的關鍵照片。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0014",
+    "title": "小舜幫張懷拍形象照",
+    "date": "",
+    "cover": "images/photo0014.webp",
+    "rank": "epic",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "小舜幫張懷拍形象照，從戀人也變成彼此的攝影師。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0015",
+    "title": "第二次約會去海邊",
+    "date": "",
+    "cover": "images/photo0015.webp",
+    "rank": "legendary",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "第二次約會去海邊，小舜幫張懷拍照。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0016",
+    "title": "張懷真正傾心的那天",
+    "date": "",
+    "cover": "images/photo0016.webp",
+    "rank": "legendary",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "張懷真正對蕭小舜傾心的那天，會放進 Love Timeline。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0017",
+    "title": "偷偷請店員插蠟燭",
+    "date": "2026-01-21",
+    "cover": "images/photo0017.webp",
+    "rank": "legendary",
+    "category": "紀念日",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "小舜偷偷去餐廳請店員幫張懷插蠟燭，是生日驚喜事件。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0018",
+    "title": "1/21 張懷生日",
+    "date": "2026-01-21",
+    "cover": "images/photo0018.webp",
+    "rank": "legendary",
+    "category": "紀念日",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "1/21 張懷生日，第一批重要紀念日之一。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0019",
+    "title": "生日形象照",
+    "date": "2026-01-21",
+    "cover": "images/photo0019.webp",
+    "rank": "epic",
+    "category": "紀念日",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "張懷生日，兩個人一起完成他想拍很久的形象照。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0020",
+    "title": "張懷照顧生病的小舜",
+    "date": "",
+    "cover": "images/photo0020.webp",
+    "rank": "legendary",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "張懷照顧生病的小舜，這是照顧與陪伴的回憶。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0021",
+    "title": "盲腸炎開刀的小舜",
+    "date": "",
+    "cover": "images/photo0021.webp",
+    "rank": "legendary",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "小舜盲腸炎開刀，屬於人生事件與陪伴系回憶。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0022",
+    "title": "一起包下阪本日常一番賞",
+    "date": "",
+    "cover": "images/photo0022.webp",
+    "rank": "epic",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "一起把《阪本的日常》一番賞整套包下來，是收藏系大事件。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0023",
+    "title": "張懷的車牌",
+    "date": "",
+    "cover": "images/photo0023.webp",
+    "rank": "rare",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "張懷的車牌 EPD-2976，會成為只有你們知道的細節題。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0024",
+    "title": "大吵過後過情人節",
+    "date": "2026-02-14",
+    "cover": "images/photo0024.webp",
+    "rank": "legendary",
+    "category": "紀念日",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "大吵過後仍然一起過情人節，不是沒有吵架，而是還願意修復。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0025",
+    "title": "跟秀芬一起拍照",
+    "date": "",
+    "cover": "images/photo0025.webp",
+    "rank": "epic",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "跟秀芬一起拍照，把重要人物也放入回憶資料庫。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0026",
+    "title": "去古亭看花花",
+    "date": "",
+    "cover": "images/photo0026.webp",
+    "rank": "epic",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "一起去古亭看花花，是散步與小約會的溫柔節點。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0027",
+    "title": "水塔壞掉住旅館",
+    "date": "",
+    "cover": "images/photo0027.webp",
+    "rank": "epic",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "家裡水塔壞掉，被迫去住旅館，普通事故變成意外小旅行。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0028",
+    "title": "買歐拉夫盲盒",
+    "date": "",
+    "cover": "images/photo0028.webp",
+    "rank": "rare",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "一起去買歐拉夫盲盒，是購物與收藏回憶。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0029",
+    "title": "張懷送的七海建人",
+    "date": "",
+    "cover": "images/photo0029.webp",
+    "rank": "epic",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "張懷送小舜七海建人，禮物題庫會記住這件事。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0030",
+    "title": "幫張懷敷面膜",
+    "date": "",
+    "cover": "images/photo0030.webp",
+    "rank": "rare",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "小舜幫張懷敷面膜，居家照顧感十足。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0031",
+    "title": "跟小玫見面",
+    "date": "",
+    "cover": "images/photo0031.webp",
+    "rank": "rare",
+    "category": "回憶",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "照片",
+      "回憶"
+    ],
+    "summary": "跟小玫見面，新增朋友人物回憶。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-0032",
+    "title": "卡皮登場",
+    "date": "2026-07-01",
+    "cover": "images/photo0032.webp",
+    "rank": "legendary",
+    "category": "寵物",
+    "people": [
+      "蕭小舜",
+      "懷寶",
+      "卡皮"
+    ],
+    "tags": [
+      "照片",
+      "回憶",
+      "卡皮",
+      "守宮",
+      "寵物"
+    ],
+    "summary": "卡皮是你們的寵物，一隻守宮。從 v4 起加入寵物頁與寵物題庫。",
+    "chatFragments": []
+  },
+  {
+    "id": "EV-LINE-001",
+    "date": "2026-02-16",
+    "title": "Pingu 拍照承諾",
+    "category": "對話",
+    "rank": "epic",
+    "cover": "",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "LINE",
+      "Pingu",
+      "對話",
+      "承諾"
+    ],
+    "summary": "小舜氣噗噗地提到 Pingu 照片忘得一乾二淨，懷寶說過完年休假後第一個就是 Pingu 拍照，會把每件事情一個一個排進去。",
+    "chatFragments": [
+      "「我們從 Pingu 照片吵到現在」",
+      "「第一個就是 Pingu 拍照」"
+    ]
+  },
+  {
+    "id": "EV-LINE-002",
+    "date": "2026-02-17",
+    "title": "露營、旅館、動漫與愛在山林間",
+    "category": "對話",
+    "rank": "legendary",
+    "cover": "",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "露營",
+      "動漫",
+      "旅館",
+      "默契",
+      "LINE"
+    ],
+    "summary": "你們討論理想連假：出去玩，在那個地方爆看動漫；露營看《愛在山林間》；或開有情調的旅館泡澡、叫外送、看動漫。",
+    "chatFragments": [
+      "「我們去露營看愛在山林間！！！」",
+      "「在旅館裡面探索世界叫外送」",
+      "「洗完澡就看動漫」"
+    ]
+  },
+  {
+    "id": "EV-LINE-003",
+    "date": "2026-02-17",
+    "title": "520 壓歲錢",
+    "category": "禮物",
+    "rank": "rare",
+    "cover": "",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "LINE",
+      "520",
+      "禮物",
+      "壓歲錢"
+    ],
+    "summary": "小舜半夜確認有沒有轉錯壓歲錢，懷寶說有收到，是 520。",
+    "chatFragments": [
+      "「你有沒有收到壓歲錢啊」",
+      "「520ㄚ」"
+    ]
+  },
+  {
+    "id": "EV-LINE-004",
+    "date": "2026-02-17",
+    "title": "用顏色、季節、鮮花、動物形容彼此",
+    "category": "默契",
+    "rank": "legendary",
+    "cover": "",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "動物",
+      "花",
+      "顏色",
+      "心理測驗",
+      "LINE",
+      "季節"
+    ],
+    "summary": "小舜形容懷寶：一下深一下淺的藍色、秋天、玫瑰、法鬥。懷寶形容小舜：黃色、夏天、向日葵、很笨的哈巴狗。",
+    "chatFragments": [
+      "「黃色 夏天 向日葵 很笨的哈巴狗」",
+      "「一下深一下淺ㄉ藍色 秋天 玫瑰花 法鬥」"
+    ]
+  },
+  {
+    "id": "EV-LINE-005",
+    "date": "2026-02-18",
+    "title": "排球少年上癮與經痛怪獸",
+    "category": "日常",
+    "rank": "epic",
+    "cover": "",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "LINE",
+      "經痛",
+      "排球少年",
+      "照顧"
+    ],
+    "summary": "小舜開始看《排球少年》，同時經痛怪獸來了。懷寶關心痛感幾分，還說排少是會上癮的。",
+    "chatFragments": [
+      "「經痛怪獸來了」",
+      "「排少是會上癮ㄉ寶寶…」"
+    ]
+  },
+  {
+    "id": "EV-LINE-006",
+    "date": "2026-02-18",
+    "title": "春聯公關畫家",
+    "category": "家人",
+    "rank": "rare",
+    "cover": "",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "LINE",
+      "家人",
+      "春聯",
+      "紅包"
+    ],
+    "summary": "小舜在家寫了好多春聯，變成哥哥的公關畫家，大家收到都很開心，還收到紅包。",
+    "chatFragments": [
+      "「我變成我哥的公關畫家了」",
+      "「完全可以壟斷春聯市場ㄌ寶寶」"
+    ]
+  },
+  {
+    "id": "EV-LINE-007",
+    "date": "2026-02-19",
+    "title": "你會覺得我是好煩寶寶嗎",
+    "category": "感情",
+    "rank": "legendary",
+    "cover": "",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "LINE",
+      "安慰",
+      "安全感",
+      "分享"
+    ],
+    "summary": "小舜問自己是不是好煩寶寶，懷寶回答他希望小舜一直跟他說話，喜歡她分享所有想分享的事情。",
+    "chatFragments": [
+      "「你會覺得我是好煩寶寶嗎」",
+      "「我就是希望妮一直跟我說話ㄚ」"
+    ]
+  },
+  {
+    "id": "EV-LINE-008",
+    "date": "2026-02-20",
+    "title": "平日要打兩通電話",
+    "category": "約定",
+    "rank": "epic",
+    "cover": "",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "睡眠模式",
+      "電話",
+      "規則",
+      "LINE"
+    ],
+    "summary": "因為睡眠模式與電話不通，小舜提醒懷寶：平日要打兩通，除了禮拜五跟六不然是不會通的。",
+    "chatFragments": [
+      "「今天是平日～要打兩通！」",
+      "「除了禮拜五跟六不然是不會通ㄉ」"
+    ]
+  },
+  {
+    "id": "EV-LINE-009",
+    "date": "2026-02-21",
+    "title": "小舜使用守則",
+    "category": "關係維護",
+    "rank": "legendary",
+    "cover": "",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "LINE",
+      "關係",
+      "使用守則",
+      "理解型承諾"
+    ],
+    "summary": "小舜請 AI 整理自己的使用守則，重點是她需要理解型承諾，而不只是記憶型承諾。",
+    "chatFragments": [
+      "「不是記住 A 不要做，而是知道我為什麼需要 B」",
+      "「你不是要他立刻完美，你是要他照著路走」"
+    ]
+  },
+  {
+    "id": "EV-LINE-010",
+    "date": "2026-02-22",
+    "title": "自由座、放屁與恐慌倒數",
+    "category": "日常",
+    "rank": "epic",
+    "cover": "",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "LINE",
+      "恐慌",
+      "高鐵",
+      "陪伴"
+    ],
+    "summary": "小舜搭自由座回來，人很多又恐慌，手機只剩 3%，一邊倒數 20 分鐘一邊撐過去。懷寶回她：再臭也不可能有我的臭。",
+    "chatFragments": [
+      "「我只要再撐20分鐘」",
+      "「再臭也不可能有我的臭」"
+    ]
+  },
+  {
+    "id": "EV-LINE-011",
+    "date": "2026-02-24",
+    "title": "面試直接錄取的一天",
+    "category": "工作",
+    "rank": "legendary",
+    "cover": "",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "LINE",
+      "順順的一天",
+      "工作",
+      "錄取"
+    ],
+    "summary": "小舜面試後直接錄取，懷寶也剛好訂好機票，於是那天被稱為順順的一天。",
+    "chatFragments": [
+      "「ㄟ…直接錄取了ㄟ」",
+      "「今天是順順ㄉ一天！」"
+    ]
+  },
+  {
+    "id": "EV-LINE-012",
+    "date": "2026-02-25",
+    "title": "張懷懷的 10 個優點",
+    "category": "稱讚",
+    "rank": "legendary",
+    "cover": "",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "感情",
+      "鼓勵",
+      "LINE",
+      "優點"
+    ],
+    "summary": "小舜列出張懷懷的 10 個優點，包含努力、樂觀、音樂品味好、不會輕易放棄、和善、熱心、開朗。",
+    "chatFragments": [
+      "「張懷懷ㄉ的10個優點」",
+      "「謝謝妳讓張懷懷知道自己也很棒！」"
+    ]
+  },
+  {
+    "id": "EV-LINE-013",
+    "date": "2026-03-01",
+    "title": "出生的時候為什麼沒來醫院看我",
+    "category": "梗",
+    "rank": "rare",
+    "cover": "",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "怪問題",
+      "撒嬌",
+      "梗",
+      "LINE"
+    ],
+    "summary": "小舜半夜問：我出生的時候你為什麼沒有來醫院看我？懷寶說她最近很愛問怪問題。",
+    "chatFragments": [
+      "「我出生的時候你為什麼沒有來醫院看我」",
+      "「寶寶妳最近很愛問怪問題ㄛ」"
+    ]
+  },
+  {
+    "id": "EV-LINE-014",
+    "date": "2026-03-04",
+    "title": "燭光第一天營業上班與 Joji",
+    "category": "工作",
+    "rank": "epic",
+    "cover": "",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "LINE",
+      "Joji",
+      "燭光",
+      "上班"
+    ],
+    "summary": "小舜在燭光第一天有營業的上班，雖然只有兩個客人，但其中一個訂 Joji，讓她覺得懂聽。",
+    "chatFragments": [
+      "「今天是不是第一天有營業ㄉ上班」",
+      "「而且他訂 jojo / Joji，懂聽」"
+    ]
+  },
+  {
+    "id": "EV-LINE-015",
+    "date": "2026-03-05",
+    "title": "如果不用做任何事就只要抱抱",
+    "category": "感情",
+    "rank": "legendary",
+    "cover": "",
+    "people": [
+      "蕭小舜",
+      "懷寶"
+    ],
+    "tags": [
+      "LINE",
+      "抱抱",
+      "未知",
+      "關係"
+    ],
+    "summary": "小舜說好想抱抱，如果一輩子都不用做任何事，就只要抱抱就好；懷寶回應希望能一起遇到未知的事情，好的不好的都一起度過。",
+    "chatFragments": [
+      "「要是我們一輩子都不用做任何事我們就都只要抱抱就好」",
+      "「好的，不好的，我們都一起度過」"
+    ]
+  }
+]

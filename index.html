@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Our Memories｜蕭小舜 ♡ 懷寶</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0b1b3a" />
+  <link rel="stylesheet" href="css/style.css?v=8.0" />
+</head>
+
+<body>
+  <div class="ambient orb-a"></div>
+  <div class="ambient orb-b"></div>
+
+  <main class="app-shell">
+    <header class="top-hero glass panel-glow">
+      <div class="hero-copy">
+        <p class="eyebrow">Every Memory Matters.</p>
+        <h1>Our Memories</h1>
+        <p class="couple">蕭小舜 ♡ 懷寶</p>
+        <div class="love-days">
+          <span id="daysTogether">—</span>
+          <small>Days Together</small>
+        </div>
+        <p id="todayLine" class="today-line">正在載入今日回憶錄…</p>
+      </div>
+      <div class="hero-badge">V8.0<br><span>Layout Fix</span></div>
+    </header>
+
+    <nav class="bottom-nav glass">
+      <button class="active" data-tab="home">首頁</button>
+      <button data-tab="game">遊戲</button>
+      <button data-tab="mood">心情</button>
+      <button data-tab="kapi">卡皮</button>
+      <button data-tab="period">小舜</button>
+    </nav>
+
+    <section id="home" class="page active">
+      <div class="section-head">
+        <h2 id="flashbackTitle">一年前的今天 / 今日回憶錄</h2>
+        <span>Daily Flashback</span>
+      </div>
+
+      <article id="flashbackCard" class="feature-card glass"></article>
+
+      <div id="careSummary" class="care-summary"></div>
+<div id="stats" class="stats-grid"></div>
+
+      <div class="section-head">
+        <h2>遊戲模式</h2>
+        <span>Photo + Dialogue</span>
+      </div>
+
+      <div class="mode-grid">
+        <button class="mode-card" data-mode="all">
+          <b>混合挑戰</b>
+          <small>照片＋對話＋排序</small>
+        </button>
+
+        <button class="mode-card" data-mode="line">
+          <b>對話電波</b>
+          <small>來自 LINE / IG 紀錄</small>
+        </button>
+
+        <button class="mode-card" data-mode="photo">
+          <b>圖片回憶</b>
+          <small>看照片猜故事</small>
+        </button>
+
+        <button class="mode-card" data-mode="pet">
+          <b>卡皮任務</b>
+          <small>寵物守宮題</small>
+        </button>
+      </div>
+    </section>
+
+    <section id="game" class="page">
+      <article id="dailyCoupleCard" class="daily-couple-card glass"></article>
+
+      <div class="game-top glass">
+        <div>
+          <p>Memory Quiz</p>
+          <h2 id="gameTitle">混合挑戰</h2>
+        </div>
+
+        <div class="score">
+          <span id="score">0</span>/<span id="answered">0</span>
+        </div>
+      </div>
+
+      <article id="quizCard" class="quiz-card glass"></article>
+
+      <div class="game-actions">
+        <button id="nextBtn">下一題</button>
+        <button id="restartBtn" class="ghost">重新洗題</button>
+      </div>
+    </section>
+
+    <section id="memories" class="page">
+      <div class="section-head">
+        <h2>回憶錄</h2>
+        <span>故事卡</span>
+      </div>
+
+      <div id="memoryList" class="memory-list"></div>
+    </section>
+
+    <section id="album" class="page">
+      <div class="section-head">
+        <h2>相簿與拍攝資訊</h2>
+        <span id="photoCount"></span>
+      </div>
+
+      <div id="albumGrid" class="album-grid"></div>
+    </section>
+
+    <section id="mood" class="page">
+      <div class="section-head">
+        <h2>今日心情板</h2>
+        <span>雙人留言板</span>
+      </div>
+
+      <article class="tracker-card glass mood-composer">
+        <h3>💬 留下今天的心情</h3>
+        <p class="muted">
+          這裡會同步到 Supabase，蕭小舜和懷寶都可以看到。適合寫：今天心情、想被怎麼照顧、想跟對方說的話。
+        </p>
+
+        <form id="moodForm" class="tracker-form">
+          <label>
+            我是
+            <select id="moodAuthor">
+              <option value="蕭小舜">蕭小舜</option>
+              <option value="懷寶">懷寶</option>
+            </select>
+          </label>
+
+          <label>
+            今天心情
+            <select id="moodValue">
+              <option value="😊 開心">😊 開心</option>
+              <option value="❤️ 想被抱抱">❤️ 想被抱抱</option>
+              <option value="🥲 委屈">🥲 委屈</option>
+              <option value="😡 生氣">😡 生氣</option>
+              <option value="😴 累">😴 累</option>
+              <option value="🫠 快爛掉">🫠 快爛掉</option>
+              <option value="🦎 想看卡皮">🦎 想看卡皮</option>
+              <option value="🌧️ 想哭">🌧️ 想哭</option>
+            </select>
+          </label>
+
+          <label>
+            想說的話
+            <textarea id="moodMessage" rows="3" placeholder="例：今天有點累，但想被抱抱一下。"></textarea>
+          </label>
+
+          <button type="button" id="moodPostBtn">送出今日心情</button>
+        </form>
+      </article>
+
+      <div id="moodBoard" class="mood-board"></div>
+    </section>
+
+    <section id="kapi" class="page">
+      <div class="section-head">
+        <h2>卡皮 Kapi</h2>
+        <span>餵食提醒＋紀錄</span>
+      </div>
+
+      <article id="kapiCard" class="feature-card glass"></article>
+
+      <article class="tracker-card glass">
+        <h3>🦎 卡皮餵食紀錄</h3>
+        <p class="muted">
+          有吃飯：自動推估 N＋3～4 天後再餵。未進食：明天～後天再試一次。紀錄會同步到 Supabase，換瀏覽器也會讀到同一份資料。
+        </p>
+
+        <form id="kapiForm" class="tracker-form">
+          <label>
+            日期
+            <input id="kapiDate" type="date" />
+          </label>
+
+          <label>
+            吃什麼
+            <input id="kapiFood" type="text" placeholder="例：蟋蟀、杜比亞、麵包蟲" />
+          </label>
+
+          <label>
+            份量
+            <input id="kapiAmount" type="text" placeholder="例：2 隻 / 吃一口 / 只舔一下" />
+          </label>
+
+          <label>
+            備註
+            <textarea id="kapiNote" rows="2" placeholder="脫皮、排便、活動力、今天很派都可以寫"></textarea>
+          </label>
+
+          <div class="two-actions">
+            <button type="button" id="kapiAteBtn">✅ 有餵食 / 有吃</button>
+            <button type="button" id="kapiRefusedBtn" class="ghost-inline">🥲 未進食</button>
+          </div>
+        </form>
+      </article>
+
+      <div id="kapiHistory" class="record-list"></div>
+    </section>
+
+    <section id="period" class="page">
+      <div class="section-head">
+        <h2>小舜警報系統</h2>
+        <span>經期紀錄＋提醒</span>
+      </div>
+
+      <article id="periodCard" class="feature-card glass"></article>
+
+      <article class="tracker-card glass">
+        <h3>🗓️ 經期月份紀錄</h3>
+        <p class="muted">
+          輸入每次經期開始日與結束日；過去月份會變成統計資料，不會再每天問你有沒有來。避孕藥提醒以醫囑與藥袋為準。
+        </p>
+
+        <form id="periodForm" class="tracker-form">
+          <label>
+            開始日
+            <input id="periodStartDate" type="date" />
+          </label>
+
+          <label>
+            結束日
+            <input id="periodEndDate" type="date" />
+          </label>
+
+          <label>
+            備註
+            <textarea id="periodNote" rows="2" placeholder="例：第一天很痛、量偏多、情緒很兇、開始吃避孕藥等"></textarea>
+          </label>
+
+          <div class="two-actions">
+            <button type="button" id="periodSaveBtn">🩸 儲存本次經期</button>
+            <button type="button" id="periodEstimateBtn" class="ghost-inline">只看預估</button>
+          </div>
+        </form>
+      </article>
+
+      <article class="tracker-card glass" id="periodDailyLogForm">
+        <h3>🩸 當天經期狀況</h3>
+        <p class="muted">預估經期前後或經期期間都可以記錄，之後會收進月份折疊紀錄。</p>
+        <form class="tracker-form">
+          <label>日期<input id="periodLogDate" type="date" /></label>
+          <label>是否有來
+            <select id="periodLogHas">
+              <option value="yes">有來 / 經期中</option>
+              <option value="no">還沒來 / 觀察中</option>
+            </select>
+          </label>
+          <label>流量
+            <select id="periodLogFlow">
+              <option value="無">無</option>
+              <option value="少">少</option>
+              <option value="中">中</option>
+              <option value="多">多</option>
+            </select>
+          </label>
+          <label>疼痛 0～10<input id="periodLogPain" type="number" min="0" max="10" value="0" /></label>
+          <label>情緒
+            <select id="periodLogMood">
+              <option value="穩定">穩定</option>
+              <option value="想哭">想哭</option>
+              <option value="煩躁">煩躁</option>
+              <option value="生氣">生氣</option>
+              <option value="很累">很累</option>
+              <option value="快爛掉">快爛掉</option>
+            </select>
+          </label>
+          <label>身體狀況<input id="periodLogSymptoms" type="text" placeholder="例：腹痛、腰痠、頭痛、想睡、噁心" /></label>
+          <label>備註<textarea id="periodLogNote" rows="2" placeholder="今天想補充的狀況"></textarea></label>
+          <button type="button" id="periodDailyLogBtn">儲存當天狀況</button>
+        </form>
+      </article>
+
+      <div id="periodTable" class="record-list"></div>
+
+      <div id="periodMoodHead" class="section-head hidden-alert">
+        <h2>小舜警報圖庫</h2>
+        <span>前三天＋經期期間才會出現</span>
+      </div>
+
+      <div id="periodMoodWall" class="anger-grid"></div>
+    </section>
+  </main>
+
+  <dialog id="modal" class="detail-modal">
+    <button id="closeModal" class="modal-close">×</button>
+    <div id="modalContent"></div>
+  </dialog>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/app.js?v=8.0"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "ACH-001",
+    "title": "First Memory",
+    "icon": "✨",
+    "description": "建立 Our Memories 的第一個回憶。",
+    "unlocked": true
+  },
+  {
+    "id": "ACH-002",
+    "title": "第一張合照",
+    "icon": "📷",
+    "description": "收藏認識後的重要合照起點。",
+    "unlocked": true
+  },
+  {
+    "id": "ACH-003",
+    "title": "共同創作",
+    "icon": "🎨",
+    "description": "第一次一起去畫畫。",
+    "unlocked": true
+  },
+  {
+    "id": "ACH-004",
+    "title": "滑板初體驗",
+    "icon": "🛹",
+    "description": "第一次一起溜滑板。",
+    "unlocked": true
+  },
+  {
+    "id": "ACH-005",
+    "title": "家人里程碑",
+    "icon": "🏠",
+    "description": "第一次跟小舜家人見面。",
+    "unlocked": true
+  },
+  {
+    "id": "ACH-006",
+    "title": "一百天",
+    "icon": "💯",
+    "description": "在一起 100 天。",
+    "unlocked": true
+  },
+  {
+    "id": "ACH-007",
+    "title": "生日驚喜",
+    "icon": "🎂",
+    "description": "偷偷請店員幫張懷插蠟燭。",
+    "unlocked": true
+  },
+  {
+    "id": "ACH-008",
+    "title": "Through Sickness",
+    "icon": "🏥",
+    "description": "盲腸炎與生病照顧回憶。",
+    "unlocked": true
+  },
+  {
+    "id": "ACH-009",
+    "title": "車牌王",
+    "icon": "🛵",
+    "description": "記住張懷的車牌 EPD-2976。",
+    "unlocked": true
+  },
+  {
+    "id": "ACH-010",
+    "title": "吵架也沒分開",
+    "icon": "🫶",
+    "description": "大吵過後仍然一起過情人節。",
+    "unlocked": true
+  },
+  {
+    "id": "ACH-011",
+    "title": "卡皮加入隊伍",
+    "icon": "🦎",
+    "description": "寵物守宮卡皮加入 Our Memories。",
+    "unlocked": true
+  },
+  {
+    "id": "ACH-012",
+    "title": "對話考古學家",
+    "icon": "💬",
+    "description": "題庫開始使用 LINE 對話，不只使用照片。",
+    "unlocked": true
+  }
+]
