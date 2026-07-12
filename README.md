@@ -50,5 +50,5 @@ js/
 data/
 images/
 Deploy V8.2.5
-
+Force redeploy V8.2.5
 ```
