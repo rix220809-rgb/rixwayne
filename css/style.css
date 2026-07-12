@@ -644,3 +644,65 @@ img{
     object-fit:cover;
   }
 }
+
+/* ===== V8.2.4 period + pill alert ===== */
+.pill-alert-full{
+  min-height:min(78vh,680px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:34px 24px;
+  border-radius:28px;
+  background:
+    radial-gradient(circle at top,#ffef8a 0,transparent 34%),
+    linear-gradient(145deg,#ff3f5f,#ff8b35 52%,#ffcf45);
+  color:#fff;
+  box-shadow:0 30px 100px rgba(255,62,85,.55);
+}
+.pill-alert-icon{font-size:88px;line-height:1;margin-bottom:16px}
+.pill-alert-kicker{
+  margin:0 0 8px;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.2);
+  font-weight:900;
+  letter-spacing:.08em;
+}
+.pill-alert-full h1{
+  margin:8px 0 14px;
+  font-size:clamp(34px,9vw,64px);
+  line-height:1.05;
+  text-shadow:0 4px 24px rgba(120,0,20,.35);
+}
+.pill-alert-full p{max-width:520px;font-weight:700;line-height:1.6}
+.pill-alert-full button{
+  width:100%;
+  max-width:420px;
+  min-height:58px;
+  margin-top:22px;
+  border:0;
+  border-radius:20px;
+  background:#fff;
+  color:#c31332;
+  font-weight:900;
+  font-size:18px;
+}
+.pill-inline-alert{
+  margin-top:16px;
+  padding:16px 18px;
+  border:2px solid #ffd75a;
+  border-radius:18px;
+  background:linear-gradient(135deg,rgba(255,56,88,.28),rgba(255,162,42,.26));
+  color:#fff4bd;
+  font-weight:900;
+  font-size:18px;
+  text-align:center;
+}
+.notification-enable-btn{
+  width:100%;
+  min-height:48px;
+  margin-top:16px;
+  border-radius:16px;
+}

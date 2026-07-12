@@ -1,4 +1,4 @@
-const APP_VERSION = '8.2.3';
+const APP_VERSION = '8.2.4';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';
@@ -1659,6 +1659,224 @@ async function renderDailyCoupleChallenge(){
     </form>`}`;
   const btn = $('#dailyCoupleSaveBtn');
   if(btn) btn.onclick = saveDailyCoupleAnswer;
+}
+
+
+/* =========================================================
+   V8.2.4 PERIOD + MEMORY OVERRIDES
+   ========================================================= */
+
+const MEMORY_RECENT_KEY = 'ourMemories.recentDailyPhotos.v8.2.4';
+const PERIOD_ALERT_SEEN_KEY = 'ourMemories.periodDailyAlertSeen.v8.2.4';
+const PERIOD_PILL_SEEN_KEY = 'ourMemories.periodPillAlertSeen.v8.2.4';
+
+function recentPhotoHistory(){
+  return loadJSON(MEMORY_RECENT_KEY, []);
+}
+function rememberDailyPhoto(src){
+  if(!src) return;
+  const list = recentPhotoHistory().filter(x=>x && x.src !== src);
+  list.unshift({src, date:todayISO()});
+  saveJSON(MEMORY_RECENT_KEY, list.slice(0,14));
+}
+function pickUnseenPhoto(){
+  const seen = new Set(recentPhotoHistory().map(x=>x.src));
+  const candidates = photos.filter(p=>p?.src && !seen.has(p.src));
+  const pool = candidates.length ? candidates : photos.filter(p=>p?.src);
+  if(!pool.length) return null;
+  const p = pickFromDate(pool, todayISO(), 213) || pool[0];
+  rememberDailyPhoto(p.src);
+  return p;
+}
+function pickDailyMemory(){
+  if(!events.length && !photos.length){
+    return {event:{id:'empty',title:'尚未載入回憶',summary:'請確認資料檔案已上傳。',category:'system',rank:'—'},title:'今日回憶錄'};
+  }
+  const iso = todayISO();
+  const today = localDate(iso);
+  const lastYear = String(today.getFullYear()-1)+iso.slice(4);
+  let match = events.find(e=>isISODate(e.date) && e.date===lastYear);
+  if(match) return {event:match,title:'一年前的今天'};
+  match = events.find(e=>sameMonthDay(e.date,iso));
+  if(match) return {event:match,title:'今天的回憶紀念日'};
+
+  const photo = pickUnseenPhoto();
+  if(photo){
+    return {
+      title:'今日照片回憶',
+      event:{
+        id:`PHOTO-${photo.id||photo.src}`,
+        title:photo.title||'今日照片回憶',
+        summary:photo.description||photo.title||'一起留下的回憶。',
+        category:'照片',
+        rank:photo.rank||'memory',
+        __photo:photo
+      }
+    };
+  }
+
+  const pool = events.filter(e=>e.rank==='legendary');
+  return {event:pickFromDate(pool.length?pool:events,iso,77)||events[0],title:'今日回憶錄'};
+}
+function renderFlashback(ev){
+  const ph = ev?.__photo || photoByEvent(ev.id);
+  $('#flashbackCard').innerHTML = `
+    ${ph ? `<img class="feature-img" src="${assetUrl(ph.src)}" alt="${ev.title}">` : `<div class="feature-symbol"><span>${eventIcon(ev)}</span><b>${isDialogueEvent(ev)?'LINE MEMORY':'TEXT MEMORY'}</b></div>`}
+    <div class="feature-body">
+      <div class="badge-row"><span class="badge">${ev.rank||'memory'}</span><span class="badge">${ev.category||'回憶'}</span></div>
+      <h3>${ev.title}</h3><p>${ev.summary||''}</p>
+      ${(ev.chatFragments||[]).slice(0,2).map(x=>`<div class="story">${x}</div>`).join('')}
+    </div>`;
+  bindImageFallbacks($('#flashbackCard'));
+}
+
+async function getRecordedPeriodState(){
+  const logs = await getPeriodDailyLogs();
+  const periodLogs = logs
+    .filter(l=>l.has_period && isISODate(l.date))
+    .sort((a,b)=>a.date.localeCompare(b.date));
+
+  if(!periodLogs.length) return {active:false, day:null, start:null, logs};
+
+  const today = todayISO();
+  const recent = periodLogs.filter(l=>{
+    const diff = dayDiff(today,l.date);
+    return diff >= 0 && diff <= 10;
+  });
+  if(!recent.length) return {active:false, day:null, start:null, logs};
+
+  // First recorded "有來" day in the current cluster is day 1.
+  let clusterStart = recent[0].date;
+  for(let i=1;i<recent.length;i++){
+    if(dayDiff(recent[i].date,recent[i-1].date) > 2){
+      clusterStart = recent[i].date;
+    }
+  }
+
+  const day = dayDiff(today, clusterStart) + 1;
+  return {
+    active: day >= 1 && day <= 5,
+    day,
+    start: clusterStart,
+    logs
+  };
+}
+
+function canUseNotifications(){
+  return 'Notification' in window;
+}
+async function requestPeriodNotifications(){
+  if(!canUseNotifications()){
+    toast('這個瀏覽器不支援系統通知。iPhone 請先把網站加入主畫面。');
+    return;
+  }
+  const result = await Notification.requestPermission();
+  toast(result === 'granted' ? '已開啟手機通知權限' : '尚未允許通知');
+}
+function sendPeriodSystemNotification(title, body, tag){
+  if(!canUseNotifications() || Notification.permission !== 'granted') return;
+  try{
+    new Notification(title,{body,tag,icon:'images/anger01.jpg'});
+  }catch(e){
+    console.warn('system notification failed',e);
+  }
+}
+
+function showPeriodAlertPopup(mood, warningText, day, force=false){
+  if(!mood || !$('#modal') || !$('#modalContent')) return;
+  const key = `${PERIOD_ALERT_SEEN_KEY}.${todayISO()}`;
+  if(!force && localStorage.getItem(key)) return;
+  localStorage.setItem(key,'1');
+  setTimeout(()=>{
+    $('#modalContent').innerHTML = `<div class="period-popup-card">
+      <img src="${assetUrl(mood.src)}" alt="${mood.title}">
+      <div class="period-popup-body">
+        <div class="badge-row">
+          <span class="badge">🚨 小舜警報</span>
+          <span class="badge">經期第 ${day} 天</span>
+        </div>
+        <h2>${mood.title}</h2>
+        <p>${warningText}</p>
+        <div class="story">${mood.caption}</div>
+        <button type="button" class="period-popup-close" onclick="document.querySelector('#modal')?.close()">收到，立刻切換照顧模式</button>
+      </div>
+    </div>`;
+    $('#modal').showModal();
+    bindImageFallbacks($('#modal'));
+  },450);
+  sendPeriodSystemNotification(`🚨 小舜經期第 ${day} 天`,warningText,`period-day-${day}-${todayISO()}`);
+}
+function showPillAlertPopup(force=false){
+  if(!$('#modal') || !$('#modalContent')) return;
+  const key = `${PERIOD_PILL_SEEN_KEY}.${todayISO()}`;
+  if(!force && localStorage.getItem(key)) return;
+  localStorage.setItem(key,'1');
+  setTimeout(()=>{
+    $('#modalContent').innerHTML = `<div class="pill-alert-full">
+      <div class="pill-alert-icon">💊</div>
+      <p class="pill-alert-kicker">經期第 5 天</p>
+      <h1>記得開始吃避孕藥</h1>
+      <p>這是高優先提醒。實際服用方式仍請以醫師指示與藥袋標示為準。</p>
+      <button type="button" onclick="document.querySelector('#modal')?.close()">我知道了</button>
+    </div>`;
+    $('#modal').showModal();
+  },250);
+  sendPeriodSystemNotification('💊 經期第 5 天提醒','記得依醫師指示開始服用避孕藥。',`pill-${todayISO()}`);
+}
+
+async function showHomePeriodPopup(force=false){
+  try{
+    const state = await getRecordedPeriodState();
+    if(!state.active) return;
+    if(state.day === 5){
+      showPillAlertPopup(force);
+      return;
+    }
+    showPeriodAlertPopup(getDailyAngryPhoto(),getPeriodWarning(),state.day,force);
+  }catch(e){
+    console.warn('首頁經期警報載入失敗',e);
+  }
+}
+
+async function renderPeriod(){
+  const info = await getPeriodPrediction();
+  info.records = dedupePeriodRecords(info.records);
+  const logs = await getPeriodDailyLogs();
+  const state = await getRecordedPeriodState();
+  const alertActive = state.active;
+  const pillReminder = state.day === 5;
+  const mood = getDailyAngryPhoto();
+  const warningText = getPeriodWarning();
+
+  $('#periodCard').innerHTML = `${alertActive ? `<div class="period-img-wrap"><img class="feature-img" src="${assetUrl(mood.src)}" alt="小舜警報照片"><div class="period-alert-chip">🚨 經期第 ${state.day} 天</div></div>` : renderCutePeriodImage()}
+    <div class="feature-body">
+      <div class="badge-row">
+        <span class="badge">智慧週期 ${info.cycle} 天</span>
+        <span class="badge">平均經期 ${info.avgDays} 天</span>
+        <span class="badge">下次 ${fmt(info.nextStart)}～${fmt(info.nextEnd)}</span>
+      </div>
+      <h3>${alertActive ? `🚨 今日警報・第 ${state.day} 天` : '🌸 漂亮小舜'}</h3>
+      <p>${alertActive ? warningText : '當天第一次記錄「有來／經期中」後，系統會把該日視為第 1 天，並連續五天每天提醒。'}</p>
+      ${pillReminder ? `<div class="pill-inline-alert">💊 第 5 天：記得依醫囑開始吃避孕藥</div>` : ''}
+      <button type="button" class="notification-enable-btn" onclick="requestPeriodNotifications()">開啟手機通知</button>
+    </div>`;
+
+  const groupedLogs = groupByMonth(logs,'date');
+  const groupedRanges = groupByMonth(info.records,'start');
+  const allKeys = [...new Set([...groupedLogs.map(x=>x[0]),...groupedRanges.map(x=>x[0])])].sort().reverse();
+
+  $('#periodTable').innerHTML = `<div class="period-table glass">
+    <div class="period-table-head"><b>經期歷史數據</b><span>智慧週期 ${info.cycle} 天 / 平均 ${info.avgDays} 天</span></div>
+    ${allKeys.length ? allKeys.map(key=>{
+      const monthLogs=(groupedLogs.find(x=>x[0]===key)||[key,[]])[1];
+      const monthRanges=(groupedRanges.find(x=>x[0]===key)||[key,[]])[1];
+      return `<details class="month-accordion"><summary><b>${monthTitle(key,'經期狀況')}</b><span>${summarizePeriodMonth(monthRanges,monthLogs)}</span></summary>
+        ${monthRanges.map(r=>`<div class="record-row"><div><b>${fmt(r.start)}～${fmt(r.end)}</b><p>${dayDiff(r.end,r.start)+1} 天${r.note?`・${r.note}`:''}</p></div><button onclick="deletePeriodRecord('${r.id||r.start}')">刪除</button></div>`).join('')}
+        ${monthLogs.map(l=>`<div class="record-row daily-log-row"><div><b>${fmt(l.date)}｜${l.has_period?'有來':'未來/觀察'}</b><p>流量：${l.flow||'—'}｜疼痛：${l.pain||0}｜情緒：${l.mood||'—'}${l.symptoms?`<br>狀況：${l.symptoms}`:''}${l.note?`<br>備註：${l.note}`:''}</p></div><button onclick="deletePeriodDailyLog('${l.id}')">刪除</button></div>`).join('')}
+      </details>`;
+    }).join('') : '<div class="empty-card">尚無經期紀錄。</div>'}
+  </div>`;
+  bindImageFallbacks($('#periodCard'));
 }
 
 loadData();
