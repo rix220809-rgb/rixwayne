@@ -1,4 +1,4 @@
-const APP_VERSION = '8.2.4';
+const APP_VERSION = '8.2.5';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';
@@ -264,17 +264,13 @@ function loadJSON(key, fallback){ try{return JSON.parse(localStorage.getItem(key
 function saveJSON(key, val){ localStorage.setItem(key, JSON.stringify(val)); }
 
 function cleanupOldServiceWorkers(){
-  // v4.5: GitHub Pages 舊版 sw.js 很容易讓手機吃到舊 app.js。
-  // 這版主動解除舊 service worker 並清除 our-memories 快取。
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.getRegistrations()
-      .then(regs => regs.forEach(reg => reg.unregister()))
-      .catch(()=>{});
-  }
   if (window.caches) {
     caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k.includes('our-memories')).map(k => caches.delete(k))))
+      .then(keys => Promise.all(keys.filter(k => k.includes('our-memories') && k !== 'our-memories-v8.2.5').map(k => caches.delete(k))))
       .catch(()=>{});
+  }
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js?v=8.2.5').catch(err=>console.warn('SW register failed', err));
   }
 }
 
@@ -1766,12 +1762,16 @@ function canUseNotifications(){
   return 'Notification' in window;
 }
 async function requestPeriodNotifications(){
-  if(!canUseNotifications()){
-    toast('這個瀏覽器不支援系統通知。iPhone 請先把網站加入主畫面。');
-    return;
+  try{
+    if(typeof window.enablePushNotifications !== 'function'){
+      throw new Error('Firebase 推播模組尚未載入，請重新整理後再試。');
+    }
+    const result = await window.enablePushNotifications();
+    toast(`已為 ${result.owner} 開啟手機推播`);
+  }catch(e){
+    console.error('push registration failed',e);
+    toast(e.message || '手機推播開啟失敗');
   }
-  const result = await Notification.requestPermission();
-  toast(result === 'granted' ? '已開啟手機通知權限' : '尚未允許通知');
 }
 function sendPeriodSystemNotification(title, body, tag){
   if(!canUseNotifications() || Notification.permission !== 'granted') return;
