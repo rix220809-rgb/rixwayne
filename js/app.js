@@ -1,4 +1,4 @@
-const APP_VERSION = '10.0.0';
+const APP_VERSION = '10.0.1';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';
@@ -266,11 +266,11 @@ function saveJSON(key, val){ localStorage.setItem(key, JSON.stringify(val)); }
 function cleanupOldServiceWorkers(){
   if (window.caches) {
     caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k.includes('our-memories') && k !== 'our-memories-v10.0.0').map(k => caches.delete(k))))
+      .then(keys => Promise.all(keys.filter(k => k.includes('our-memories') && k !== 'our-memories-v10.0.1').map(k => caches.delete(k))))
       .catch(()=>{});
   }
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js?v=10.0.0').catch(err=>console.warn('SW register failed', err));
+    navigator.serviceWorker.register('./sw.js?v=10.0.1').catch(err=>console.warn('SW register failed', err));
   }
 }
 
@@ -1789,33 +1789,47 @@ function renderFlashback(ev){
 }
 
 async function getRecordedPeriodState(){
-  const logs = await getPeriodDailyLogs();
-  const periodLogs = logs
-    .filter(l=>l.has_period && isISODate(l.date))
-    .sort((a,b)=>a.date.localeCompare(b.date));
+  const logs = (await getPeriodDailyLogs())
+    .filter(l => isISODate(l.date))
+    .sort((a,b) => a.date.localeCompare(b.date));
 
-  if(!periodLogs.length) return {active:false, day:null, start:null, logs};
+  const periodLogs = logs.filter(l => l.has_period);
+  if(!periodLogs.length){
+    return {active:false, ended:false, day:null, start:null, end:null, logs};
+  }
 
   const today = todayISO();
-  const recent = periodLogs.filter(l=>{
-    const diff = dayDiff(today,l.date);
-    return diff >= 0 && diff <= 10;
+  const recentTrueLogs = periodLogs.filter(l => {
+    const diff = dayDiff(today, l.date);
+    return diff >= 0 && diff <= 14;
   });
-  if(!recent.length) return {active:false, day:null, start:null, logs};
 
-  // First recorded "有來" day in the current cluster is day 1.
-  let clusterStart = recent[0].date;
-  for(let i=1;i<recent.length;i++){
-    if(dayDiff(recent[i].date,recent[i-1].date) > 2){
-      clusterStart = recent[i].date;
+  if(!recentTrueLogs.length){
+    return {active:false, ended:true, day:null, start:null, end:null, logs};
+  }
+
+  // 同一段經期內，即使中間漏記 1～2 天，也不會被誤判成下一次。
+  let clusterStart = recentTrueLogs[0].date;
+  for(let i=1;i<recentTrueLogs.length;i++){
+    if(dayDiff(recentTrueLogs[i].date, recentTrueLogs[i-1].date) > 3){
+      clusterStart = recentTrueLogs[i].date;
     }
   }
 
+  const falseAfterStart = logs
+    .filter(l => !l.has_period && dayDiff(l.date, clusterStart) >= 0)
+    .sort((a,b) => a.date.localeCompare(b.date))[0] || null;
+
   const day = dayDiff(today, clusterStart) + 1;
+  const explicitlyEnded = !!falseAfterStart;
+  const withinReasonableLength = day >= 1 && day <= 10;
+
   return {
-    active: day >= 1 && day <= 5,
+    active: !explicitlyEnded && withinReasonableLength,
+    ended: explicitlyEnded,
     day,
     start: clusterStart,
+    end: falseAfterStart ? addDaysISO(falseAfterStart.date, -1) : null,
     logs
   };
 }
@@ -1915,10 +1929,14 @@ async function renderPeriod(){
       <div class="badge-row">
         <span class="badge">智慧週期 ${info.cycle} 天</span>
         <span class="badge">平均經期 ${info.avgDays} 天</span>
-        <span class="badge">下次 ${fmt(info.nextStart)}～${fmt(info.nextEnd)}</span>
+        ${state.active
+          ? `<span class="badge">本次經期第 ${state.day} 天・尚未結束</span>`
+          : `<span class="badge">下次預估 ${fmt(info.nextStart)}～${fmt(info.nextEnd)}</span>`}
       </div>
-      <h3>${alertActive ? `🚨 今日警報・第 ${state.day} 天` : '🌸 漂亮小舜'}</h3>
-      <p>${alertActive ? warningText : '當天第一次記錄「有來／經期中」後，系統會把該日視為第 1 天，並連續五天每天提醒。'}</p>
+      <h3>${state.active ? `🚨 本次經期進行中・第 ${state.day} 天` : '🌸 漂亮小舜'}</h3>
+      <p>${state.active
+        ? `${warningText} 系統不會把這段算成下一次經期；直到你記錄「未來／觀察」，才會視為本次結束並重新顯示下次預估。`
+        : '當天第一次記錄「有來／經期中」後，系統會把該日視為本次第 1 天。記錄「未來／觀察」後，才會結束本次週期並顯示下一次預估。'}</p>
       ${pillReminder ? `<div class="pill-inline-alert">💊 第 5 天：記得依醫囑開始吃避孕藥</div>` : ''}
       <button type="button" class="notification-enable-btn" onclick="requestPeriodNotifications()">開啟手機通知</button>
     </div>`;
