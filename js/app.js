@@ -1488,7 +1488,88 @@ async function getPeriodDailyLogs(){
   if(cloud) return normalizePeriodDailyLogs(cloud);
   return loadJSON(PERIOD_DAILY_LOG_KEY, []);
 }
-async function savePeriodDailyLog(){
+async function savePeriodDailyLog() {
+  const button = document.querySelector('#periodDailyLogBtn');
+
+  const date = document.querySelector('#periodLogDate')?.value || todayISO();
+  const has_period =
+    document.querySelector('#periodLogHas')?.value === 'yes';
+  const flow =
+    document.querySelector('#periodLogFlow')?.value || '';
+  const pain = Number(
+    document.querySelector('#periodLogPain')?.value || 0
+  );
+  const mood =
+    document.querySelector('#periodLogMood')?.value || '';
+  const symptoms =
+    document.querySelector('#periodLogSymptoms')?.value?.trim() || '';
+  const note =
+    document.querySelector('#periodLogNote')?.value?.trim() || '';
+
+  if (button) {
+    button.disabled = true;
+    button.textContent = '儲存中…';
+  }
+
+  try {
+    const payload = {
+      log_date: date,
+      has_period,
+      flow,
+      pain,
+      mood,
+      symptoms,
+      note
+    };
+
+    if (db) {
+      const timeout = new Promise((_, reject) => {
+        setTimeout(() => {
+          reject(new Error('Supabase 寫入逾時，請檢查網路或資料表權限'));
+        }, 12000);
+      });
+
+      await Promise.race([
+        cloudInsert('period_daily_logs', payload),
+        timeout
+      ]);
+    } else {
+      const logs = loadJSON(PERIOD_DAILY_LOG_KEY, []);
+
+      logs.unshift({
+        id: Date.now(),
+        date,
+        has_period,
+        flow,
+        pain,
+        mood,
+        symptoms,
+        note
+      });
+
+      saveJSON(PERIOD_DAILY_LOG_KEY, logs.slice(0, 300));
+    }
+
+    toast('已儲存小舜當天狀況');
+
+    await Promise.race([
+      renderPeriod(),
+      new Promise(resolve => setTimeout(resolve, 5000))
+    ]);
+  } catch (error) {
+    console.error('period daily log save failed:', error);
+
+    toast(
+      error?.message ||
+      '當天狀況儲存失敗，請查看 Console 錯誤'
+    );
+  } finally {
+    if (button) {
+      button.disabled = false;
+      button.textContent = '儲存當天狀況';
+    }
+  }
+}{
   const date = $('#periodLogDate')?.value || todayISO();
   const has_period = $('#periodLogHas')?.value === 'yes';
   const flow = $('#periodLogFlow')?.value || '';
