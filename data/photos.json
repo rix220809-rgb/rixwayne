@@ -1733,5 +1733,89 @@
       "originalBytes": null,
       "webpBytes": 278322
     }
+  },
+  {
+    "id": "P-0070",
+    "eventId": "",
+    "src": "images/photo0070.webp",
+    "title": "談和解之日",
+    "description": "坐榻榻米聊天真是太棒了！東西又很好吃՞⸝⸝ᵒ̴̶̷ 𓈞 ᵒ̴̶̷⸝⸝՞",
+    "date": "2026-07-16",
+    "category": "約會",
+    "rank": "memory",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "608544E3-785F-4382-BAFA-1D30FE7208E7.jpeg",
+      "originalSize": "1024x1536",
+      "webSize": "1024x1536",
+      "orientation": "直式",
+      "aspectRatio": "0.667",
+      "exifDateTime": "",
+      "originalBytes": 663884,
+      "webpBytes": 249000
+    }
+  },
+  {
+    "id": "P-0071",
+    "eventId": "",
+    "src": "images/photo0071.webp",
+    "title": "卡皮跟爸爸一起看手機",
+    "description": "卡皮跟爸爸一起躺著看手機的可愛日常。",
+    "date": "2026-07-16",
+    "category": "卡皮",
+    "rank": "memory",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "9C85F965-AE32-480C-8650-2C64EF4FAF2A.jpeg",
+      "originalSize": "3456x4608",
+      "webSize": "1200x1600",
+      "orientation": "直式",
+      "aspectRatio": "0.75",
+      "exifDateTime": "",
+      "originalBytes": 3700896,
+      "webpBytes": 153328
+    }
+  },
+  {
+    "id": "P-0072",
+    "eventId": "",
+    "src": "images/photo0072.webp",
+    "title": "卡皮看世足",
+    "description": "唷呼！有夠口愛(ृ´͈ ᵕ `͈ ृ )",
+    "date": "2026-07-16",
+    "category": "卡皮",
+    "rank": "memory",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "66A84CA7-09B4-4C5A-8A64-6EAE3BDCAA6A.jpeg",
+      "originalSize": "1536x1152",
+      "webSize": "1536x1152",
+      "orientation": "橫式",
+      "aspectRatio": "1.333",
+      "exifDateTime": "",
+      "originalBytes": 488376,
+      "webpBytes": 111468
+    }
+  },
+  {
+    "id": "P-0073",
+    "eventId": "",
+    "src": "images/photo0073.webp",
+    "title": "和解之日之合照",
+    "description": "談開之後留下的合照，和解成功紀念。",
+    "date": "2026-07-16",
+    "category": "感情",
+    "rank": "memory",
+    "featured": false,
+    "metadata": {
+      "originalFilename": "728D5B47-21A0-4692-A54B-330086B9A53C.jpeg",
+      "originalSize": "1536x1152",
+      "webSize": "1536x1152",
+      "orientation": "橫式",
+      "aspectRatio": "1.333",
+      "exifDateTime": "",
+      "originalBytes": 645902,
+      "webpBytes": 201732
+    }
   }
 ]

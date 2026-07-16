@@ -10,19 +10,18 @@ firebase.initializeApp({
   appId: "1:283362590873:web:2380bcb3162867bc213808"
 });
 
-// Keep Firebase Messaging initialized, but do not call
-// onBackgroundMessage + showNotification here.
-// FCM notification messages are already displayed by the browser.
+// Initialize FCM only. Do not manually show notification messages here,
+// otherwise the browser and Service Worker will each display one copy.
 firebase.messaging();
 
-const CACHE_NAME = "our-memories-v9.1.1";
+const CACHE_NAME = "our-memories-v10.0.0";
 const CORE = [
   "./",
   "./index.html",
   "./manifest.json",
-  "./css/style.css?v=9.1.1",
-  "./js/app.js?v=9.1.1",
-  "./js/push-notifications.js?v=9.1.1",
+  "./css/style.css?v=10.0.0",
+  "./js/app.js?v=10.0.0",
+  "./js/push-notifications.js?v=10.0.0",
   "./icon-192.png",
   "./icon-512.png"
 ];
