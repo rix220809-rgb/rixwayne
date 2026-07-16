@@ -1,4 +1,4 @@
-const APP_VERSION = '8.2.5';
+const APP_VERSION = '9.1.1';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';
@@ -266,11 +266,11 @@ function saveJSON(key, val){ localStorage.setItem(key, JSON.stringify(val)); }
 function cleanupOldServiceWorkers(){
   if (window.caches) {
     caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k.includes('our-memories') && k !== 'our-memories-v8.2.5').map(k => caches.delete(k))))
+      .then(keys => Promise.all(keys.filter(k => k.includes('our-memories') && k !== 'our-memories-v9.1.1').map(k => caches.delete(k))))
       .catch(()=>{});
   }
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js?v=8.2.5').catch(err=>console.warn('SW register failed', err));
+    navigator.serviceWorker.register('./sw.js?v=9.1.1').catch(err=>console.warn('SW register failed', err));
   }
 }
 
@@ -1556,6 +1556,8 @@ async function savePeriodDailyLog() {
       renderPeriod(),
       new Promise(resolve => setTimeout(resolve, 5000))
     ]);
+
+    await renderCareSummary().catch(() => {});
   } catch (error) {
     console.error('period daily log save failed:', error);
 
@@ -1568,27 +1570,6 @@ async function savePeriodDailyLog() {
       button.disabled = false;
       button.textContent = '儲存當天狀況';
     }
-  }
-}{
-  const date = $('#periodLogDate')?.value || todayISO();
-  const has_period = $('#periodLogHas')?.value === 'yes';
-  const flow = $('#periodLogFlow')?.value || '';
-  const pain = Number($('#periodLogPain')?.value || 0);
-  const mood = $('#periodLogMood')?.value || '';
-  const symptoms = $('#periodLogSymptoms')?.value.trim() || '';
-  const note = $('#periodLogNote')?.value.trim() || '';
-  try {
-    if(db) await cloudInsert('period_daily_logs', {log_date:date, has_period, flow, pain, mood, symptoms, note});
-    else {
-      const logs = loadJSON(PERIOD_DAILY_LOG_KEY, []);
-      logs.unshift({id:Date.now(), date, has_period, flow, pain, mood, symptoms, note});
-      saveJSON(PERIOD_DAILY_LOG_KEY, logs.slice(0,300));
-    }
-    toast('已儲存小舜當天狀況');
-    await renderPeriod();
-  } catch(e) {
-    console.error(e);
-    toast('當天狀況沒有寫入成功，請檢查 Supabase 權限。');
   }
 }
 async function deletePeriodDailyLog(id){
@@ -1957,6 +1938,18 @@ async function renderPeriod(){
       </details>`;
     }).join('') : '<div class="empty-card">尚無經期紀錄。</div>'}
   </div>`;
+  const periodLogDate = $('#periodLogDate');
+  if (periodLogDate && !periodLogDate.value) {
+    periodLogDate.value = todayISO();
+  }
+
+  const periodDailyLogBtn = $('#periodDailyLogBtn');
+  if (periodDailyLogBtn) {
+    periodDailyLogBtn.onclick = savePeriodDailyLog;
+    periodDailyLogBtn.disabled = false;
+    periodDailyLogBtn.textContent = '儲存當天狀況';
+  }
+
   bindImageFallbacks($('#periodCard'));
 }
 
