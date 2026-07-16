@@ -6,7 +6,7 @@
   <title>Our Memories｜蕭小舜 ♡ 懷寶</title>
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#0b1b3a" />
-  <link rel="stylesheet" href="css/style.css?v=10.0.1" />
+  <link rel="stylesheet" href="css/style.css?v=10.2.0" />
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         </div>
         <p id="todayLine" class="today-line">正在載入今日回憶錄…</p>
       </div>
-      <div class="hero-badge">V10.0.1<br><span>Period State Fix</span></div>
+      <div class="hero-badge">V10.2<br><span>Cycle + Dashboard</span></div>
     </header>
 
     <nav class="bottom-nav glass">
@@ -43,6 +43,19 @@
       </div>
 
       <article id="flashbackCard" class="feature-card glass"></article>
+
+      <section class="love-dashboard glass" aria-labelledby="dashboardTitle">
+        <div class="dashboard-head">
+          <div>
+            <p class="eyebrow">Today Dashboard</p>
+            <h2 id="dashboardTitle">今天的兩人生活</h2>
+          </div>
+          <span id="dashboardDate">—</span>
+        </div>
+        <div id="dashboardGrid" class="dashboard-grid">
+          <div class="dashboard-loading">正在整理今天的狀態…</div>
+        </div>
+      </section>
 
       <div id="careSummary" class="care-summary"></div>
 <div id="stats" class="stats-grid"></div>
@@ -215,10 +228,27 @@
 
       <article id="periodCard" class="feature-card glass"></article>
 
-      <article class="tracker-card glass">
-        <h3>🗓️ 經期月份紀錄</h3>
+
+      <article class="tracker-card glass cycle-control-card">
+        <div class="cycle-control-head">
+          <div>
+            <p class="eyebrow">Cycle Engine</p>
+            <h3>🌸 本次經期控制</h3>
+          </div>
+          <span id="cycleStatusBadge" class="badge">讀取中</span>
+        </div>
+        <p class="muted">按「開始」建立一個新週期；每天只記錄狀況，不會重設 Day 1。確定結束時再按「今天經期結束」。</p>
+        <div id="cycleStatusPanel" class="cycle-status-panel"></div>
+        <div class="two-actions">
+          <button type="button" id="periodCycleStartBtn">🩸 今天開始經期</button>
+          <button type="button" id="periodCycleEndBtn" class="ghost-inline">✅ 今天經期結束</button>
+        </div>
+      </article>
+
+      <article class="tracker-card glass legacy-period-form">
+        <h3>🗓️ 補登過去經期</h3>
         <p class="muted">
-          輸入每次經期開始日與結束日；過去月份會變成統計資料，不會再每天問你有沒有來。避孕藥提醒以醫囑與藥袋為準。
+          這一區只用來補登已經結束的舊經期。現在進行中的經期請使用上方「開始／結束」按鈕。避孕藥提醒仍以醫囑與藥袋為準。
         </p>
 
         <form id="periodForm" class="tracker-form">
@@ -249,12 +279,8 @@
         <p class="muted">預估經期前後或經期期間都可以記錄，之後會收進月份折疊紀錄。</p>
         <form class="tracker-form">
           <label>日期<input id="periodLogDate" type="date" /></label>
-          <label>是否有來
-            <select id="periodLogHas">
-              <option value="yes">有來 / 經期中</option>
-              <option value="no">還沒來 / 觀察中</option>
-            </select>
-          </label>
+          <input id="periodLogHas" type="hidden" value="yes" />
+          <div class="cycle-log-hint" id="cycleLogHint">請先開始一個經期週期，再記錄今天狀況。</div>
           <label>流量
             <select id="periodLogFlow">
               <option value="無">無</option>
@@ -292,7 +318,8 @@
   <div id="toast" class="toast"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="js/app.js?v=10.0.1"></script>
-  <script type="module" src="js/push-notifications.js?v=10.0.1"></script>
+  <script src="js/app.js?v=10.2.0"></script>
+  <script src="js/cycle-engine.js?v=10.2.0"></script>
+  <script type="module" src="js/push-notifications.js?v=10.2.0"></script>
 </body>
 </html>
