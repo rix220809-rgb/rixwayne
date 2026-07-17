@@ -14,7 +14,7 @@ firebase.initializeApp({
 // otherwise the browser and Service Worker will each display one copy.
 firebase.messaging();
 
-const CACHE_NAME = "our-memories-v10.2.1";
+const CACHE_NAME = "our-memories-v10.3.0";
 const CORE = [
   "./",
   "./index.html",

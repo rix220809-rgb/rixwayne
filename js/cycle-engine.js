@@ -132,6 +132,41 @@ async function getCycleEngineState(){
   };
 }
 
+
+async function getPillEngineState(){
+  const cycles = await getPeriodCycles();
+  const today = todayISO();
+  const latest = cycles
+    .filter(c => isISODate(c.start) && dayDiff(today, c.start) >= 0)
+    .sort((a,b) => b.start.localeCompare(a.start))[0] || null;
+
+  if(!latest){
+    return {status:'waiting',pillDay:null,periodDay:null,cycle:null,shouldRemind:false,
+      title:'等待第一次經期開始',
+      detail:'開始一個週期後，系統會從第 5 天起計算 28 天提醒。'};
+  }
+
+  const periodDay = dayDiff(today, latest.start) + 1;
+
+  if(periodDay >= 1 && periodDay <= 4){
+    return {status:'paused',pillDay:null,periodDay,cycle:latest,shouldRemind:false,
+      title:'避孕藥提醒暫停',
+      detail:`經期 Day ${periodDay}，第 1～4 天不提醒。`};
+  }
+
+  const pillDay = periodDay - 4;
+
+  if(pillDay >= 1 && pillDay <= 28){
+    return {status:'reminding',pillDay,periodDay,cycle:latest,shouldRemind:true,
+      title:`避孕藥第 ${pillDay}/28 天`,
+      detail:'今晚 21:00 提醒；實際服用仍以醫師與藥袋指示為準。'};
+  }
+
+  return {status:'completed',pillDay:28,periodDay,cycle:latest,shouldRemind:false,
+    title:'本輪 28 天提醒已完成',
+    detail:'等待下一次經期開始後，Day 1～4 暫停，Day 5 重新開始。'};
+}
+
 async function startCycleFromUI(){
   const date = $('#periodLogDate')?.value || todayISO();
   const button = $('#periodCycleStartBtn');
@@ -322,7 +357,8 @@ async function renderPeriod(){
   const mood = getDailyAngryPhoto();
   const warningText = getPeriodWarning();
   const alertActive = !!state.active && state.day <= 4;
-  const pillActive = !!state.active && state.day >= 5 && state.day <= 32;
+  const pillState = await getPillEngineState();
+  const pillActive = pillState.shouldRemind;
 
   $('#periodCard').innerHTML = `${alertActive
       ? `<div class="period-img-wrap"><img class="feature-img" src="${assetUrl(mood.src)}" alt="小舜警報照片"><div class="period-alert-chip">🚨 經期第 ${state.day} 天</div></div>`
@@ -339,7 +375,9 @@ async function renderPeriod(){
       <p>${state.active
         ? (alertActive ? warningText : '本次經期仍在進行中。系統會一直從開始日計算 Day 數，直到你按下「今天經期結束」。')
         : '目前沒有進行中的經期。開始後，每日紀錄都會歸在同一個週期。'}</p>
-      ${pillActive ? `<div class="pill-inline-alert">💊 今日為本輪避孕藥提醒第 ${state.day-4} 天；實際服用仍以醫師與藥袋指示為準。</div>` : ''}
+      <div class="pill-inline-alert ${pillState.status}">
+        💊 ${pillState.title}<br><small>${pillState.detail}</small>
+      </div>
       <button type="button" class="notification-enable-btn" onclick="requestPeriodNotifications()">開啟手機通知</button>
     </div>`;
 
@@ -396,11 +434,12 @@ async function renderDashboard(){
   const lastKapi = [...kapiRecords].sort((a,b)=>String(b.date).localeCompare(String(a.date)))[0] || null;
   const kapiRange = nextKapiRange(lastKapi);
   const today = todayISO();
-  const pillStatus = cycleState.active
-    ? (cycleState.day <= 4
-      ? {icon:'⏸️', title:'避孕藥提醒暫停', detail:`經期 Day ${cycleState.day}（第 1～4 天不提醒）`}
-      : {icon:'💊', title:'今晚 21:00 提醒', detail:`本輪提醒第 ${cycleState.day-4} 天`})
-    : {icon:'💊', title:'避孕藥提醒', detail:'等待下一次經期開始'};
+  const pillState = await getPillEngineState();
+  const pillStatus = {
+    icon: pillState.status === 'paused' ? '⏸️' : '💊',
+    title: pillState.title,
+    detail: pillState.detail
+  };
 
   const cards = [
     {
@@ -420,7 +459,9 @@ async function renderDashboard(){
     {
       icon:pillStatus.icon,
       title:pillStatus.title,
-      value:cycleState.active && cycleState.day >= 5 ? `第 ${cycleState.day-4} 天` : '—',
+      value:pillState.status === 'reminding'
+        ? `${pillState.pillDay}/28`
+        : (pillState.status === 'paused' ? `Day ${pillState.periodDay}` : '—'),
       detail:pillStatus.detail,
       tab:'period'
     },
@@ -472,3 +513,4 @@ showTab = function(id){
 window.startCycleFromUI = startCycleFromUI;
 window.endCycleFromUI = endCycleFromUI;
 window.renderDashboard = renderDashboard;
+window.getPillEngineState = getPillEngineState;

@@ -94,9 +94,14 @@ Deno.serve(async req=>{
       .order("start_date",{ascending:false});
     if(cycleError) throw cycleError;
 
-    const active=(cycles||[]).find(c=>!c.end_date) || null;
+    const allCycles=(cycles||[])
+      .filter(c=>dayDiff(today,c.start_date)>=0)
+      .sort((a,b)=>b.start_date.localeCompare(a.start_date));
+    const latestCycle=allCycles[0] || null;
+    const active=allCycles.find(c=>!c.end_date) || null;
     const completed=(cycles||[]).filter(c=>c.end_date);
     const activeDay=active ? dayDiff(today,active.start_date)+1 : null;
+    const latestPeriodDay=latestCycle ? dayDiff(today,latestCycle.start_date)+1 : null;
 
     let predictedStart:string|null=null;
     if(!active && completed.length){
@@ -137,14 +142,16 @@ Deno.serve(async req=>{
       }
     }
 
-    if(mode==="pill" && active && activeDay!==null){
-      const pillDay=activeDay-4;
+    if(mode==="pill" && latestCycle && latestPeriodDay!==null){
+      const pillDay=latestPeriodDay-4;
       if(pillDay>=1&&pillDay<=28){
         for(const owner of OWNERS){
           notices.push({
             owner,type:`pill_day_${pillDay}`,
-            title:`💊 21:00 避孕藥提醒｜第 ${pillDay} 天`,
-            body:owner==="懷寶"?"記得提醒小舜依醫師與藥袋指示服藥。":"記得依醫師與藥袋指示服用今天的避孕藥。",
+            title:`💊 21:00 避孕藥提醒｜第 ${pillDay}/28 天`,
+            body:owner==="懷寶"
+              ? `今天是小舜本輪避孕藥提醒第 ${pillDay} 天，記得提醒她依醫師與藥袋指示服藥。`
+              : `今天是本輪避孕藥提醒第 ${pillDay} 天，記得依醫師與藥袋指示服藥。`,
             target:"period"
           });
         }
@@ -205,7 +212,11 @@ Deno.serve(async req=>{
       results.push({owner:notice.owner,sent,type:notice.type});
     }
 
-    return response({ok:true,mode,today,activeDay,predictedStart,results});
+    return response({
+      ok:true,mode,today,activeDay,latestPeriodDay,
+      pillDay:latestPeriodDay!==null ? latestPeriodDay-4 : null,
+      predictedStart,results
+    });
   }catch(error){
     console.error(error);
     return response({ok:false,error:error instanceof Error?error.message:String(error)},500);
