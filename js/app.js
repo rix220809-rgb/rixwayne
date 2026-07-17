@@ -1,4 +1,4 @@
-const APP_VERSION = '10.3.0';
+const APP_VERSION = '10.3.1';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';
@@ -266,11 +266,11 @@ function saveJSON(key, val){ localStorage.setItem(key, JSON.stringify(val)); }
 function cleanupOldServiceWorkers(){
   if (window.caches) {
     caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k.includes('our-memories') && k !== 'our-memories-v10.3.0').map(k => caches.delete(k))))
+      .then(keys => Promise.all(keys.filter(k => k.includes('our-memories') && k !== 'our-memories-v10.3.1').map(k => caches.delete(k))))
       .catch(()=>{});
   }
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js?v=10.3.0').catch(err=>console.warn('SW register failed', err));
+    navigator.serviceWorker.register('./sw.js?v=10.3.1').catch(err=>console.warn('SW register failed', err));
   }
 }
 
@@ -382,6 +382,7 @@ async function init(){
     $('#todayLine').textContent = `${daily.title}：${daily.event.title}`;
     renderFlashback(daily.event);
     renderDailyHeroLine();
+    await mergeDailyAnswersIntoQuestionPool();
     renderStats();
     renderMemories();
     renderAlbum();
@@ -1681,19 +1682,77 @@ async function saveDailyCoupleAnswer(){
     await renderDailyCoupleChallenge();
   } catch(e) { console.error(e); toast('每日必達沒有寫入成功，請檢查 Supabase 權限。'); }
 }
+async function getAllDailyCoupleAnswers(){
+  if(db){
+    const {data, error} = await db
+      .from('daily_couple_answers')
+      .select('*')
+      .eq('space_id', CLOUD_SPACE_ID)
+      .order('question_date', {ascending:false})
+      .limit(300);
+
+    if(!error) return data || [];
+    console.warn('all daily_couple_answers unavailable', error);
+  }
+
+  return loadJSON(DAILY_COUPLE_ANSWER_KEY, []);
+}
+
 function generatedQuestionsFromCoupleAnswers(allAnswers){
-  const doneDays = (allAnswers||[]).filter(a=>a.self_answer && dayDiff(todayISO(), a.question_date) >= 3);
-  return doneDays.slice(0,60).map((a,idx)=>({
-    id:`DQ-${a.id||idx}`,
-    type:'open',
-    question:`每日必達複習：${a.author} 在「${a.question}」這題裡，自己的答案是什麼？`,
-    options:[],
-    answer:null,
-    image:'',
-    story:`答案：${a.self_answer}。猜對方答案：${a.guess_partner_answer||'未填'}`,
-    tags:['每日必達','默契'],
-    source:'daily'
-  }));
+  const grouped = new Map();
+
+  for(const answer of (allAnswers || [])){
+    if(!answer?.question_date || !answer?.question || !answer?.author || !answer?.self_answer) continue;
+    if(dayDiff(todayISO(), answer.question_date) < 3) continue;
+
+    const key = `${answer.question_date}::${answer.question}`;
+    if(!grouped.has(key)){
+      grouped.set(key, {
+        question_date: answer.question_date,
+        question: answer.question,
+        category: answer.category || '更了解彼此',
+        answers: {}
+      });
+    }
+
+    grouped.get(key).answers[answer.author] = answer;
+  }
+
+  return [...grouped.values()]
+    .filter(group => group.answers['蕭小舜'] && group.answers['懷寶'])
+    .slice(0, 60)
+    .map((group, index) => {
+      const shun = group.answers['蕭小舜'];
+      const wayne = group.answers['懷寶'];
+
+      return {
+        id: `DQ-${group.question_date}-${index}`,
+        type: 'open',
+        question: `每日必答回顧：關於「${group.question}」，你還記得彼此當時怎麼回答嗎？`,
+        options: [],
+        answer: null,
+        image: '',
+        story:
+          `蕭小舜：${shun.self_answer}｜猜懷寶：${shun.guess_partner_answer || '未填'}\n` +
+          `懷寶：${wayne.self_answer}｜猜小舜：${wayne.guess_partner_answer || '未填'}`,
+        tags: ['每日必答', '默契', group.category],
+        source: 'daily'
+      };
+    });
+}
+
+async function mergeDailyAnswersIntoQuestionPool(){
+  try{
+    const allAnswers = await getAllDailyCoupleAnswers();
+    const generated = generatedQuestionsFromCoupleAnswers(allAnswers);
+    const existingIds = new Set(questions.map(question => question.id));
+    const uniqueGenerated = generated.filter(question => !existingIds.has(question.id));
+    questions = [...questions, ...uniqueGenerated];
+    return uniqueGenerated.length;
+  }catch(error){
+    console.warn('daily answers question merge failed', error);
+    return 0;
+  }
 }
 async function renderDailyCoupleChallenge(){
   const el = $('#dailyCoupleCard');
