@@ -1,4 +1,4 @@
-const APP_VERSION = '10.3.1';
+const APP_VERSION = '10.4.0';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';
@@ -8,9 +8,10 @@ const KAPI_KEY = 'ourMemories.kapiFeedRecords.v1';
 const PERIOD_KEY = 'ourMemories.periodRecords.v1';
 const QUIZ_DAILY_KEY = 'ourMemories.dailyQuizState.v1';
 const DAILY_QUIZ_LIMIT = 10;
+const DAILY_QUESTION_ASSIGNMENT_KEY = 'ourMemories.dailyQuestionAssignments.v10.4';
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
-let events=[], photos=[], questions=[], achievements=[];
+let events=[], photos=[], questions=[], achievements=[], dailyQuestionBank=[], specialEvents=[];
 let db = null;
 let cloudReady = false;
 let quiz=[], current=0, score=0, answered=0, currentMode='all', questionLocked=false;
@@ -162,6 +163,8 @@ async function loadData(){
     photos = await loadDataFile('data/photos.json');
     questions = await loadDataFile('data/questions.json');
     achievements = await loadDataFile('data/achievements.json');
+    dailyQuestionBank = await loadDataFile('data/daily_question_bank.json');
+    specialEvents = await loadDataFile('data/special_events.json');
   } catch(e) {
     console.error('data load failed', e);
     events = events || [];
@@ -266,11 +269,11 @@ function saveJSON(key, val){ localStorage.setItem(key, JSON.stringify(val)); }
 function cleanupOldServiceWorkers(){
   if (window.caches) {
     caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k.includes('our-memories') && k !== 'our-memories-v10.3.1').map(k => caches.delete(k))))
+      .then(keys => Promise.all(keys.filter(k => k.includes('our-memories') && k !== 'our-memories-v10.4.0').map(k => caches.delete(k))))
       .catch(()=>{});
   }
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js?v=10.3.1').catch(err=>console.warn('SW register failed', err));
+    navigator.serviceWorker.register('./sw.js?v=10.4.0').catch(err=>console.warn('SW register failed', err));
   }
 }
 
@@ -1652,8 +1655,69 @@ async function renderKapi(){
   startKapiCarousel();
 }
 
-function getDailyCoupleQuestion(){
-  return pickFromDate(dailyCoupleQuestionBank, todayISO(), 88) || dailyCoupleQuestionBank[0];
+function monthKey(date=todayISO()){
+  return String(date).slice(0,7);
+}
+function introducedQuestionPool(){
+  const currentMonth = monthKey();
+  return (dailyQuestionBank || []).filter(item =>
+    item?.active !== false && item?.id && item?.question &&
+    (!item.introduced_month || item.introduced_month <= currentMonth)
+  );
+}
+function deterministicQuestionPick(items, date=todayISO()){
+  if(!items.length) return null;
+  const seed = hashString(`${date}|our-memories-v10.4|${items.length}`);
+  return items[seed % items.length];
+}
+async function getDailyQuestionAssignments(){
+  if(db){
+    const {data, error} = await db.from('daily_question_assignments').select('*')
+      .eq('space_id', CLOUD_SPACE_ID).order('question_date', {ascending:false}).limit(500);
+    if(!error) return data || [];
+    console.warn('daily_question_assignments unavailable', error);
+  }
+  return loadJSON(DAILY_QUESTION_ASSIGNMENT_KEY, []);
+}
+async function getDailyCoupleQuestion(){
+  const today = todayISO();
+  if(db){
+    const {data:existing,error} = await db.from('daily_question_assignments').select('*')
+      .eq('space_id',CLOUD_SPACE_ID).eq('question_date',today).maybeSingle();
+    if(!error && existing){
+      return {id:existing.question_id,question:existing.question,category:existing.category,introduced_month:existing.month_key};
+    }
+  }else{
+    const existing=loadJSON(DAILY_QUESTION_ASSIGNMENT_KEY,[]).find(item=>item.question_date===today);
+    if(existing) return existing;
+  }
+  const assignments=await getDailyQuestionAssignments();
+  const usedIds=new Set(assignments.map(item=>item.question_id).filter(Boolean));
+  const recentCategories=new Set(assignments.filter(item=>{
+    const diff=dayDiff(today,item.question_date); return diff>=0 && diff<=7;
+  }).map(item=>item.category).filter(Boolean));
+  const pool=introducedQuestionPool();
+  let candidates=pool.filter(item=>!usedIds.has(item.id) && !recentCategories.has(item.category));
+  if(!candidates.length) candidates=pool.filter(item=>!usedIds.has(item.id));
+  if(!candidates.length){
+    const recentIds=new Set(assignments.filter(item=>{
+      const diff=dayDiff(today,item.question_date); return diff>=0 && diff<=180;
+    }).map(item=>item.question_id));
+    candidates=pool.filter(item=>!recentIds.has(item.id) && !recentCategories.has(item.category));
+  }
+  if(!candidates.length) candidates=pool.filter(item=>!recentCategories.has(item.category));
+  if(!candidates.length) candidates=pool;
+  const chosen=deterministicQuestionPick(candidates,today) || dailyCoupleQuestionBank[0];
+  const assignment={question_date:today,question_id:chosen.id||`LEGACY-${today}`,question:chosen.question,category:chosen.category||'更了解彼此',month_key:chosen.introduced_month||monthKey()};
+  if(db){
+    const {data,error}=await db.from('daily_question_assignments').upsert({...assignment,space_id:CLOUD_SPACE_ID},{onConflict:'space_id,question_date'}).select().single();
+    if(!error && data) return {id:data.question_id,question:data.question,category:data.category,introduced_month:data.month_key};
+    console.warn('daily assignment save failed', error);
+  }else{
+    const local=loadJSON(DAILY_QUESTION_ASSIGNMENT_KEY,[]).filter(item=>item.question_date!==today);
+    local.push(assignment); saveJSON(DAILY_QUESTION_ASSIGNMENT_KEY,local.slice(-500));
+  }
+  return chosen;
 }
 async function getDailyCoupleAnswers(){
   if(db){
@@ -1664,18 +1728,18 @@ async function getDailyCoupleAnswers(){
   return loadJSON(DAILY_COUPLE_ANSWER_KEY, []).filter(a=>a.question_date===todayISO());
 }
 async function saveDailyCoupleAnswer(){
-  const q = getDailyCoupleQuestion();
+  const q = await getDailyCoupleQuestion();
   const author = $('#dailyCoupleAuthor')?.value || '蕭小舜';
   const self_answer = $('#dailyCoupleSelf')?.value.trim() || '';
   const guess_partner_answer = $('#dailyCoupleGuess')?.value.trim() || '';
   if(!self_answer || !guess_partner_answer){ toast('自己的答案和猜對方答案都要填唷'); return; }
   try {
     if(db){
-      await cloudInsert('daily_couple_answers', {question_date:todayISO(), question:q.question, category:q.category, author, self_answer, guess_partner_answer});
+      await cloudInsert('daily_couple_answers', {question_date:todayISO(), question_id:q.id||null, question:q.question, category:q.category, author, self_answer, guess_partner_answer});
     } else {
       const local = loadJSON(DAILY_COUPLE_ANSWER_KEY, []);
       const rest = local.filter(a=>!(a.question_date===todayISO() && a.author===author));
-      rest.push({id:Date.now(), question_date:todayISO(), question:q.question, category:q.category, author, self_answer, guess_partner_answer, created_at:new Date().toISOString()});
+      rest.push({id:Date.now(), question_date:todayISO(), question_id:q.id||null, question:q.question, category:q.category, author, self_answer, guess_partner_answer, created_at:new Date().toISOString()});
       saveJSON(DAILY_COUPLE_ANSWER_KEY, rest);
     }
     toast('每日必達問題已送出');
@@ -1757,7 +1821,7 @@ async function mergeDailyAnswersIntoQuestionPool(){
 async function renderDailyCoupleChallenge(){
   const el = $('#dailyCoupleCard');
   if(!el) return;
-  const q = getDailyCoupleQuestion();
+  const q = await getDailyCoupleQuestion();
   const answers = await getDailyCoupleAnswers();
   const shun = answers.find(a=>a.author==='蕭小舜');
   const wayne = answers.find(a=>a.author==='懷寶');
@@ -1778,6 +1842,38 @@ async function renderDailyCoupleChallenge(){
   if(btn) btn.onclick = saveDailyCoupleAnswer;
 }
 
+
+
+function lunarMonthDay(date){
+  try{
+    const parts=new Intl.DateTimeFormat('en-u-ca-chinese',{timeZone:'Asia/Taipei',month:'numeric',day:'numeric'}).formatToParts(date);
+    return {month:Number(parts.find(p=>p.type==='month')?.value),day:Number(parts.find(p=>p.type==='day')?.value)};
+  }catch(error){console.warn('Chinese calendar unavailable',error);return {month:null,day:null};}
+}
+function qixiDateForYear(year){
+  const start=new Date(year,6,1), end=new Date(year,9,15);
+  for(let date=new Date(start);date<=end;date.setDate(date.getDate()+1)){
+    const lunar=lunarMonthDay(date);
+    if(lunar.month===7 && lunar.day===7){
+      return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+    }
+  }
+  return null;
+}
+function specialEventOccurrences(fromDate=todayISO()){
+  const year=Number(fromDate.slice(0,4)); const rows=[];
+  for(const eventYear of [year,year+1]){
+    for(const event of (specialEvents||[])){
+      let date=null;
+      if(event.type==='fixed') date=`${eventYear}-${String(event.month).padStart(2,'0')}-${String(event.day).padStart(2,'0')}`;
+      else if(event.type==='lunar') date=qixiDateForYear(eventYear);
+      if(date) rows.push({...event,date,year:eventYear});
+    }
+  }
+  return rows.filter(event=>dayDiff(event.date,fromDate)>=0).sort((a,b)=>a.date.localeCompare(b.date));
+}
+function getNextSpecialEvent(){return specialEventOccurrences(todayISO())[0]||null;}
+function specialEventCountdownText(event){if(!event)return '尚無日期';const days=dayDiff(event.date,todayISO());return days===0?'就是今天！':`剩 ${days} 天`;}
 
 /* =========================================================
    V8.2.4 PERIOD + MEMORY OVERRIDES

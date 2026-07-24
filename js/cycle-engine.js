@@ -441,6 +441,8 @@ async function renderDashboard(){
     detail: pillState.detail
   };
 
+  const nextEvent = getNextSpecialEvent();
+
   const cards = [
     {
       icon:'❤️',
@@ -478,6 +480,13 @@ async function renderDashboard(){
       value:kapiRange ? `${fmt(kapiRange.start)}～${fmt(kapiRange.end)}` : '待紀錄',
       detail:kapiRange ? kapiStatusText(kapiRange) : '新增餵食紀錄後開始推算',
       tab:'kapi'
+    },
+    {
+      icon:nextEvent?.emoji || '📅',
+      title:'下一個重要日子',
+      value:nextEvent ? nextEvent.name : '尚無日期',
+      detail:nextEvent ? `${fmt(nextEvent.date)}・${specialEventCountdownText(nextEvent)}` : '等待設定',
+      tab:'home'
     },
     {
       icon:'📷',

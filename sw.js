@@ -14,11 +14,13 @@ firebase.initializeApp({
 // otherwise the browser and Service Worker will each display one copy.
 firebase.messaging();
 
-const CACHE_NAME = "our-memories-v10.3.1";
+const CACHE_NAME = "our-memories-v10.4.0";
 const CORE = [
   "./",
   "./index.html",
   "./manifest.json",
+  "./data/special_events.json?v=10.4.0",
+  "./data/daily_question_bank.json?v=10.4.0",
   "./css/style.css?v=10.0.0",
   "./js/app.js?v=10.0.0",
   "./js/push-notifications.js?v=10.0.0",

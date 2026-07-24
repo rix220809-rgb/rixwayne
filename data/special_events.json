@@ -1,0 +1,58 @@
+[
+  {
+    "id": "anniversary",
+    "name": "交往週年",
+    "type": "fixed",
+    "month": 1,
+    "day": 9,
+    "emoji": "❤️"
+  },
+  {
+    "id": "wayne-birthday",
+    "name": "懷寶生日",
+    "type": "fixed",
+    "month": 1,
+    "day": 21,
+    "emoji": "🎂"
+  },
+  {
+    "id": "valentine",
+    "name": "西洋情人節",
+    "type": "fixed",
+    "month": 2,
+    "day": 14,
+    "emoji": "💝"
+  },
+  {
+    "id": "white-day",
+    "name": "白色情人節",
+    "type": "fixed",
+    "month": 3,
+    "day": 14,
+    "emoji": "🤍"
+  },
+  {
+    "id": "qixi",
+    "name": "七夕情人節",
+    "type": "lunar",
+    "lunar_month": 7,
+    "lunar_day": 7,
+    "emoji": "🌌"
+  },
+  {
+    "id": "shun-birthday",
+    "name": "小舜生日",
+    "type": "fixed",
+    "month": 10,
+    "day": 11,
+    "emoji": "🎂"
+  },
+  {
+    "id": "christmas",
+    "name": "聖誕節",
+    "type": "fixed",
+    "month": 12,
+    "day": 25,
+    "emoji": "🎄"
+  }
+]

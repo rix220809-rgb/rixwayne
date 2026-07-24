@@ -1,0 +1,962 @@
+[
+  {
+    "id": "DQ-0001",
+    "question": "最近有哪一首歌讓你想到對方？為什麼？",
+    "category": "興趣與喜好",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "興趣與喜好"
+  },
+  {
+    "id": "DQ-0002",
+    "question": "如果要交換一個興趣一週，你最想體驗對方的哪個興趣？",
+    "category": "興趣與喜好",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "興趣與喜好"
+  },
+  {
+    "id": "DQ-0003",
+    "question": "最近哪個作品最想拉著對方一起看？",
+    "category": "興趣與喜好",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "興趣與喜好"
+  },
+  {
+    "id": "DQ-0004",
+    "question": "如果你們要一起學一個新技能，你會選什麼？",
+    "category": "興趣與喜好",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "興趣與喜好"
+  },
+  {
+    "id": "DQ-0005",
+    "question": "最近有哪件小東西讓你很想買給對方？",
+    "category": "興趣與喜好",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "興趣與喜好"
+  },
+  {
+    "id": "DQ-0006",
+    "question": "你最喜歡對方認真聊自己興趣時的哪個樣子？",
+    "category": "興趣與喜好",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "興趣與喜好"
+  },
+  {
+    "id": "DQ-0007",
+    "question": "如果今晚只能一起聽一張專輯，你會選哪張？",
+    "category": "興趣與喜好",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "興趣與喜好"
+  },
+  {
+    "id": "DQ-0008",
+    "question": "你覺得對方最近可能會迷上什麼新東西？",
+    "category": "興趣與喜好",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "興趣與喜好"
+  },
+  {
+    "id": "DQ-0009",
+    "question": "如果要為你們做一份共同歌單，第一首會放什麼？",
+    "category": "興趣與喜好",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "興趣與喜好"
+  },
+  {
+    "id": "DQ-0010",
+    "question": "哪一種展覽或活動最容易讓你想到對方？",
+    "category": "興趣與喜好",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "興趣與喜好"
+  },
+  {
+    "id": "DQ-0011",
+    "question": "你最想帶對方認識哪位自己喜歡的創作者？",
+    "category": "興趣與喜好",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "興趣與喜好"
+  },
+  {
+    "id": "DQ-0012",
+    "question": "如果你們一起開一間小店，會賣什麼？",
+    "category": "興趣與喜好",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "興趣與喜好"
+  },
+  {
+    "id": "DQ-0013",
+    "question": "最近哪個迷因或影片最想傳給對方？",
+    "category": "興趣與喜好",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "興趣與喜好"
+  },
+  {
+    "id": "DQ-0014",
+    "question": "你覺得對方的審美最迷人的地方是什麼？",
+    "category": "興趣與喜好",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "興趣與喜好"
+  },
+  {
+    "id": "DQ-0015",
+    "question": "如果要替彼此挑一件代表性的收藏，你會選什麼？",
+    "category": "興趣與喜好",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "興趣與喜好"
+  },
+  {
+    "id": "DQ-0016",
+    "question": "你覺得對方一天中最可愛的時刻通常是什麼時候？",
+    "category": "生活習慣",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "生活習慣"
+  },
+  {
+    "id": "DQ-0017",
+    "question": "如果一起住，哪一件家事你最願意固定負責？",
+    "category": "生活習慣",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "生活習慣"
+  },
+  {
+    "id": "DQ-0018",
+    "question": "你希望兩個人每週保留哪一個固定小儀式？",
+    "category": "生活習慣",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "生活習慣"
+  },
+  {
+    "id": "DQ-0019",
+    "question": "對方哪個小習慣雖然奇怪但你已經習慣了？",
+    "category": "生活習慣",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "生活習慣"
+  },
+  {
+    "id": "DQ-0020",
+    "question": "你最希望對方在忙碌時仍記得做哪件小事？",
+    "category": "生活習慣",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "生活習慣"
+  },
+  {
+    "id": "DQ-0021",
+    "question": "如果今天一起整理房間，你會先從哪裡開始？",
+    "category": "生活習慣",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "生活習慣"
+  },
+  {
+    "id": "DQ-0022",
+    "question": "你覺得你們最適合的假日作息是什麼？",
+    "category": "生活習慣",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "生活習慣"
+  },
+  {
+    "id": "DQ-0023",
+    "question": "哪一個生活用品最能代表對方？",
+    "category": "生活習慣",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "生活習慣"
+  },
+  {
+    "id": "DQ-0024",
+    "question": "你希望未來的家裡一定要有什麼角落？",
+    "category": "生活習慣",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "生活習慣"
+  },
+  {
+    "id": "DQ-0025",
+    "question": "對方做哪件普通小事時最有生活感？",
+    "category": "生活習慣",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "生活習慣"
+  },
+  {
+    "id": "DQ-0026",
+    "question": "如果只能保留一個共同生活習慣，你會留哪個？",
+    "category": "生活習慣",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "生活習慣"
+  },
+  {
+    "id": "DQ-0027",
+    "question": "你覺得兩個人最容易因為哪件日常小事有摩擦？",
+    "category": "生活習慣",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "生活習慣"
+  },
+  {
+    "id": "DQ-0028",
+    "question": "如果今天交換手機桌布，你會替對方選什麼？",
+    "category": "生活習慣",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "生活習慣"
+  },
+  {
+    "id": "DQ-0029",
+    "question": "你希望對方怎麼提醒你休息才不會覺得煩？",
+    "category": "生活習慣",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "生活習慣"
+  },
+  {
+    "id": "DQ-0030",
+    "question": "你最喜歡兩個人一起吃飯時的哪個小細節？",
+    "category": "生活習慣",
+    "introduced_month": "2026-07",
+    "active": true,
+    "similarity_group": "生活習慣"
+  },
+  {
+    "id": "DQ-0031",
+    "question": "你心情不好時，對方做什麼最能讓你安心？",
+    "category": "感情與照顧",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "感情與照顧"
+  },
+  {
+    "id": "DQ-0032",
+    "question": "最近一次感覺被對方接住是什麼時候？",
+    "category": "感情與照顧",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "感情與照顧"
+  },
+  {
+    "id": "DQ-0033",
+    "question": "你最希望對方更常說哪一句話？",
+    "category": "感情與照顧",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "感情與照顧"
+  },
+  {
+    "id": "DQ-0034",
+    "question": "如果對方今天很累，你會怎麼照顧他／她？",
+    "category": "感情與照顧",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "感情與照顧"
+  },
+  {
+    "id": "DQ-0035",
+    "question": "你覺得對方什麼時候最需要抱抱？",
+    "category": "感情與照顧",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "感情與照顧"
+  },
+  {
+    "id": "DQ-0036",
+    "question": "吵架後，哪一個動作最能代表願意和好？",
+    "category": "感情與照顧",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "感情與照顧"
+  },
+  {
+    "id": "DQ-0037",
+    "question": "你最感謝對方曾經替你做過的哪件小事？",
+    "category": "感情與照顧",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "感情與照顧"
+  },
+  {
+    "id": "DQ-0038",
+    "question": "你希望自己能用什麼方式讓對方更有安全感？",
+    "category": "感情與照顧",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "感情與照顧"
+  },
+  {
+    "id": "DQ-0039",
+    "question": "哪一種稱讚最能讓你真的感受到被愛？",
+    "category": "感情與照顧",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "感情與照顧"
+  },
+  {
+    "id": "DQ-0040",
+    "question": "你覺得對方被誤解時最需要你怎麼做？",
+    "category": "感情與照顧",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "感情與照顧"
+  },
+  {
+    "id": "DQ-0041",
+    "question": "如果只能送對方一張「今天可以放心」卡，你會寫什麼？",
+    "category": "感情與照顧",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "感情與照顧"
+  },
+  {
+    "id": "DQ-0042",
+    "question": "你最希望兩個人在低潮時遵守哪一條約定？",
+    "category": "感情與照顧",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "感情與照顧"
+  },
+  {
+    "id": "DQ-0043",
+    "question": "最近哪個瞬間讓你覺得你們是一隊的？",
+    "category": "感情與照顧",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "感情與照顧"
+  },
+  {
+    "id": "DQ-0044",
+    "question": "當對方想哭時，你覺得陪伴和解決問題哪個更重要？",
+    "category": "感情與照顧",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "感情與照顧"
+  },
+  {
+    "id": "DQ-0045",
+    "question": "你希望對方如何分辨你是真的生氣還是只是累了？",
+    "category": "感情與照顧",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "感情與照顧"
+  },
+  {
+    "id": "DQ-0046",
+    "question": "你覺得一段關係裡最重要的承諾是什麼？",
+    "category": "價值觀",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "價值觀"
+  },
+  {
+    "id": "DQ-0047",
+    "question": "遇到重大選擇時，你最希望兩個人先討論哪件事？",
+    "category": "價值觀",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "價值觀"
+  },
+  {
+    "id": "DQ-0048",
+    "question": "你覺得「公平」和「互相體諒」哪個更重要？為什麼？",
+    "category": "價值觀",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "價值觀"
+  },
+  {
+    "id": "DQ-0049",
+    "question": "如果彼此想法不同，你希望最後怎麼做決定？",
+    "category": "價值觀",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "價值觀"
+  },
+  {
+    "id": "DQ-0050",
+    "question": "你最不能接受關係裡出現哪種冷處理？",
+    "category": "價值觀",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "價值觀"
+  },
+  {
+    "id": "DQ-0051",
+    "question": "你覺得真正的道歉應該包含哪些部分？",
+    "category": "價值觀",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "價值觀"
+  },
+  {
+    "id": "DQ-0052",
+    "question": "金錢、時間、陪伴之中，你覺得目前最需要平衡哪一項？",
+    "category": "價值觀",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "價值觀"
+  },
+  {
+    "id": "DQ-0053",
+    "question": "你希望彼此保有多少獨處和個人空間？",
+    "category": "價值觀",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "價值觀"
+  },
+  {
+    "id": "DQ-0054",
+    "question": "你覺得兩個人可以有秘密嗎？界線在哪裡？",
+    "category": "價值觀",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "價值觀"
+  },
+  {
+    "id": "DQ-0055",
+    "question": "如果未來工作很忙，你希望如何維持關係品質？",
+    "category": "價值觀",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "價值觀"
+  },
+  {
+    "id": "DQ-0056",
+    "question": "你覺得「被理解」和「被記得」最大的差別是什麼？",
+    "category": "價值觀",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "價值觀"
+  },
+  {
+    "id": "DQ-0057",
+    "question": "你希望兩個人遇到壓力時先報備還是整理好再說？",
+    "category": "價值觀",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "價值觀"
+  },
+  {
+    "id": "DQ-0058",
+    "question": "對你來說，什麼行為最能代表尊重？",
+    "category": "價值觀",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "價值觀"
+  },
+  {
+    "id": "DQ-0059",
+    "question": "你覺得伴侶之間哪件事不能只靠默契猜？",
+    "category": "價值觀",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "價值觀"
+  },
+  {
+    "id": "DQ-0060",
+    "question": "如果一件事讓其中一人不舒服，另一人應該怎麼處理？",
+    "category": "價值觀",
+    "introduced_month": "2026-08",
+    "active": true,
+    "similarity_group": "價值觀"
+  },
+  {
+    "id": "DQ-0061",
+    "question": "今年剩下的時間最想一起完成哪一件事？",
+    "category": "未來規劃",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "未來規劃"
+  },
+  {
+    "id": "DQ-0062",
+    "question": "如果明年能一起住一個月，你會選哪座城市？",
+    "category": "未來規劃",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "未來規劃"
+  },
+  {
+    "id": "DQ-0063",
+    "question": "你希望五年後你們的普通一天長什麼樣子？",
+    "category": "未來規劃",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "未來規劃"
+  },
+  {
+    "id": "DQ-0064",
+    "question": "如果一起存一筆共同基金，最想拿來做什麼？",
+    "category": "未來規劃",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "未來規劃"
+  },
+  {
+    "id": "DQ-0065",
+    "question": "未來最想一起養成哪個健康習慣？",
+    "category": "未來規劃",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "未來規劃"
+  },
+  {
+    "id": "DQ-0066",
+    "question": "如果要為下一次旅行設定一個主題，會是什麼？",
+    "category": "未來規劃",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "未來規劃"
+  },
+  {
+    "id": "DQ-0067",
+    "question": "你希望未來每年固定慶祝哪一個只屬於你們的日子？",
+    "category": "未來規劃",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "未來規劃"
+  },
+  {
+    "id": "DQ-0068",
+    "question": "如果一起搬家，你最重視地點、空間還是生活機能？",
+    "category": "未來規劃",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "未來規劃"
+  },
+  {
+    "id": "DQ-0069",
+    "question": "你最期待和對方一起經歷哪個人生階段？",
+    "category": "未來規劃",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "未來規劃"
+  },
+  {
+    "id": "DQ-0070",
+    "question": "如果能提前看見一年後的一張照片，你希望畫面是什麼？",
+    "category": "未來規劃",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "未來規劃"
+  },
+  {
+    "id": "DQ-0071",
+    "question": "你希望未來彼此在工作上扮演什麼角色？",
+    "category": "未來規劃",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "未來規劃"
+  },
+  {
+    "id": "DQ-0072",
+    "question": "如果要一起完成一個長期作品，你想做什麼？",
+    "category": "未來規劃",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "未來規劃"
+  },
+  {
+    "id": "DQ-0073",
+    "question": "你最希望下一次週年時你們比現在多做到哪件事？",
+    "category": "未來規劃",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "未來規劃"
+  },
+  {
+    "id": "DQ-0074",
+    "question": "如果出國生活，哪一件事最需要先講清楚？",
+    "category": "未來規劃",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "未來規劃"
+  },
+  {
+    "id": "DQ-0075",
+    "question": "你希望未來的家裡如何保留彼此的個性？",
+    "category": "未來規劃",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "未來規劃"
+  },
+  {
+    "id": "DQ-0076",
+    "question": "下一次約會你最想要熱鬧還是安靜？",
+    "category": "約會與旅行",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "約會與旅行"
+  },
+  {
+    "id": "DQ-0077",
+    "question": "如果只能用一千元安排一天約會，你會怎麼安排？",
+    "category": "約會與旅行",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "約會與旅行"
+  },
+  {
+    "id": "DQ-0078",
+    "question": "哪一個曾去過的地方最想再和對方去一次？",
+    "category": "約會與旅行",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "約會與旅行"
+  },
+  {
+    "id": "DQ-0079",
+    "question": "如果今天立刻出發兩天一夜，你會帶對方去哪裡？",
+    "category": "約會與旅行",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "約會與旅行"
+  },
+  {
+    "id": "DQ-0080",
+    "question": "你最喜歡一起旅行時對方的哪個樣子？",
+    "category": "約會與旅行",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "約會與旅行"
+  },
+  {
+    "id": "DQ-0081",
+    "question": "下一次約會最想吃新餐廳還是回訪愛店？",
+    "category": "約會與旅行",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "約會與旅行"
+  },
+  {
+    "id": "DQ-0082",
+    "question": "如果安排一場不拍照的約會，你想做什麼？",
+    "category": "約會與旅行",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "約會與旅行"
+  },
+  {
+    "id": "DQ-0083",
+    "question": "哪種交通方式最適合你們的小旅行？",
+    "category": "約會與旅行",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "約會與旅行"
+  },
+  {
+    "id": "DQ-0084",
+    "question": "你希望下一次旅行裡留一段什麼樣的空白時間？",
+    "category": "約會與旅行",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "約會與旅行"
+  },
+  {
+    "id": "DQ-0085",
+    "question": "如果只能選海邊、山上、城市或溫泉，你會選哪個？",
+    "category": "約會與旅行",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "約會與旅行"
+  },
+  {
+    "id": "DQ-0086",
+    "question": "你最想和對方一起看哪一種季節景色？",
+    "category": "約會與旅行",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "約會與旅行"
+  },
+  {
+    "id": "DQ-0087",
+    "question": "如果約會中突然下大雨，你希望怎麼繼續？",
+    "category": "約會與旅行",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "約會與旅行"
+  },
+  {
+    "id": "DQ-0088",
+    "question": "哪一餐最適合成為你們下一次重要日子的慶祝？",
+    "category": "約會與旅行",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "約會與旅行"
+  },
+  {
+    "id": "DQ-0089",
+    "question": "你最想一起住哪種特別住宿？",
+    "category": "約會與旅行",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "約會與旅行"
+  },
+  {
+    "id": "DQ-0090",
+    "question": "如果要重現第一次約會，你會保留什麼、改變什麼？",
+    "category": "約會與旅行",
+    "introduced_month": "2026-09",
+    "active": true,
+    "similarity_group": "約會與旅行"
+  },
+  {
+    "id": "DQ-0091",
+    "question": "你小時候最喜歡的玩具或收藏是什麼？",
+    "category": "回憶與童年",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "回憶與童年"
+  },
+  {
+    "id": "DQ-0092",
+    "question": "你最想帶對方回去看哪個成長地點？",
+    "category": "回憶與童年",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "回憶與童年"
+  },
+  {
+    "id": "DQ-0093",
+    "question": "哪一個童年味道會讓你立刻安心？",
+    "category": "回憶與童年",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "回憶與童年"
+  },
+  {
+    "id": "DQ-0094",
+    "question": "小時候的你最希望現在的伴侶知道什麼？",
+    "category": "回憶與童年",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "回憶與童年"
+  },
+  {
+    "id": "DQ-0095",
+    "question": "你學生時期最常聽哪一類音樂？",
+    "category": "回憶與童年",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "回憶與童年"
+  },
+  {
+    "id": "DQ-0096",
+    "question": "哪一件童年糗事最想講給對方聽？",
+    "category": "回憶與童年",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "回憶與童年"
+  },
+  {
+    "id": "DQ-0097",
+    "question": "你小時候最期待哪一個節日？",
+    "category": "回憶與童年",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "回憶與童年"
+  },
+  {
+    "id": "DQ-0098",
+    "question": "如果能讓對方看見你人生中的一天，你會選哪一天？",
+    "category": "回憶與童年",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "回憶與童年"
+  },
+  {
+    "id": "DQ-0099",
+    "question": "你最早記得的生日畫面是什麼？",
+    "category": "回憶與童年",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "回憶與童年"
+  },
+  {
+    "id": "DQ-0100",
+    "question": "你小時候遇到難過時通常怎麼辦？",
+    "category": "回憶與童年",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "回憶與童年"
+  },
+  {
+    "id": "DQ-0101",
+    "question": "哪一位家人對你的個性影響最大？",
+    "category": "回憶與童年",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "回憶與童年"
+  },
+  {
+    "id": "DQ-0102",
+    "question": "你以前最想成為什麼樣的大人？",
+    "category": "回憶與童年",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "回憶與童年"
+  },
+  {
+    "id": "DQ-0103",
+    "question": "有哪個老地方雖然普通但對你很重要？",
+    "category": "回憶與童年",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "回憶與童年"
+  },
+  {
+    "id": "DQ-0104",
+    "question": "哪首歌最像你的青春期？",
+    "category": "回憶與童年",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "回憶與童年"
+  },
+  {
+    "id": "DQ-0105",
+    "question": "如果要交換一本成長日記，你最想看對方哪個年紀？",
+    "category": "回憶與童年",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "回憶與童年"
+  },
+  {
+    "id": "DQ-0106",
+    "question": "如果對方變成一種甜點，會是什麼？",
+    "category": "輕鬆怪問題",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "輕鬆怪問題"
+  },
+  {
+    "id": "DQ-0107",
+    "question": "如果你們是動畫角色，誰比較像主角、誰像吐槽役？",
+    "category": "輕鬆怪問題",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "輕鬆怪問題"
+  },
+  {
+    "id": "DQ-0108",
+    "question": "如果卡皮可以說一句話，你猜牠第一句會說什麼？",
+    "category": "輕鬆怪問題",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "輕鬆怪問題"
+  },
+  {
+    "id": "DQ-0109",
+    "question": "如果對方是一種天氣，今天會是什麼？",
+    "category": "輕鬆怪問題",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "輕鬆怪問題"
+  },
+  {
+    "id": "DQ-0110",
+    "question": "如果只能用三個表情符號形容對方，你會選哪些？",
+    "category": "輕鬆怪問題",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "輕鬆怪問題"
+  },
+  {
+    "id": "DQ-0111",
+    "question": "如果你們交換身體一天，第一件事會做什麼？",
+    "category": "輕鬆怪問題",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "輕鬆怪問題"
+  },
+  {
+    "id": "DQ-0112",
+    "question": "如果要替對方設計一個遊戲技能，會是什麼？",
+    "category": "輕鬆怪問題",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "輕鬆怪問題"
+  },
+  {
+    "id": "DQ-0113",
+    "question": "如果兩個人一起參加實境節目，最可能是哪一種？",
+    "category": "輕鬆怪問題",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "輕鬆怪問題"
+  },
+  {
+    "id": "DQ-0114",
+    "question": "如果對方是一張黑膠，封面會長什麼樣子？",
+    "category": "輕鬆怪問題",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "輕鬆怪問題"
+  },
+  {
+    "id": "DQ-0115",
+    "question": "如果今天是世界末日，晚餐要吃什麼？",
+    "category": "輕鬆怪問題",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "輕鬆怪問題"
+  },
+  {
+    "id": "DQ-0116",
+    "question": "如果可以把一個吵架瞬間改成喜劇，你會改哪段？",
+    "category": "輕鬆怪問題",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "輕鬆怪問題"
+  },
+  {
+    "id": "DQ-0117",
+    "question": "如果你們共同養一隻幻想生物，會叫什麼名字？",
+    "category": "輕鬆怪問題",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "輕鬆怪問題"
+  },
+  {
+    "id": "DQ-0118",
+    "question": "如果對方突然中一千萬，你猜第一筆會花在哪裡？",
+    "category": "輕鬆怪問題",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "輕鬆怪問題"
+  },
+  {
+    "id": "DQ-0119",
+    "question": "如果把你們的關係拍成電影，片名會是什麼？",
+    "category": "輕鬆怪問題",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "輕鬆怪問題"
+  },
+  {
+    "id": "DQ-0120",
+    "question": "如果今天只能用歌詞溝通，你會先傳哪一句？",
+    "category": "輕鬆怪問題",
+    "introduced_month": "2026-10",
+    "active": true,
+    "similarity_group": "輕鬆怪問題"
+  }
+]

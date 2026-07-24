@@ -5,7 +5,7 @@ const SPACE_ID = "shun-wayne-kapi-period";
 const SITE_URL = "https://rix220809-rgb.github.io/rixwayne/";
 const OWNERS = ["蕭小舜", "懷寶"];
 const TIME_ZONE = "Asia/Taipei";
-type Mode = "period" | "daily_question" | "pill" | "special_event";
+type Mode = "period" | "daily_question" | "pill";
 type CycleRow = { id?: string; start_date: string; end_date: string | null };
 
 function response(data: unknown, status = 200) {
@@ -73,53 +73,6 @@ async function loadCycles(supabase: ReturnType<typeof createClient>) {
   return { rows: (fallback.data || []) as CycleRow[], source: "period_records" };
 }
 
-
-function lunarMonthDay(date: Date) {
-  const parts = new Intl.DateTimeFormat("en-u-ca-chinese", {
-    timeZone: TIME_ZONE,
-    month: "numeric",
-    day: "numeric",
-  }).formatToParts(date);
-  return {
-    month: Number(parts.find((part) => part.type === "month")?.value),
-    day: Number(parts.find((part) => part.type === "day")?.value),
-  };
-}
-
-function qixiDateForYear(year: number) {
-  const start = new Date(`${year}-07-01T00:00:00+08:00`);
-  const end = new Date(`${year}-10-15T00:00:00+08:00`);
-  for (let date = new Date(start); date.getTime() <= end.getTime(); date.setUTCDate(date.getUTCDate() + 1)) {
-    const lunar = lunarMonthDay(date);
-    if (lunar.month === 7 && lunar.day === 7) return taipeiDate(date);
-  }
-  return null;
-}
-
-function specialEventOccurrences(today: string) {
-  const year = Number(today.slice(0, 4));
-  const fixed = [
-    { id: "anniversary", name: "交往週年", month: 1, day: 9, emoji: "❤️" },
-    { id: "wayne-birthday", name: "懷寶生日", month: 1, day: 21, emoji: "🎂" },
-    { id: "valentine", name: "西洋情人節", month: 2, day: 14, emoji: "💝" },
-    { id: "white-day", name: "白色情人節", month: 3, day: 14, emoji: "🤍" },
-    { id: "shun-birthday", name: "小舜生日", month: 10, day: 11, emoji: "🎂" },
-    { id: "christmas", name: "聖誕節", month: 12, day: 25, emoji: "🎄" },
-  ];
-  const rows: Array<{ id: string; name: string; date: string; emoji: string }> = [];
-  for (const eventYear of [year, year + 1]) {
-    for (const event of fixed) {
-      rows.push({
-        ...event,
-        date: `${eventYear}-${String(event.month).padStart(2, "0")}-${String(event.day).padStart(2, "0")}`,
-      });
-    }
-    const qixi = qixiDateForYear(eventYear);
-    if (qixi) rows.push({ id: "qixi", name: "七夕情人節", date: qixi, emoji: "🌌" });
-  }
-  return rows.filter((event) => dayDiff(event.date, today) >= 0).sort((a, b) => a.date.localeCompare(b.date));
-}
-
 Deno.serve(async (req) => {
   try {
     if (req.method !== "POST") return response({ error: "Method not allowed" }, 405);
@@ -132,8 +85,8 @@ Deno.serve(async (req) => {
     const payload = await req.json().catch(() => ({}));
     const mode = payload.mode as Mode;
     const force = payload.force === true;
-    if (!["period", "daily_question", "pill", "special_event"].includes(mode)) {
-      return response({ error: "mode 必須是 period、daily_question、pill 或 special_event" }, 400);
+    if (!["period", "daily_question", "pill"].includes(mode)) {
+      return response({ error: "mode 必須是 period、daily_question 或 pill" }, 400);
     }
 
     const supabaseUrl = Deno.env.get("SUPABASE_URL");
@@ -237,30 +190,6 @@ Deno.serve(async (req) => {
               : `今天是本輪避孕藥提醒第 ${pillDay} 天，記得依醫師與藥袋指示服藥。`,
             target: "period"
           });
-        }
-      }
-    }
-
-
-    if (mode === "special_event") {
-      const nextEvent = specialEventOccurrences(today)[0] || null;
-      const reminderDays = new Set([30, 21, 14, 7, 3, 1, 0]);
-      if (nextEvent) {
-        const daysAway = dayDiff(nextEvent.date, today);
-        if (force || reminderDays.has(daysAway)) {
-          for (const owner of OWNERS) {
-            notices.push({
-              owner,
-              type: `special_event_${nextEvent.id}_${nextEvent.date}_${daysAway}`,
-              title: daysAway === 0
-                ? `${nextEvent.emoji} 今天是${nextEvent.name}！`
-                : `${nextEvent.emoji} ${nextEvent.name}倒數 ${daysAway} 天`,
-              body: daysAway === 0
-                ? "今天是值得好好記住與慶祝的日子。"
-                : `距離 ${nextEvent.name} 還有 ${daysAway} 天，可以開始準備驚喜與行程了。`,
-              target: "home",
-            });
-          }
         }
       }
     }
