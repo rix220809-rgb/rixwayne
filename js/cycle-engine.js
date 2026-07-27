@@ -494,9 +494,9 @@ async function renderDashboard(){
       title:'交往里程碑',
       value:milestoneState.isMilestone
         ? `今天第 ${milestoneState.currentDay} 天！`
-        : `第 ${milestoneState.currentDay} 天`,
+        : `今天第 ${milestoneState.currentDay} 天`,
       detail:milestoneState.isMilestone
-        ? `下一站：第 ${milestoneState.currentDay + 100} 天`
+        ? `達成第 ${milestoneState.currentDay} 天里程碑・下一站第 ${milestoneState.nextMilestone} 天`
         : `第 ${milestoneState.nextMilestone} 天倒數 ${milestoneState.daysRemaining} 天`,
       tab:'home'
     },
