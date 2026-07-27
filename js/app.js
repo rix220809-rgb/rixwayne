@@ -1,4 +1,4 @@
-const APP_VERSION = '10.4.0';
+const APP_VERSION = '10.4.1';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';
@@ -269,11 +269,11 @@ function saveJSON(key, val){ localStorage.setItem(key, JSON.stringify(val)); }
 function cleanupOldServiceWorkers(){
   if (window.caches) {
     caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k.includes('our-memories') && k !== 'our-memories-v10.4.0').map(k => caches.delete(k))))
+      .then(keys => Promise.all(keys.filter(k => k.includes('our-memories') && k !== 'our-memories-v10.4.1').map(k => caches.delete(k))))
       .catch(()=>{});
   }
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js?v=10.4.0').catch(err=>console.warn('SW register failed', err));
+    navigator.serviceWorker.register('./sw.js?v=10.4.1').catch(err=>console.warn('SW register failed', err));
   }
 }
 
@@ -1843,6 +1843,28 @@ async function renderDailyCoupleChallenge(){
 }
 
 
+
+
+const RELATIONSHIP_START_DATE = '2026-01-09';
+
+function relationshipDayNumber(date=todayISO()){
+  return dayDiff(date, RELATIONSHIP_START_DATE) + 1;
+}
+
+function nextRelationshipMilestone(date=todayISO()){
+  const currentDay = Math.max(1, relationshipDayNumber(date));
+  const next = Math.ceil(currentDay / 100) * 100;
+  return {
+    currentDay,
+    nextMilestone: next,
+    daysRemaining: Math.max(0, next - currentDay)
+  };
+}
+
+function isRelationshipMilestone(date=todayISO()){
+  const day = relationshipDayNumber(date);
+  return day > 0 && day % 100 === 0;
+}
 
 function lunarMonthDay(date){
   try{

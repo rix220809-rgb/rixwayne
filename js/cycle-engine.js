@@ -442,6 +442,7 @@ async function renderDashboard(){
   };
 
   const nextEvent = getNextSpecialEvent();
+  const relationshipMilestone = nextRelationshipMilestone();
 
   const cards = [
     {
@@ -486,6 +487,15 @@ async function renderDashboard(){
       title:'下一個重要日子',
       value:nextEvent ? nextEvent.name : '尚無日期',
       detail:nextEvent ? `${fmt(nextEvent.date)}・${specialEventCountdownText(nextEvent)}` : '等待設定',
+      tab:'home'
+    },
+    {
+      icon:'❤️',
+      title:'在一起里程碑',
+      value:`第 ${relationshipMilestone.currentDay} 天`,
+      detail:relationshipMilestone.daysRemaining === 0
+        ? `今天是第 ${relationshipMilestone.nextMilestone} 天！`
+        : `下一個：${relationshipMilestone.nextMilestone} 天（剩 ${relationshipMilestone.daysRemaining} 天）`,
       tab:'home'
     },
     {
