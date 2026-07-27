@@ -5,7 +5,7 @@ const SPACE_ID = "shun-wayne-kapi-period";
 const SITE_URL = "https://rix220809-rgb.github.io/rixwayne/";
 const OWNERS = ["蕭小舜", "懷寶"];
 const TIME_ZONE = "Asia/Taipei";
-type Mode = "period" | "daily_question" | "pill" | "special_event";
+type Mode = "period" | "daily_question" | "pill" | "special_event" | "milestone";
 type CycleRow = { id?: string; start_date: string; end_date: string | null };
 
 function response(data: unknown, status = 200) {
@@ -74,6 +74,43 @@ async function loadCycles(supabase: ReturnType<typeof createClient>) {
 }
 
 
+
+const RELATIONSHIP_START_DATE = "2026-01-09";
+
+function relationshipDayNumber(date: string) {
+  return dayDiff(date, RELATIONSHIP_START_DATE) + 1;
+}
+
+function addMilestoneNotices(
+  notices: Array<{owner:string;type:string;title:string;body:string;target:string}>,
+  today: string,
+  force: boolean,
+) {
+  const currentDay = relationshipDayNumber(today);
+  if (currentDay <= 0) return;
+
+  const isMilestone = currentDay % 100 === 0;
+  if (!isMilestone && !force) return;
+
+  const displayedDay = isMilestone
+    ? currentDay
+    : Math.ceil(currentDay / 100) * 100;
+
+  for (const owner of OWNERS) {
+    notices.push({
+      owner,
+      type: `relationship_milestone_${displayedDay}`,
+      title: isMilestone
+        ? `❤️ 今天是在一起第 ${currentDay} 天！`
+        : `🧪 里程碑測試｜下一站第 ${displayedDay} 天`,
+      body: isMilestone
+        ? `從 2026/1/9 開始，你們已經一起走過 ${currentDay} 天了。`
+        : `目前是在一起第 ${currentDay} 天，距離第 ${displayedDay} 天還有 ${displayedDay-currentDay} 天。`,
+      target: "home",
+    });
+  }
+}
+
 function lunarMonthDay(date: Date) {
   const parts = new Intl.DateTimeFormat("en-u-ca-chinese", {
     timeZone: TIME_ZONE,
@@ -132,8 +169,8 @@ Deno.serve(async (req) => {
     const payload = await req.json().catch(() => ({}));
     const mode = payload.mode as Mode;
     const force = payload.force === true;
-    if (!["period", "daily_question", "pill", "special_event"].includes(mode)) {
-      return response({ error: "mode 必須是 period、daily_question、pill 或 special_event" }, 400);
+    if (!["period", "daily_question", "pill", "special_event", "milestone"].includes(mode)) {
+      return response({ error: "mode 必須是 period、daily_question、pill、special_event 或 milestone" }, 400);
     }
 
     const supabaseUrl = Deno.env.get("SUPABASE_URL");
@@ -243,26 +280,37 @@ Deno.serve(async (req) => {
 
 
     if (mode === "special_event") {
-      const nextEvent = specialEventOccurrences(today)[0] || null;
       const reminderDays = new Set([30, 21, 14, 7, 3, 1, 0]);
-      if (nextEvent) {
-        const daysAway = dayDiff(nextEvent.date, today);
-        if (force || reminderDays.has(daysAway)) {
-          for (const owner of OWNERS) {
-            notices.push({
-              owner,
-              type: `special_event_${nextEvent.id}_${nextEvent.date}_${daysAway}`,
-              title: daysAway === 0
-                ? `${nextEvent.emoji} 今天是${nextEvent.name}！`
-                : `${nextEvent.emoji} ${nextEvent.name}倒數 ${daysAway} 天`,
-              body: daysAway === 0
-                ? "今天是值得好好記住與慶祝的日子。"
-                : `距離 ${nextEvent.name} 還有 ${daysAway} 天，可以開始準備驚喜與行程了。`,
-              target: "home",
-            });
-          }
+      const upcomingEvents = specialEventOccurrences(today);
+
+      for (const event of upcomingEvents) {
+        const daysAway = dayDiff(event.date, today);
+        if (!force && !reminderDays.has(daysAway)) continue;
+
+        for (const owner of OWNERS) {
+          notices.push({
+            owner,
+            type: `special_event_${event.id}_${event.date}_${daysAway}`,
+            title: daysAway === 0
+              ? `${event.emoji} 今天是${event.name}！`
+              : `${event.emoji} ${event.name}倒數 ${daysAway} 天`,
+            body: daysAway === 0
+              ? "今天是值得好好記住與慶祝的日子。"
+              : `距離 ${event.name} 還有 ${daysAway} 天，可以開始準備驚喜與行程了。`,
+            target: "home",
+          });
         }
+
+        // 正常排程最多只會命中少量日期；force 測試時避免一次送出所有未來節日。
+        if (force) break;
       }
+
+      // 里程碑與重要節日共用原本的 special_event Cron，不需新增排程。
+      addMilestoneNotices(notices, today, force);
+    }
+
+    if (mode === "milestone") {
+      addMilestoneNotices(notices, today, force);
     }
 
     if (mode === "daily_question") {

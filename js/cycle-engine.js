@@ -442,7 +442,7 @@ async function renderDashboard(){
   };
 
   const nextEvent = getNextSpecialEvent();
-  const relationshipMilestone = nextRelationshipMilestone();
+  const milestoneState = relationshipMilestoneState();
 
   const cards = [
     {
@@ -490,12 +490,14 @@ async function renderDashboard(){
       tab:'home'
     },
     {
-      icon:'❤️',
-      title:'在一起里程碑',
-      value:`第 ${relationshipMilestone.currentDay} 天`,
-      detail:relationshipMilestone.daysRemaining === 0
-        ? `今天是第 ${relationshipMilestone.nextMilestone} 天！`
-        : `下一個：${relationshipMilestone.nextMilestone} 天（剩 ${relationshipMilestone.daysRemaining} 天）`,
+      icon:'💞',
+      title:'交往里程碑',
+      value:milestoneState.isMilestone
+        ? `今天第 ${milestoneState.currentDay} 天！`
+        : `第 ${milestoneState.currentDay} 天`,
+      detail:milestoneState.isMilestone
+        ? `下一站：第 ${milestoneState.currentDay + 100} 天`
+        : `第 ${milestoneState.nextMilestone} 天倒數 ${milestoneState.daysRemaining} 天`,
       tab:'home'
     },
     {

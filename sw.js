@@ -21,9 +21,10 @@ const CORE = [
   "./manifest.json",
   "./data/special_events.json?v=10.4.1",
   "./data/daily_question_bank.json?v=10.4.1",
-  "./css/style.css?v=10.0.0",
-  "./js/app.js?v=10.0.0",
-  "./js/push-notifications.js?v=10.0.0",
+  "./css/style.css?v=10.4.1",
+  "./js/app.js?v=10.4.1",
+  "./js/cycle-engine.js?v=10.4.1",
+  "./js/push-notifications.js?v=10.4.1",
   "./icon-192.png",
   "./icon-512.png"
 ];

@@ -1845,25 +1845,23 @@ async function renderDailyCoupleChallenge(){
 
 
 
-const RELATIONSHIP_START_DATE = '2026-01-09';
-
 function relationshipDayNumber(date=todayISO()){
-  return dayDiff(date, RELATIONSHIP_START_DATE) + 1;
+  return Math.max(0, dayDiff(date, START_DATE) + 1);
 }
 
-function nextRelationshipMilestone(date=todayISO()){
-  const currentDay = Math.max(1, relationshipDayNumber(date));
-  const next = Math.ceil(currentDay / 100) * 100;
+function relationshipMilestoneState(date=todayISO()){
+  const currentDay = relationshipDayNumber(date);
+  if(currentDay <= 0){
+    return {currentDay:0, nextMilestone:100, daysRemaining:100, isMilestone:false};
+  }
+  const isMilestone = currentDay % 100 === 0;
+  const nextMilestone = isMilestone ? currentDay : Math.ceil(currentDay / 100) * 100;
   return {
     currentDay,
-    nextMilestone: next,
-    daysRemaining: Math.max(0, next - currentDay)
+    nextMilestone,
+    daysRemaining: Math.max(0, nextMilestone - currentDay),
+    isMilestone
   };
-}
-
-function isRelationshipMilestone(date=todayISO()){
-  const day = relationshipDayNumber(date);
-  return day > 0 && day % 100 === 0;
 }
 
 function lunarMonthDay(date){

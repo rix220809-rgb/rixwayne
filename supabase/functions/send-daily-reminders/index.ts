@@ -81,22 +81,34 @@ function relationshipDayNumber(date: string) {
   return dayDiff(date, RELATIONSHIP_START_DATE) + 1;
 }
 
-function milestoneNoticeForDate(today: string, force = false) {
+function addMilestoneNotices(
+  notices: Array<{owner:string;type:string;title:string;body:string;target:string}>,
+  today: string,
+  force: boolean,
+) {
   const currentDay = relationshipDayNumber(today);
+  if (currentDay <= 0) return;
 
-  if (currentDay <= 0) return null;
+  const isMilestone = currentDay % 100 === 0;
+  if (!isMilestone && !force) return;
 
-  if (!force && currentDay % 100 !== 0) return null;
+  const displayedDay = isMilestone
+    ? currentDay
+    : Math.ceil(currentDay / 100) * 100;
 
-  const milestone = force
-    ? Math.ceil(currentDay / 100) * 100
-    : currentDay;
-
-  return {
-    currentDay,
-    milestone,
-    isToday: currentDay % 100 === 0,
-  };
+  for (const owner of OWNERS) {
+    notices.push({
+      owner,
+      type: `relationship_milestone_${displayedDay}`,
+      title: isMilestone
+        ? `❤️ 今天是在一起第 ${currentDay} 天！`
+        : `🧪 里程碑測試｜下一站第 ${displayedDay} 天`,
+      body: isMilestone
+        ? `從 2026/1/9 開始，你們已經一起走過 ${currentDay} 天了。`
+        : `目前是在一起第 ${currentDay} 天，距離第 ${displayedDay} 天還有 ${displayedDay-currentDay} 天。`,
+      target: "home",
+    });
+  }
 }
 
 function lunarMonthDay(date: Date) {
@@ -268,43 +280,37 @@ Deno.serve(async (req) => {
 
 
     if (mode === "special_event") {
-      const nextEvent = specialEventOccurrences(today)[0] || null;
       const reminderDays = new Set([30, 21, 14, 7, 3, 1, 0]);
-      if (nextEvent) {
-        const daysAway = dayDiff(nextEvent.date, today);
-        if (force || reminderDays.has(daysAway)) {
-          for (const owner of OWNERS) {
-            notices.push({
-              owner,
-              type: `special_event_${nextEvent.id}_${nextEvent.date}_${daysAway}`,
-              title: daysAway === 0
-                ? `${nextEvent.emoji} 今天是${nextEvent.name}！`
-                : `${nextEvent.emoji} ${nextEvent.name}倒數 ${daysAway} 天`,
-              body: daysAway === 0
-                ? "今天是值得好好記住與慶祝的日子。"
-                : `距離 ${nextEvent.name} 還有 ${daysAway} 天，可以開始準備驚喜與行程了。`,
-              target: "home",
-            });
-          }
-        }
-      }
-    }
+      const upcomingEvents = specialEventOccurrences(today);
 
+      for (const event of upcomingEvents) {
+        const daysAway = dayDiff(event.date, today);
+        if (!force && !reminderDays.has(daysAway)) continue;
 
-    if (mode === "milestone" || mode === "special_event") {
-      const milestone = milestoneNoticeForDate(today, force);
-
-      if (milestone && milestone.isToday) {
         for (const owner of OWNERS) {
           notices.push({
             owner,
-            type: `relationship_milestone_${milestone.currentDay}`,
-            title: `❤️ 今天是在一起第 ${milestone.currentDay} 天！`,
-            body: `從 2026/1/9 開始，你們已經一起走過 ${milestone.currentDay} 天了。`,
+            type: `special_event_${event.id}_${event.date}_${daysAway}`,
+            title: daysAway === 0
+              ? `${event.emoji} 今天是${event.name}！`
+              : `${event.emoji} ${event.name}倒數 ${daysAway} 天`,
+            body: daysAway === 0
+              ? "今天是值得好好記住與慶祝的日子。"
+              : `距離 ${event.name} 還有 ${daysAway} 天，可以開始準備驚喜與行程了。`,
             target: "home",
           });
         }
+
+        // 正常排程最多只會命中少量日期；force 測試時避免一次送出所有未來節日。
+        if (force) break;
       }
+
+      // 里程碑與重要節日共用原本的 special_event Cron，不需新增排程。
+      addMilestoneNotices(notices, today, force);
+    }
+
+    if (mode === "milestone") {
+      addMilestoneNotices(notices, today, force);
     }
 
     if (mode === "daily_question") {
