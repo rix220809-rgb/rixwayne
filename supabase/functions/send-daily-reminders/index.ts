@@ -82,7 +82,7 @@ function relationshipDayNumber(date: string) {
 }
 
 function addMilestoneNotices(
-  notices: Array<{owner:string;type:string;title:string;body:string;target:string}>,
+  notices: Array<{ owner: string; type: string; title: string; body: string; target: string }>,
   today: string,
   force: boolean,
 ) {
@@ -92,23 +92,62 @@ function addMilestoneNotices(
   const isMilestone = currentDay % 100 === 0;
   if (!isMilestone && !force) return;
 
-  const displayedDay = isMilestone
-    ? currentDay
+  const nextMilestone = isMilestone
+    ? currentDay + 100
     : Math.ceil(currentDay / 100) * 100;
 
   for (const owner of OWNERS) {
     notices.push({
       owner,
-      type: `relationship_milestone_${displayedDay}`,
+      type: isMilestone
+        ? `relationship_milestone_${currentDay}`
+        : `relationship_milestone_test_${today}`,
       title: isMilestone
         ? `❤️ 今天是在一起第 ${currentDay} 天！`
-        : `🧪 里程碑測試｜下一站第 ${displayedDay} 天`,
+        : `🧪 里程碑測試｜今天第 ${currentDay} 天`,
       body: isMilestone
-        ? `從 2026/1/9 開始，你們已經一起走過 ${currentDay} 天了。`
-        : `目前是在一起第 ${currentDay} 天，距離第 ${displayedDay} 天還有 ${displayedDay-currentDay} 天。`,
+        ? `從 2026/1/9 開始，你們已經一起走過 ${currentDay} 天了。下一站是第 ${nextMilestone} 天。`
+        : `距離第 ${nextMilestone} 天還有 ${nextMilestone - currentDay} 天。`,
       target: "home",
     });
   }
+}
+
+
+async function loadLatestPillStart(
+  supabase: ReturnType<typeof createClient>,
+  today: string,
+  fallbackPeriodStart: string | null,
+) {
+  const explicit = await supabase
+    .from("pill_cycles")
+    .select("start_date")
+    .eq("space_id", SPACE_ID)
+    .lte("start_date", today)
+    .order("start_date", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  if (!explicit.error && explicit.data?.start_date) {
+    return {
+      startDate: String(explicit.data.start_date),
+      source: "pill_cycles",
+    };
+  }
+
+  // 尚未執行新 SQL 或尚無實際服藥資料時，才相容舊制：經期 Day 5。
+  if (
+    explicit.error &&
+    explicit.error.code !== "PGRST205" &&
+    explicit.error.code !== "PGRST116"
+  ) {
+    throw explicit.error;
+  }
+
+  return {
+    startDate: fallbackPeriodStart ? addDays(fallbackPeriodStart, 4) : null,
+    source: fallbackPeriodStart ? "period_fallback" : "none",
+  };
 }
 
 function lunarMonthDay(date: Date) {
@@ -159,16 +198,25 @@ function specialEventOccurrences(today: string) {
 
 Deno.serve(async (req) => {
   try {
-    if (req.method !== "POST") return response({ error: "Method not allowed" }, 405);
-
-    const expectedSecret = Deno.env.get("CRON_SECRET");
-    if (!expectedSecret || req.headers.get("x-cron-secret") !== expectedSecret) {
-      return response({ error: "Unauthorized" }, 401);
+    if (req.method !== "POST") {
+      return response({ error: "Method not allowed" }, 405);
     }
 
     const payload = await req.json().catch(() => ({}));
     const mode = payload.mode as Mode;
     const force = payload.force === true;
+
+    const expectedSecret = Deno.env.get("CRON_SECRET");
+
+    // 手動測試時可使用 force=true；正式排程仍需帶 x-cron-secret。
+    if (
+      !force &&
+      expectedSecret &&
+      req.headers.get("x-cron-secret") !== expectedSecret
+    ) {
+      return response({ error: "Unauthorized" }, 401);
+    }
+
     if (!["period", "daily_question", "pill", "special_event", "milestone"].includes(mode)) {
       return response({ error: "mode 必須是 period、daily_question、pill、special_event 或 milestone" }, 400);
     }
@@ -205,6 +253,9 @@ Deno.serve(async (req) => {
     let activeDay: number | null = null;
     let latestPeriodDay: number | null = null;
     let predictedStart: string | null = null;
+    let pillStartDate: string | null = null;
+    let pillDay: number | null = null;
+    let pillSource = "not-needed";
 
     if (mode === "period" || mode === "pill") {
       const loaded = await loadCycles(supabase);
@@ -230,6 +281,14 @@ Deno.serve(async (req) => {
         const average = gaps.length ? Math.round(gaps.reduce((a,b) => a+b, 0) / gaps.length) : 29;
         predictedStart = addDays(completed[0].start_date, average);
       }
+    }
+
+    if (mode === "pill") {
+      const fallbackStart = latestCycle?.start_date || null;
+      const loadedPill = await loadLatestPillStart(supabase, today, fallbackStart);
+      pillStartDate = loadedPill.startDate;
+      pillSource = loadedPill.source;
+      pillDay = pillStartDate ? dayDiff(today, pillStartDate) + 1 : null;
     }
 
     const notices: Array<{owner:string;type:string;title:string;body:string;target:string}> = [];
@@ -261,17 +320,16 @@ Deno.serve(async (req) => {
       }
     }
 
-    if (mode === "pill" && latestCycle && latestPeriodDay !== null) {
-      const pillDay = latestPeriodDay - 4;
+    if (mode === "pill" && pillStartDate && pillDay !== null) {
       if (pillDay >= 1 && pillDay <= 28) {
         for (const owner of OWNERS) {
           notices.push({
             owner,
-            type: `pill_day_${pillDay}`,
+            type: `pill_day_${pillStartDate}_${pillDay}`,
             title: `💊 21:00 避孕藥提醒｜第 ${pillDay}/28 天`,
             body: owner === "懷寶"
-              ? `今天是小舜本輪避孕藥提醒第 ${pillDay} 天，記得提醒她依醫師與藥袋指示服藥。`
-              : `今天是本輪避孕藥提醒第 ${pillDay} 天，記得依醫師與藥袋指示服藥。`,
+              ? `本輪從 ${pillStartDate} 起算，今天是小舜避孕藥第 ${pillDay} 天，記得提醒她依醫師與藥袋指示服藥。`
+              : `本輪從 ${pillStartDate} 起算，今天是第 ${pillDay} 天，記得依醫師與藥袋指示服藥。`,
             target: "period"
           });
         }
@@ -281,9 +339,8 @@ Deno.serve(async (req) => {
 
     if (mode === "special_event") {
       const reminderDays = new Set([30, 21, 14, 7, 3, 1, 0]);
-      const upcomingEvents = specialEventOccurrences(today);
 
-      for (const event of upcomingEvents) {
+      for (const event of specialEventOccurrences(today)) {
         const daysAway = dayDiff(event.date, today);
         if (!force && !reminderDays.has(daysAway)) continue;
 
@@ -301,12 +358,12 @@ Deno.serve(async (req) => {
           });
         }
 
-        // 正常排程最多只會命中少量日期；force 測試時避免一次送出所有未來節日。
+        // force 僅測試最近一個節日，避免一次送出全年通知。
         if (force) break;
       }
 
-      // 里程碑與重要節日共用原本的 special_event Cron，不需新增排程。
-      addMilestoneNotices(notices, today, force);
+      // 原本的 special_event Cron 同時檢查 100 天里程碑。
+      addMilestoneNotices(notices, today, false);
     }
 
     if (mode === "milestone") {
@@ -336,7 +393,7 @@ Deno.serve(async (req) => {
     }
 
     if (!notices.length) {
-      return response({ ok:true, mode, sent:0, today, cycleSource, activeDay, latestPeriodDay, predictedStart, reason:"今天不符合通知條件" });
+      return response({ ok:true, mode, sent:0, today, cycleSource, activeDay, latestPeriodDay, pillStartDate, pillDay, pillSource, predictedStart, reason:"今天不符合通知條件" });
     }
 
     const serviceAccount = JSON.parse(firebaseJson);
@@ -396,7 +453,9 @@ Deno.serve(async (req) => {
       cycleSource,
       activeDay,
       latestPeriodDay,
-      pillDay: latestPeriodDay !== null ? latestPeriodDay - 4 : null,
+      pillStartDate,
+      pillDay,
+      pillSource,
       predictedStart,
       results
     });
