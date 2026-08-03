@@ -72,7 +72,7 @@ async function registerPush() {
   }
 
   const registration = await navigator.serviceWorker.register(
-    "./sw.js?v=10.5.3",
+    "./sw.js?v=10.5.3.1",
     { scope: "./" }
   );
 
@@ -134,4 +134,4 @@ window.resetPushOwner = () => {
 };
 
 window.dispatchEvent(new CustomEvent("our-memories-push-ready"));
-console.info("Our Memories Firebase Push V10.5.3 ready");
+console.info("Our Memories Firebase Push V10.5.3.1 ready");
