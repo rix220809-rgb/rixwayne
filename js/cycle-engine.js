@@ -1,5 +1,5 @@
 
-/* Our Memories V10.5.2 — Cycle Engine + Pill Engine Hotfix */
+/* Our Memories V10.5.2.1 — Pill Layout Hotfix */
 const PERIOD_CYCLE_LOCAL_KEY = 'ourMemories.periodCycles.v10.2';
 const PILL_CYCLE_LOCAL_KEY = 'ourMemories.pillCycles.v10.5.2';
 const PERIOD_CYCLE_MAX_OPEN_DAYS = 14;
@@ -516,11 +516,18 @@ async function renderPeriod(){
         💊 ${pillState.title}<br><small>${pillState.detail}</small>
       </div>
       <div class="pill-cycle-setup">
-        <label>本輪實際服藥 Day 1
-          <input id="pillCycleStartDate" type="date" value="${pillState.pillStart || ''}">
-        </label>
-        <button type="button" id="pillCycleSaveBtn" class="ghost-inline">💊 儲存實際服藥起始日</button>
-        <small>避孕藥天數以這個日期為唯一基準，不再被經期長短或預估日期重設。</small>
+        <div class="pill-cycle-setup-head">
+          <div>
+            <span class="pill-cycle-eyebrow">PILL CYCLE</span>
+            <strong>本輪實際服藥 Day 1</strong>
+          </div>
+          <span class="pill-cycle-source">${pillState.source === 'pill_cycles' ? '已同步' : '待設定'}</span>
+        </div>
+        <div class="pill-cycle-form-row">
+          <input id="pillCycleStartDate" type="date" value="${pillState.pillStart || ''}" aria-label="本輪實際服藥 Day 1">
+          <button type="button" id="pillCycleSaveBtn" class="pill-cycle-save-btn">儲存日期</button>
+        </div>
+        <p class="pill-cycle-help">以此日期作為唯一基準，經期長短與預估日期不會重設避孕藥天數。</p>
       </div>
       <button type="button" class="notification-enable-btn" onclick="requestPeriodNotifications()">開啟手機通知</button>
     </div>`;
