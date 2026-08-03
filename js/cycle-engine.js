@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 /* Our Memories V10.5.3 — Cycle UI Redesign */
+=======
+/* Our Memories V10.5.2.1 — Pill Layout Hotfix */
+>>>>>>> 20b0c17d7a5900d4813a3d4eaa41b1fa48db2af9
 const PERIOD_CYCLE_LOCAL_KEY = 'ourMemories.periodCycles.v10.2';
 const PILL_CYCLE_LOCAL_KEY = 'ourMemories.pillCycles.v10.5.2';
 const PERIOD_CYCLE_MAX_OPEN_DAYS = 14;
@@ -507,8 +511,34 @@ function openPillCycleModal(){
         <button type="button" class="cycle-modal-secondary">取消</button>
         <button type="button" class="cycle-modal-primary">儲存</button>
       </div>
+<<<<<<< HEAD
     </div>
   `;
+=======
+      <h3>${state.active ? `🌸 本次經期 Day ${state.day}` : '🌸 漂亮小舜'}</h3>
+      <p>${state.active
+        ? (alertActive ? warningText : '本次經期仍在進行中。系統會一直從開始日計算 Day 數，直到你按下「今天經期結束」。')
+        : '目前沒有進行中的經期。開始後，每日紀錄都會歸在同一個週期。'}</p>
+      <div class="pill-inline-alert ${pillState.status}">
+        💊 ${pillState.title}<br><small>${pillState.detail}</small>
+      </div>
+      <div class="pill-cycle-setup">
+        <div class="pill-cycle-setup-head">
+          <div>
+            <span class="pill-cycle-eyebrow">PILL CYCLE</span>
+            <strong>本輪實際服藥 Day 1</strong>
+          </div>
+          <span class="pill-cycle-source">${pillState.source === 'pill_cycles' ? '已同步' : '待設定'}</span>
+        </div>
+        <div class="pill-cycle-form-row">
+          <input id="pillCycleStartDate" type="date" value="${pillState.pillStart || ''}" aria-label="本輪實際服藥 Day 1">
+          <button type="button" id="pillCycleSaveBtn" class="pill-cycle-save-btn">儲存日期</button>
+        </div>
+        <p class="pill-cycle-help">以此日期作為唯一基準，經期長短與預估日期不會重設避孕藥天數。</p>
+      </div>
+      <button type="button" class="notification-enable-btn" onclick="requestPeriodNotifications()">開啟手機通知</button>
+    </div>`;
+>>>>>>> 20b0c17d7a5900d4813a3d4eaa41b1fa48db2af9
 
   document.body.appendChild(modal);
   document.body.classList.add('modal-open');
