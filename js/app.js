@@ -1,4 +1,4 @@
-const APP_VERSION = '10.5.2';
+const APP_VERSION = '10.5.3';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';
@@ -269,11 +269,11 @@ function saveJSON(key, val){ localStorage.setItem(key, JSON.stringify(val)); }
 function cleanupOldServiceWorkers(){
   if (window.caches) {
     caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k.includes('our-memories') && k !== 'our-memories-v10.5.2').map(k => caches.delete(k))))
+      .then(keys => Promise.all(keys.filter(k => k.includes('our-memories') && k !== 'our-memories-v10.5.3').map(k => caches.delete(k))))
       .catch(()=>{});
   }
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js?v=10.5.2').catch(err=>console.warn('SW register failed', err));
+    navigator.serviceWorker.register('./sw.js?v=10.5.3').catch(err=>console.warn('SW register failed', err));
   }
 }
 

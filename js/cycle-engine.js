@@ -1,5 +1,9 @@
 
-/* Our Memories V10.5.2 — Cycle Engine + Pill Engine Hotfix */
+<<<<<<< HEAD
+/* Our Memories V10.5.3 — Cycle UI Redesign */
+=======
+/* Our Memories V10.5.2.1 — Pill Layout Hotfix */
+>>>>>>> 20b0c17d7a5900d4813a3d4eaa41b1fa48db2af9
 const PERIOD_CYCLE_LOCAL_KEY = 'ourMemories.periodCycles.v10.2';
 const PILL_CYCLE_LOCAL_KEY = 'ourMemories.pillCycles.v10.5.2';
 const PERIOD_CYCLE_MAX_OPEN_DAYS = 14;
@@ -487,27 +491,30 @@ async function renderCycleControls(state){
   }
 }
 
-async function renderPeriod(){
-  const info = await getPeriodPrediction();
-  const state = await getCycleEngineState();
-  const logs = await getPeriodDailyLogs();
-  const mood = getDailyAngryPhoto();
-  const warningText = getPeriodWarning();
-  const alertActive = !!state.active && state.day <= 4;
-  const pillState = await getPillEngineState();
-  const pillActive = pillState.shouldRemind;
 
-  $('#periodCard').innerHTML = `${alertActive
-      ? `<div class="period-img-wrap"><img class="feature-img" src="${assetUrl(mood.src)}" alt="小舜警報照片"><div class="period-alert-chip">🚨 經期第 ${state.day} 天</div></div>`
-      : renderCutePeriodImage()}
-    <div class="feature-body">
-      <div class="badge-row">
-        <span class="badge">智慧週期 ${info.cycle} 天</span>
-        <span class="badge">平均經期 ${info.avgDays} 天</span>
-        ${state.active
-          ? `<span class="badge">本次 Day ${state.day}</span>`
-          : `<span class="badge">下次 ${cycleDateLabel(info.nextStart)}</span>`}
+function openPillCycleModal(){
+  const current = $('#pillCycleStartDate')?.value || '';
+  const modal = document.createElement('div');
+  modal.className = 'cycle-modal-backdrop';
+  modal.id = 'pillCycleModal';
+  modal.innerHTML = `
+    <div class="cycle-modal" role="dialog" aria-modal="true" aria-labelledby="pillCycleModalTitle">
+      <button type="button" class="cycle-modal-close" aria-label="關閉">×</button>
+      <div class="cycle-modal-icon">💊</div>
+      <h3 id="pillCycleModalTitle">設定本輪開始日期</h3>
+      <p>這個日期會作為避孕藥 Day 1。</p>
+      <label class="cycle-modal-field">
+        <span>實際開始日期</span>
+        <input id="pillCycleModalDate" type="date" value="${current}">
+      </label>
+      <div class="cycle-modal-actions">
+        <button type="button" class="cycle-modal-secondary">取消</button>
+        <button type="button" class="cycle-modal-primary">儲存</button>
       </div>
+<<<<<<< HEAD
+    </div>
+  `;
+=======
       <h3>${state.active ? `🌸 本次經期 Day ${state.day}` : '🌸 漂亮小舜'}</h3>
       <p>${state.active
         ? (alertActive ? warningText : '本次經期仍在進行中。系統會一直從開始日計算 Day 數，直到你按下「今天經期結束」。')
@@ -516,55 +523,258 @@ async function renderPeriod(){
         💊 ${pillState.title}<br><small>${pillState.detail}</small>
       </div>
       <div class="pill-cycle-setup">
-        <label>本輪實際服藥 Day 1
-          <input id="pillCycleStartDate" type="date" value="${pillState.pillStart || ''}">
-        </label>
-        <button type="button" id="pillCycleSaveBtn" class="ghost-inline">💊 儲存實際服藥起始日</button>
-        <small>避孕藥天數以這個日期為唯一基準，不再被經期長短或預估日期重設。</small>
+        <div class="pill-cycle-setup-head">
+          <div>
+            <span class="pill-cycle-eyebrow">PILL CYCLE</span>
+            <strong>本輪實際服藥 Day 1</strong>
+          </div>
+          <span class="pill-cycle-source">${pillState.source === 'pill_cycles' ? '已同步' : '待設定'}</span>
+        </div>
+        <div class="pill-cycle-form-row">
+          <input id="pillCycleStartDate" type="date" value="${pillState.pillStart || ''}" aria-label="本輪實際服藥 Day 1">
+          <button type="button" id="pillCycleSaveBtn" class="pill-cycle-save-btn">儲存日期</button>
+        </div>
+        <p class="pill-cycle-help">以此日期作為唯一基準，經期長短與預估日期不會重設避孕藥天數。</p>
       </div>
       <button type="button" class="notification-enable-btn" onclick="requestPeriodNotifications()">開啟手機通知</button>
     </div>`;
+>>>>>>> 20b0c17d7a5900d4813a3d4eaa41b1fa48db2af9
 
-  await renderCycleControls(state);
+  document.body.appendChild(modal);
+  document.body.classList.add('modal-open');
 
-  const groupedLogs = groupByMonth(logs,'date');
-  const completed = info.records || [];
-  const groupedRanges = groupByMonth(completed,'start');
-  const allKeys = [...new Set([...groupedLogs.map(x=>x[0]), ...groupedRanges.map(x=>x[0])])].sort().reverse();
+  const close = () => {
+    modal.remove();
+    document.body.classList.remove('modal-open');
+  };
 
-  $('#periodTable').innerHTML = `<div class="period-table glass">
-    <div class="period-table-head"><b>經期歷史數據</b><span>平均週期 ${info.cycle} 天 / 平均 ${info.avgDays} 天</span></div>
-    ${allKeys.length ? allKeys.map(key=>{
-      const monthLogs=(groupedLogs.find(x=>x[0]===key)||[key,[]])[1];
-      const monthRanges=(groupedRanges.find(x=>x[0]===key)||[key,[]])[1];
-      return `<details class="month-accordion"><summary><b>${monthTitle(key,'經期狀況')}</b><span>${summarizePeriodMonth(monthRanges,monthLogs)}</span></summary>
-        ${monthRanges.map(r=>`<div class="record-row"><div><b>${fmt(r.start)}～${fmt(r.end)}</b><p>${dayDiff(r.end,r.start)+1} 天${r.note?`・${r.note}`:''}</p></div></div>`).join('')}
-        ${monthLogs.map(l=>`<div class="record-row daily-log-row"><div><b>${fmt(l.date)}</b><p>流量：${l.flow||'—'}｜疼痛：${l.pain||0}｜情緒：${l.mood||'—'}${l.symptoms?`<br>狀況：${l.symptoms}`:''}${l.note?`<br>備註：${l.note}`:''}</p></div><button onclick="deletePeriodDailyLog('${l.id}')">刪除</button></div>`).join('')}
-      </details>`;
-    }).join('') : '<div class="empty-card">尚無已完成的經期紀錄。</div>'}
-  </div>`;
+  modal.querySelector('.cycle-modal-close')?.addEventListener('click', close);
+  modal.querySelector('.cycle-modal-secondary')?.addEventListener('click', close);
+  modal.addEventListener('click', event => {
+    if(event.target === modal) close();
+  });
 
-  const periodLogDate = $('#periodLogDate');
-  if(periodLogDate && !periodLogDate.value) periodLogDate.value = todayISO();
-  const startBtn = $('#periodCycleStartBtn');
-  const endBtn = $('#periodCycleEndBtn');
-  const dailyBtn = $('#periodDailyLogBtn');
-  if(startBtn) startBtn.onclick = startCycleFromUI;
-  if(endBtn) endBtn.onclick = endCycleFromUI;
-  if(dailyBtn) dailyBtn.onclick = savePeriodDailyLog;
-  const pillSaveBtn = $('#pillCycleSaveBtn');
-  if(pillSaveBtn) pillSaveBtn.onclick = setPillCycleStartFromUI;
-  bindImageFallbacks($('#periodCard'));
+  modal.querySelector('.cycle-modal-primary')?.addEventListener('click', async () => {
+    const date = modal.querySelector('#pillCycleModalDate')?.value;
+    if(!date){
+      toast('請先選擇實際開始吃藥的日期');
+      return;
+    }
+
+    const btn = modal.querySelector('.cycle-modal-primary');
+    btn.disabled = true;
+    btn.textContent = '儲存中…';
+
+    try{
+      await setPillCycleStart(date);
+      close();
+      toast(`已將 ${fmt(date)} 設為本輪避孕藥 Day 1`);
+      await renderPeriod();
+      await renderDashboard();
+    }catch(error){
+      console.error('pill cycle modal save failed', error);
+      toast(error?.message || '無法儲存避孕藥週期');
+      btn.disabled = false;
+      btn.textContent = '儲存';
+    }
+  });
+
+  setTimeout(() => modal.querySelector('#pillCycleModalDate')?.focus(), 50);
 }
 
-async function dashboardQuestionState(){
-  const answers = await getDailyCoupleAnswers();
-  const answered = new Set(answers.map(a=>a.author));
+function toggleBackfillPanel(){
+  const panel = $('#periodBackfillPanel');
+  const button = $('#periodBackfillToggle');
+  if(!panel || !button) return;
+  const open = panel.hidden;
+  panel.hidden = !open;
+  button.setAttribute('aria-expanded', String(open));
+  button.querySelector('.backfill-chevron').textContent = open ? '▲' : '▼';
+}
+
+function pillStatusCopy(state){
+  if(state.status === 'reminding'){
+    return {
+      eyebrow:'PILL CYCLE',
+      title:`Day ${state.pillDay} / 28`,
+      status: state.pillDay === 28 ? '今天最後一天' : `剩餘 ${28 - state.pillDay} 天`,
+      note:'今晚 21:00 提醒',
+      tone:'active'
+    };
+  }
+
+  if(state.status === 'completed'){
+    return {
+      eyebrow:'PILL CYCLE',
+      title:'本輪已完成',
+      status:'等待下一輪開始',
+      note:state.pillStart ? `${fmt(state.pillStart)}－${fmt(addDaysISO(state.pillStart, 27))}` : '',
+      tone:'completed'
+    };
+  }
+
   return {
-    shun: answered.has('蕭小舜'),
-    wayne: answered.has('懷寶'),
-    complete: answered.has('蕭小舜') && answered.has('懷寶')
+    eyebrow:'PILL CYCLE',
+    title:'尚未設定本輪',
+    status:'設定實際服藥 Day 1',
+    note:'設定後會開始計算 28 天提醒',
+    tone:'waiting'
   };
+}
+
+async function renderPeriod(){
+  const hero = $('#periodHero');
+  if(!hero) return;
+
+  const cycles = await getPeriodCycles();
+  const current = getCurrentCycle(cycles);
+  const stats = getCycleStats(cycles);
+  const prediction = getPredictedStart(cycles);
+  const pillState = await getPillEngineState();
+  const pillCopy = pillStatusCopy(pillState);
+  const history = await getPeriodHistoryItems();
+  const predictedText = prediction ? fmt(prediction) : '等待資料';
+  const daysAway = prediction ? dayDiff(prediction, todayISO()) : null;
+
+  hero.innerHTML = `
+    <section class="cycle-overview-card">
+      <div class="cycle-section-heading">
+        <div>
+          <span class="cycle-kicker">CYCLE STATUS</span>
+          <h2>🌸 小舜</h2>
+        </div>
+        <span class="cycle-status-pill ${current ? 'active' : ''}">
+          ${current ? `第 ${dayDiff(todayISO(), current.start) + 1} 天` : '未進行中'}
+        </span>
+      </div>
+
+      <div class="cycle-stat-grid">
+        <article class="cycle-stat-item">
+          <span>🩷</span>
+          <strong>${stats.averageCycle || 28}</strong>
+          <small>平均週期</small>
+        </article>
+        <article class="cycle-stat-item">
+          <span>🌸</span>
+          <strong>${stats.averagePeriod || 6}</strong>
+          <small>平均經期</small>
+        </article>
+        <article class="cycle-stat-item">
+          <span>📅</span>
+          <strong>${prediction ? fmt(prediction).slice(0,5) : '—'}</strong>
+          <small>${daysAway !== null && daysAway >= 0 ? `預估・${daysAway} 天後` : '預估開始'}</small>
+        </article>
+      </div>
+
+      <p class="cycle-overview-note">
+        ${current
+          ? `本次經期從 ${fmt(current.start)} 開始，所有每日紀錄都會歸在同一個週期。`
+          : `目前沒有進行中的經期。下一次預估開始日為 ${predictedText}。`}
+      </p>
+    </section>
+
+    <section class="pill-status-card ${pillCopy.tone}">
+      <div class="pill-status-top">
+        <div>
+          <span class="cycle-kicker">${pillCopy.eyebrow}</span>
+          <h3>💊 避孕藥</h3>
+        </div>
+        <span class="pill-status-badge">${pillCopy.title}</span>
+      </div>
+
+      <div class="pill-status-main">
+        <strong>${pillCopy.status}</strong>
+        ${pillCopy.note ? `<span>${pillCopy.note}</span>` : ''}
+      </div>
+
+      <div class="pill-status-meta">
+        <div>
+          <small>實際開始日</small>
+          <strong>${pillState.pillStart ? fmt(pillState.pillStart) : '尚未設定'}</strong>
+        </div>
+        <button type="button" class="pill-edit-btn" id="openPillCycleModal">
+          修改開始日期
+        </button>
+      </div>
+
+      <input id="pillCycleStartDate" type="hidden" value="${pillState.pillStart || ''}">
+      <p class="pill-status-footnote">提醒以實際服藥 Day 1 為基準，仍以醫師與藥袋指示為準。</p>
+    </section>
+
+    <section class="cycle-control-card">
+      <div class="cycle-section-heading compact">
+        <div>
+          <span class="cycle-kicker">CURRENT CYCLE</span>
+          <h3>🌸 本次經期</h3>
+        </div>
+        <span class="cycle-status-pill ${current ? 'active' : ''}">
+          ${current ? '進行中' : '尚未開始'}
+        </span>
+      </div>
+
+      ${current ? `
+        <div class="cycle-current-summary">
+          <strong>${fmt(current.start)} 開始</strong>
+          <span>今天是第 ${dayDiff(todayISO(), current.start) + 1} 天</span>
+        </div>
+        <button type="button" id="endCycleBtn" class="cycle-primary-btn danger">✅ 今天經期結束</button>
+      ` : `
+        <p class="cycle-control-copy">開始後，每日狀況都會歸在同一個週期，不會重設 Day 1。</p>
+        <button type="button" id="startCycleBtn" class="cycle-primary-btn">🩸 ${prediction === todayISO() ? '今天開始經期' : '手動開始本次經期'}</button>
+      `}
+    </section>
+
+    <section class="cycle-collapsible-card">
+      <button type="button" id="periodBackfillToggle" class="cycle-collapsible-toggle" aria-expanded="false">
+        <span>
+          <strong>🗓️ 補登過去經期</strong>
+          <small>新增已經結束的舊週期</small>
+        </span>
+        <span class="backfill-chevron">▼</span>
+      </button>
+
+      <div id="periodBackfillPanel" class="cycle-collapsible-panel" hidden>
+        <label>開始日<input id="backfillStart" type="date"></label>
+        <label>結束日<input id="backfillEnd" type="date"></label>
+        <label>備註<textarea id="backfillNote" rows="3" placeholder="可選填"></textarea></label>
+        <button type="button" id="backfillSaveBtn" class="cycle-primary-btn">新增過去經期</button>
+      </div>
+    </section>
+
+    <section class="cycle-history-card">
+      <div class="cycle-section-heading compact">
+        <div>
+          <span class="cycle-kicker">HISTORY</span>
+          <h3>📖 經期歷史</h3>
+        </div>
+        <span class="history-count">${history.length} 筆</span>
+      </div>
+
+      <div class="cycle-history-list">
+        ${history.length ? history.map(item => `
+          <article class="cycle-history-item">
+            <div>
+              <strong>${item.title || `${fmt(item.start)}～${item.end ? fmt(item.end) : '進行中'}`}</strong>
+              <span>${item.subtitle || item.note || '尚無備註'}</span>
+            </div>
+            ${item.id ? `<button type="button" class="cycle-history-delete" data-id="${item.id}">刪除</button>` : ''}
+          </article>
+        `).join('') : `
+          <div class="cycle-empty-state">尚無歷史紀錄</div>
+        `}
+      </div>
+    </section>
+  `;
+
+  $('#openPillCycleModal')?.addEventListener('click', openPillCycleModal);
+  $('#periodBackfillToggle')?.addEventListener('click', toggleBackfillPanel);
+  $('#startCycleBtn')?.addEventListener('click', startCycleFromUI);
+  $('#endCycleBtn')?.addEventListener('click', endCycleFromUI);
+  $('#backfillSaveBtn')?.addEventListener('click', savePeriodBackfill);
+
+  hero.querySelectorAll('.cycle-history-delete').forEach(button => {
+    button.addEventListener('click', () => deletePeriodHistory(button.dataset.id));
+  });
 }
 
 async function renderDashboard(){
