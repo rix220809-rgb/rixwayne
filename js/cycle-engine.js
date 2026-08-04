@@ -1,5 +1,5 @@
 
-/* Our Memories V10.5.3.1 — Cycle UI Fix */
+/* Our Memories V10.6 — Cycle Engine */
 const PERIOD_CYCLE_LOCAL_KEY = 'ourMemories.periodCycles.v10.2';
 const PILL_CYCLE_LOCAL_KEY = 'ourMemories.pillCycles.v10.5.2';
 const PERIOD_CYCLE_MAX_OPEN_DAYS = 14;
@@ -314,7 +314,7 @@ async function startCycleFromUI(){
     toast(`已將 ${fmt(date)} 設為本次經期第 1 天`);
     await renderPeriod();
     await renderDashboard();
-    setTimeout(() => showHomePeriodPopup(true), 350);
+    setTimeout(() => window.showTodayBrief?.({force:true, onlyTypes:['period_start']}), 350);
   }catch(e){
     console.error('start cycle failed', e);
     toast(e?.message || '無法開始經期');

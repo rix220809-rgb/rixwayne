@@ -1,4 +1,4 @@
-const APP_VERSION = '10.5.3.1';
+const APP_VERSION = '10.6.0';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';
@@ -396,7 +396,7 @@ async function init(){
     await renderDailyCoupleChallenge();
     startGame('all');
     bindImageFallbacks();
-    setTimeout(()=>showHomePeriodPopup(), 700);
+    setTimeout(()=>window.showTodayBrief?.(), 700);
 
     try {
       const after = sessionStorage.getItem('ourMemories.afterReloadTab');
@@ -447,7 +447,7 @@ function showTab(id){
   $$('.page').forEach(p=>p.classList.toggle('active', p.id===id));
   $$('.bottom-nav button').forEach(b=>b.classList.toggle('active', b.dataset.tab===id));
   try { window.scrollTo({top:0, behavior:'smooth'}); } catch(e) { window.scrollTo(0,0); }
-  if(id==='home') showHomePeriodPopup();
+  if(id==='home') window.showTodayBrief?.();
   if(id==='kapi') renderKapi();
   if(id==='period') renderPeriod();
   if(id==='mood') renderMoodBoard();
