@@ -1,5 +1,13 @@
 # Changelog
 
+## V10.6.1
+- Added permanent period_cycles migration.
+- Fixed starting and ending active period cycles.
+- Added local fallback before migration is installed.
+- Preserved period_records as completed history.
+- Added period_daily_logs cycle_id compatibility.
+
+
 ## V10.6 Stable
 ### Added
 - Mandatory Today Brief sequence before entering the home experience

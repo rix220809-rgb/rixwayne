@@ -1,11 +1,21 @@
 
-/* Our Memories V10.6 — Cycle Engine */
+/* Our Memories V10.6.1 — Cycle Record Hotfix */
 const PERIOD_CYCLE_LOCAL_KEY = 'ourMemories.periodCycles.v10.2';
 const PILL_CYCLE_LOCAL_KEY = 'ourMemories.pillCycles.v10.5.2';
 const PERIOD_CYCLE_MAX_OPEN_DAYS = 14;
 
 function cycleDateLabel(date){
   return isISODate(date) ? fmt(date) : '—';
+}
+
+
+function isMissingTableError(error, tableName){
+  if(!error) return false;
+  const message = String(error.message || '');
+  return error.code === 'PGRST205'
+    || error.code === '42P01'
+    || message.includes(`public.${tableName}`)
+    || message.includes(`'${tableName}'`);
 }
 
 function normalizeCycleRows(rows){
@@ -29,14 +39,21 @@ async function getPeriodCycles(){
       .eq('space_id', CLOUD_SPACE_ID)
       .order('start_date', {ascending:false});
 
-    if(!error) return normalizeCycleRows(data);
-    console.warn('period_cycles unavailable; using compatibility mode', error);
+    if(!error){
+      const cloudRows = normalizeCycleRows(data);
+      saveJSON(PERIOD_CYCLE_LOCAL_KEY, cloudRows);
+      return cloudRows;
+    }
+
+    if(!isMissingTableError(error, 'period_cycles')){
+      console.warn('period_cycles read failed; using cached data', error);
+    }
   }
 
   const local = loadJSON(PERIOD_CYCLE_LOCAL_KEY, []);
   if(local.length) return normalizeCycleRows(local);
 
-  // Compatibility migration from completed period_records.
+  // Compatibility: completed history still lives in period_records.
   const oldRecords = await getPeriodRecords();
   return normalizeCycleRows(oldRecords.map(r => ({
     id: r.id,
@@ -69,14 +86,30 @@ async function createPeriodCycle(startDate=todayISO()){
       .insert({...payload, space_id:CLOUD_SPACE_ID})
       .select()
       .single();
-    if(error) throw error;
-    return normalizeCycleRows([data])[0];
+
+    if(!error){
+      const record = normalizeCycleRows([data])[0];
+      const cached = loadJSON(PERIOD_CYCLE_LOCAL_KEY, []);
+      saveJSON(
+        PERIOD_CYCLE_LOCAL_KEY,
+        [record, ...cached.filter(item => String(item.id) !== String(record.id))].slice(0,100)
+      );
+      return record;
+    }
+
+    if(!isMissingTableError(error, 'period_cycles')) throw error;
+    console.warn('period_cycles is not installed; storing active cycle locally until SQL migration is applied.');
   }
 
   const cycles = loadJSON(PERIOD_CYCLE_LOCAL_KEY, []);
-  const record = {id:Date.now(), start:payload.start_date, end:null, note:payload.note};
+  const record = {
+    id:`local-${Date.now()}`,
+    start:payload.start_date,
+    end:null,
+    note:'本機暫存：等待 period_cycles migration'
+  };
   cycles.unshift(record);
-  saveJSON(PERIOD_CYCLE_LOCAL_KEY, cycles);
+  saveJSON(PERIOD_CYCLE_LOCAL_KEY, cycles.slice(0,100));
   return record;
 }
 
@@ -85,18 +118,46 @@ async function endPeriodCycle(endDate=todayISO()){
   if(!current) throw new Error('目前沒有進行中的經期。');
   if(dayDiff(endDate, current.start) < 0) throw new Error('結束日不能早於開始日。');
 
-  if(db){
+  let cloudCycleUpdated = false;
+
+  if(db && !String(current.id).startsWith('local-')){
     const {error} = await db
       .from('period_cycles')
       .update({end_date:endDate, updated_at:new Date().toISOString()})
       .eq('id', current.id)
       .eq('space_id', CLOUD_SPACE_ID);
-    if(error) throw error;
+
+    if(!error){
+      cloudCycleUpdated = true;
+    }else if(!isMissingTableError(error, 'period_cycles')){
+      throw error;
+    }
+  }
+
+  const cycles = loadJSON(PERIOD_CYCLE_LOCAL_KEY, []);
+  const target = cycles.find(c => String(c.id) === String(current.id));
+  if(target){
+    target.end = endDate;
+    target.note = cloudCycleUpdated ? target.note : '本機完成；已同步至 period_records';
   }else{
-    const cycles = loadJSON(PERIOD_CYCLE_LOCAL_KEY, []);
-    const target = cycles.find(c => String(c.id) === String(current.id));
-    if(target) target.end = endDate;
-    saveJSON(PERIOD_CYCLE_LOCAL_KEY, cycles);
+    cycles.unshift({...current, end:endDate});
+  }
+  saveJSON(PERIOD_CYCLE_LOCAL_KEY, cycles.slice(0,100));
+
+  // period_records is the long-term completed-history table used by the existing project.
+  if(db){
+    const {error: historyError} = await db
+      .from('period_records')
+      .upsert({
+        space_id:CLOUD_SPACE_ID,
+        start_date:current.start,
+        end_date:endDate,
+        note:current.note || '由 Cycle Engine 完成'
+      }, {
+        onConflict:'space_id,start_date,end_date'
+      });
+
+    if(historyError) throw historyError;
   }
 
   return {...current, end:endDate};
@@ -311,7 +372,12 @@ async function startCycleFromUI(){
   try{
     await createPeriodCycle(date);
     if($('#periodLogHas')) $('#periodLogHas').value = 'yes';
-    toast(`已將 ${fmt(date)} 設為本次經期第 1 天`);
+    const latestCycle = await getActivePeriodCycle();
+    const localOnly = String(latestCycle?.id || '').startsWith('local-');
+    toast(localOnly
+      ? `已將 ${fmt(date)} 設為第 1 天（目前暫存於此裝置）`
+      : `已將 ${fmt(date)} 設為本次經期第 1 天`
+    );
     await renderPeriod();
     await renderDashboard();
     setTimeout(() => window.showTodayBrief?.({force:true, onlyTypes:['period_start']}), 350);
@@ -370,11 +436,27 @@ async function savePeriodDailyLog(){
 
   try{
     if(db){
-      const {error} = await db
+      let {error} = await db
         .from('period_daily_logs')
         .upsert({...payload, space_id:CLOUD_SPACE_ID}, {
           onConflict:'space_id,log_date'
         });
+
+      // Compatibility with installations that have not added cycle_id yet.
+      if(error && (
+        error.code === 'PGRST204'
+        || String(error.message || '').includes('cycle_id')
+      )){
+        const compatibilityPayload = {...payload, space_id:CLOUD_SPACE_ID};
+        delete compatibilityPayload.cycle_id;
+        const retry = await db
+          .from('period_daily_logs')
+          .upsert(compatibilityPayload, {
+            onConflict:'space_id,log_date'
+          });
+        error = retry.error;
+      }
+
       if(error) throw error;
     }else{
       const logs = loadJSON(PERIOD_DAILY_LOG_KEY, []);

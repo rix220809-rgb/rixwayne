@@ -1,7 +1,7 @@
 # Our Memories Development
 
 ## Current version
-V10.6 Stable
+V10.6.1
 
 ## Completed in V10.6
 - Today Brief forced-view queue
