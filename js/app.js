@@ -1,4 +1,4 @@
-const APP_VERSION = '10.7.1';
+const APP_VERSION = '10.7.2';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';
@@ -176,7 +176,7 @@ async function loadData(){
 
   const openCoupleMemoriesBtn = $('#openCoupleMemoriesBtn');
 if(openCoupleMemoriesBtn){
-  openCoupleMemoriesBtn.onclick=()=>showPage('album');
+  openCoupleMemoriesBtn.onclick=()=>showTab('album');
 }
 
 init();
@@ -447,6 +447,7 @@ function setupTabs(){
   bindClick('#periodSaveBtn', ()=>savePeriodRange());
   bindClick('#periodEstimateBtn', ()=>toast('下方已顯示下一次經期預估。'));
   bindClick('#moodPostBtn', ()=>addMoodPost());
+  bindClick('#openCoupleMemoriesBtn', ()=>showTab('album'));
 }
 function showTab(id){
   $$('.page').forEach(p=>p.classList.toggle('active', p.id===id));

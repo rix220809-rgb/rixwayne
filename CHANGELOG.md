@@ -1,5 +1,10 @@
 # Changelog
 
+## V10.7.2
+- Corrected Pretty Shun P001–P010 captions/stories to match the actual photos.
+- Fixed the home “查看其他回憶” button by routing through `showTab('album')`.
+
+
 ## V10.7.1
 - Period daily logs now upsert on `space_id,log_date`.
 - Homepage keeps a single Daily Flashback.
