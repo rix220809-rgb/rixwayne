@@ -6,7 +6,7 @@
   <title>Our Memories｜蕭小舜 ♡ 懷寶</title>
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#0b1b3a" />
-  <link rel="stylesheet" href="css/style.css?v=10.7.0" />
+  <link rel="stylesheet" href="css/style.css?v=10.7.1" />
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         </div>
         <p id="todayLine" class="today-line">正在載入今日回憶錄…</p>
       </div>
-      <div class="hero-badge">V10.7<br><span>Relationship Engine</span></div>
+      <div class="hero-badge">V10.7.1<br><span>Relationship Engine</span></div>
     </header>
 
     <nav class="bottom-nav glass">
@@ -43,6 +43,7 @@
       </div>
 
       <article id="flashbackCard" class="feature-card glass"></article>
+      <button type="button" id="openCoupleMemoriesBtn" class="flashback-more-button">查看其他回憶 →</button>
 
       <section class="love-dashboard glass" aria-labelledby="dashboardTitle">
         <div class="dashboard-head">
@@ -121,19 +122,13 @@
 
     <section id="album" class="page">
       <div class="section-head">
-        <h2>回憶相簿</h2>
+        <h2>❤️ 小舜 × 懷寶</h2>
         <span id="photoCount"></span>
       </div>
-
-      <div class="gallery-filter-bar" id="galleryFilters">
-        <button type="button" class="active" data-gallery-filter="all">全部</button>
-        <button type="button" data-gallery-filter="memory">❤️ 回憶</button>
-        <button type="button" data-gallery-filter="shun">🌸 小舜</button>
-        <button type="button" data-gallery-filter="kapi">🦎 卡皮</button>
-        <button type="button" data-gallery-filter="favorite">⭐ 收藏</button>
-      </div>
-      <p class="gallery-intro">照片不只放在相簿裡。點開後會看到小標、故事與只有你們才懂的備註。</p>
-      <div id="albumGrid" class="album-grid"></div>
+      <p class="gallery-intro">收藏一路走來的每個故事。左右滑慢慢看，點照片會打開完整故事。</p>
+      <div id="coupleStoryRail" class="story-photo-rail"></div>
+      <button type="button" id="coupleAllBtn" class="gallery-more-button">查看全部回憶</button>
+      <div id="albumGrid" class="album-grid gallery-full-grid" hidden></div>
     </section>
 
     <section id="mood" class="page">
@@ -231,7 +226,7 @@
         <h2>卡皮日記</h2>
         <span>一家人的小日常</span>
       </div>
-      <div id="kapiStoryGrid" class="story-photo-strip"></div>
+      <div id="kapiStoryGrid" class="story-photo-rail"></div>
     </section>
 
     <section id="period" class="page">
@@ -323,15 +318,16 @@
       <div id="periodTable" class="record-list"></div>
 
       <div class="section-head story-gallery-head">
-        <h2>漂亮小舜</h2>
-        <span>照片日記＋小舜食堂</span>
+        <h2>🌸 Pretty 舜</h2>
+        <span>今天的小舜，也值得收藏</span>
       </div>
-      <div class="gallery-filter-bar compact" id="shunGalleryFilters">
-        <button type="button" class="active" data-shun-filter="all">全部</button>
-        <button type="button" data-shun-filter="漂亮小舜">漂亮小舜</button>
-        <button type="button" data-shun-filter="小舜食堂">#小舜食堂</button>
+      <div id="prettyShunRail" class="story-photo-rail"></div>
+
+      <div class="section-head story-gallery-head food-story-head">
+        <h2>🍳 小舜食堂</h2>
+        <span>一起生活的味道</span>
       </div>
-      <div id="shunStoryGrid" class="story-photo-strip"></div>
+      <div id="shunFoodRail" class="story-photo-rail"></div>
 </section>
   </main>
 
@@ -343,9 +339,9 @@
   <div id="toast" class="toast"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="js/app.js?v=10.7.0"></script>
-  <script src="js/cycle-engine.js?v=10.7.0"></script>
-  <script src="js/today-brief.js?v=10.7.0"></script>
-  <script type="module" src="js/push-notifications.js?v=10.7.0"></script>
+  <script src="js/app.js?v=10.7.1"></script>
+  <script src="js/cycle-engine.js?v=10.7.1"></script>
+  <script src="js/today-brief.js?v=10.7.1"></script>
+  <script type="module" src="js/push-notifications.js?v=10.7.1"></script>
 </body>
 </html>

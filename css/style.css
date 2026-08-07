@@ -1198,3 +1198,70 @@ body.today-brief-open{overflow:hidden}
   .story-photo-strip{grid-template-columns:1fr 1fr}
   .photo-tile{padding:7px}
 }
+
+
+/* ===== V10.7.1 Photo System Refactor ===== */
+.story-photo-rail{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:2px 4px 14px 1px;
+  scroll-snap-type:x proximity;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.story-photo-rail::-webkit-scrollbar{display:none}
+.story-photo-rail .story-rail-card{
+  flex:0 0 min(72vw, 280px);
+  width:min(72vw, 280px);
+  scroll-snap-align:start;
+}
+.story-photo-rail .story-rail-card:last-child{
+  margin-right:20vw;
+}
+.story-photo-rail .photo-tile-image{
+  aspect-ratio:4/5;
+  overflow:hidden;
+  border-radius:17px;
+}
+.story-photo-rail .photo-tile-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.story-photo-rail .photo-tile b{
+  display:block;
+  margin-top:9px;
+  text-align:left;
+}
+.story-photo-rail .photo-tile small{
+  text-align:left;
+}
+.flashback-more-button,
+.gallery-more-button{
+  width:100%;
+  margin:10px 0 24px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:13px 16px;
+  background:rgba(255,255,255,.075);
+  color:rgba(255,255,255,.82);
+  font:inherit;
+  font-size:13px;
+  font-weight:850;
+}
+.flashback-more-button{
+  margin-top:-3px;
+}
+.gallery-full-grid{
+  margin-top:14px;
+}
+.gallery-full-grid[hidden]{display:none!important}
+.food-story-head{margin-top:34px}
+@media(min-width:760px){
+  .story-photo-rail .story-rail-card{
+    flex-basis:250px;
+    width:250px;
+  }
+}

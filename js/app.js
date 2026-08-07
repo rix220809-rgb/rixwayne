@@ -1,4 +1,4 @@
-const APP_VERSION = '10.7.0';
+const APP_VERSION = '10.7.1';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';
@@ -174,7 +174,12 @@ async function loadData(){
     window.__LOAD_ERROR__ = e.message || String(e);
   }
 
-  init();
+  const openCoupleMemoriesBtn = $('#openCoupleMemoriesBtn');
+if(openCoupleMemoriesBtn){
+  openCoupleMemoriesBtn.onclick=()=>showPage('album');
+}
+
+init();
 }
 function isISODate(s){
   return typeof s === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(s);
@@ -450,6 +455,7 @@ function showTab(id){
   if(id==='home') window.showTodayBrief?.();
   if(id==='kapi'){ renderKapi(); renderStoryGalleries(); }
   if(id==='period'){ renderPeriod(); renderStoryGalleries(); }
+  if(id==='album') renderAlbum();
   if(id==='mood') renderMoodBoard();
 }
 function shuffle(arr){return [...arr].sort(()=>Math.random()-.5)}
@@ -619,47 +625,69 @@ function setShunGalleryFilter(filter){
   document.querySelectorAll('[data-shun-filter]').forEach(btn=>btn.classList.toggle('active', btn.dataset.shunFilter===filter));
   renderStoryGalleries();
 }
-function renderStoryGalleries(){
-  const kapiRoot = $('#kapiStoryGrid');
-  if(kapiRoot){
-    const list = photos.filter(p=>normalizedPhotoCategory(p)==='kapi').slice().reverse().slice(0,16);
-    kapiRoot.innerHTML = list.length ? list.map(p=>photoStoryCard(p,'story-strip-card')).join('') : '<div class="empty-card">卡皮照片之後會出現在這裡。</div>';
-    bindPhotoTiles(kapiRoot);
-  }
-  const shunRoot = $('#shunStoryGrid');
-  if(shunRoot){
-    let list = photos.filter(p=>normalizedPhotoCategory(p)==='shun').slice().reverse();
-    if(shunGalleryFilter!=='all') list = list.filter(p=>p.series===shunGalleryFilter || (p.tags||[]).includes(shunGalleryFilter));
-    shunRoot.innerHTML = list.slice(0,30).map(p=>photoStoryCard(p,'story-strip-card')).join('');
-    bindPhotoTiles(shunRoot);
-  }
+function renderHorizontalRail(root, list, emptyText='目前還沒有照片。'){
+  if(!root) return;
+  root.innerHTML = list.length
+    ? list.map(p=>photoStoryCard(p,'story-rail-card')).join('')
+    : `<div class="empty-card">${emptyText}</div>`;
+  bindPhotoTiles(root);
 }
 
+function renderStoryGalleries(){
+  const kapiRoot = $('#kapiStoryGrid');
+  const kapiList = photos
+    .filter(p=>normalizedPhotoCategory(p)==='kapi')
+    .slice()
+    .reverse();
+  renderHorizontalRail(kapiRoot, kapiList, '卡皮照片之後會出現在這裡。');
+
+  const prettyRoot = $('#prettyShunRail');
+  const prettyList = photos
+    .filter(p=>normalizedPhotoCategory(p)==='shun' && p.series==='漂亮小舜')
+    .slice()
+    .reverse();
+  renderHorizontalRail(prettyRoot, prettyList, '漂亮小舜照片之後會出現在這裡。');
+
+  const foodRoot = $('#shunFoodRail');
+  const foodList = photos
+    .filter(p=>p.series==='小舜食堂' || (p.tags||[]).includes('小舜食堂'))
+    .slice()
+    .reverse();
+  renderHorizontalRail(foodRoot, foodList, '小舜食堂照片之後會出現在這裡。');
+
+  const coupleRoot = $('#coupleStoryRail');
+  const coupleList = photos
+    .filter(p=>normalizedPhotoCategory(p)==='memory')
+    .slice()
+    .reverse();
+  renderHorizontalRail(coupleRoot, coupleList, '共同回憶之後會出現在這裡。');
+}
 function renderAlbum(){
-  const filters = $('#galleryFilters');
-  if(filters && !filters.dataset.bound){
-    filters.dataset.bound='1';
-    filters.querySelectorAll('[data-gallery-filter]').forEach(btn=>{
-      btn.onclick=()=>setGalleryFilter(btn.dataset.galleryFilter);
-    });
-  }
-  const shunFilters = $('#shunGalleryFilters');
-  if(shunFilters && !shunFilters.dataset.bound){
-    shunFilters.dataset.bound='1';
-    shunFilters.querySelectorAll('[data-shun-filter]').forEach(btn=>{
-      btn.onclick=()=>setShunGalleryFilter(btn.dataset.shunFilter);
-    });
-  }
+  const couple = photos.filter(p=>normalizedPhotoCategory(p)==='memory').slice().reverse();
+  $('#photoCount').textContent = `${couple.length} photos`;
 
-  let list = photos.slice().reverse();
-  if(galleryFilter==='favorite') list = list.filter(p=>isPhotoFavorite(p.id));
-  else if(galleryFilter!=='all') list = list.filter(p=>normalizedPhotoCategory(p)===galleryFilter);
+  renderHorizontalRail($('#coupleStoryRail'), couple, '共同回憶之後會出現在這裡。');
 
-  $('#photoCount').textContent=`${list.length} photos`;
-  $('#albumGrid').innerHTML = list.length
-    ? list.map(p=>photoStoryCard(p)).join('')
-    : `<div class="empty-card">這個分類目前還沒有照片。</div>`;
-  bindPhotoTiles($('#albumGrid'));
+  const grid = $('#albumGrid');
+  const more = $('#coupleAllBtn');
+  if(grid && !grid.dataset.bound){
+    grid.dataset.bound='1';
+    grid.innerHTML = couple.map(p=>photoStoryCard(p)).join('');
+    bindPhotoTiles(grid);
+  }
+  if(more && !more.dataset.bound){
+    more.dataset.bound='1';
+    more.onclick=()=>{
+      const isHidden = grid.hasAttribute('hidden');
+      if(isHidden){
+        grid.removeAttribute('hidden');
+        more.textContent='收合全部回憶';
+      }else{
+        grid.setAttribute('hidden','');
+        more.textContent='查看全部回憶';
+      }
+    };
+  }
   renderStoryGalleries();
 }
 
@@ -747,8 +775,8 @@ async function deleteKapiRecord(id){
 }
 
 function renderKapiCarousel(){
-  const richKapi = photos.filter(p=>normalizedPhotoCategory(p)==='kapi').slice().reverse().slice(0,8).map(p=>({src:p.src,title:p.title,caption:p.subtitle||p.description||''}));
-  const list = [...richKapi, ...kapiCarouselPhotos].filter((p,i,arr)=>arr.findIndex(x=>x.src===p.src)===i);
+  const richKapi = photos.filter(p=>normalizedPhotoCategory(p)==='kapi').slice().reverse().map(p=>({src:p.src,title:p.title,caption:p.subtitle||p.description||''}));
+  const list = richKapi.length ? richKapi : kapiCarouselPhotos;
   if(!list.length) list.push({src:'images/photo0032.webp', title:'卡皮', caption:'卡皮輪播圖'});
   kapiCarouselIndex = 0;
   return `<div class="kapi-carousel" data-carousel-count="${list.length}">
@@ -1587,7 +1615,7 @@ function getCycleLength(records){
 function getPrettyShunMemory(){
   const richShun = photos.filter(p=>normalizedPhotoCategory(p)==='shun' && p.series==='漂亮小舜')
     .map(p=>({src:p.src,title:p.title,caption:p.subtitle||p.description||''}));
-  const pool = [...richShun, ...shunPrettyPhotos];
+  const pool = richShun.length ? richShun : shunPrettyPhotos;
   const photo = pickFromDate(pool, todayISO(), 31) || shunCutePhotos[0];
   const compliment = pickFromDate(shunPrettyCompliments, todayISO(), 57) || '小舜就是這麼漂亮又可愛，看看你多幸運。';
   return {photo, compliment};
@@ -1661,7 +1689,12 @@ async function savePeriodDailyLog() {
       });
 
       await Promise.race([
-        cloudInsert('period_daily_logs', payload),
+        (async ()=>{
+          const { error } = await db
+            .from('period_daily_logs')
+            .upsert({ ...payload, space_id: CLOUD_SPACE_ID }, { onConflict: 'space_id,log_date' });
+          if(error) throw error;
+        })(),
         timeout
       ]);
     } else {

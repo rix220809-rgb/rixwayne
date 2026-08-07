@@ -1,5 +1,14 @@
 # Changelog
 
+## V10.7.1
+- Period daily logs now upsert on `space_id,log_date`.
+- Homepage keeps a single Daily Flashback.
+- Couple, Pretty Shun, Kapi, and Shun Food photos use horizontal rails in their own sections.
+- Removed exact duplicate Kapi "終於團聚了！" image entry.
+- Corrected the ten newly added Shun Food photo titles/stories.
+- `photos.json` is the primary photo source; legacy photo arrays are fallback only.
+
+
 ## V10.7
 - Memory Story gallery with only three core content families: couple memories, Shun, Kapi.
 - 41 new photos from 2026-08 update.
