@@ -14,19 +14,19 @@ firebase.initializeApp({
 // otherwise the browser and Service Worker will each display one copy.
 firebase.messaging();
 
-const CACHE_NAME = "our-memories-v10.6.1";
+const CACHE_NAME = "our-memories-v10.7.0";
 const CORE = [
   "./",
   "./index.html",
   "./manifest.json",
-  "./data/special_events.json?v=10.6.1",
-  "./data/daily_question_bank.json?v=10.6.1",
-  "./css/style.css?v=10.6.1",
-  "./js/app.js?v=10.6.1",
-  "./js/cycle-engine.js?v=10.6.1",
-  "./js/today-brief.js?v=10.6.1",
+  "./data/special_events.json?v=10.7.0",
+  "./data/daily_question_bank.json?v=10.7.0",
+  "./css/style.css?v=10.7.0",
+  "./js/app.js?v=10.7.0",
+  "./js/cycle-engine.js?v=10.7.0",
+  "./js/today-brief.js?v=10.7.0",
   "./data/today_brief_texts.json",
-  "./js/push-notifications.js?v=10.6.1",
+  "./js/push-notifications.js?v=10.7.0",
   "./icon-192.png",
   "./icon-512.png"
 ];

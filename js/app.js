@@ -1,4 +1,4 @@
-const APP_VERSION = '10.6.1';
+const APP_VERSION = '10.7.0';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';
@@ -448,8 +448,8 @@ function showTab(id){
   $$('.bottom-nav button').forEach(b=>b.classList.toggle('active', b.dataset.tab===id));
   try { window.scrollTo({top:0, behavior:'smooth'}); } catch(e) { window.scrollTo(0,0); }
   if(id==='home') window.showTodayBrief?.();
-  if(id==='kapi') renderKapi();
-  if(id==='period') renderPeriod();
+  if(id==='kapi'){ renderKapi(); renderStoryGalleries(); }
+  if(id==='period'){ renderPeriod(); renderStoryGalleries(); }
   if(id==='mood') renderMoodBoard();
 }
 function shuffle(arr){return [...arr].sort(()=>Math.random()-.5)}
@@ -567,12 +567,101 @@ function renderMemories(){
   }).join('');
   $$('#memoryList [data-event]').forEach(b=>b.onclick=()=>openEvent(b.dataset.event));
 }
-function renderAlbum(){
-  $('#photoCount').textContent=`${photos.length} photos`;
-  $('#albumGrid').innerHTML=photos.map(p=>`<button class="photo-tile" data-photo="${p.id}"><img src="${assetUrl(p.src)}" alt="${p.title}"><b>${p.title}</b><small>${p.metadata.orientation} · ${p.metadata.webSize}</small></button>`).join('');
-  $$('#albumGrid [data-photo]').forEach(b=>b.onclick=()=>openPhoto(b.dataset.photo));
+
+const PHOTO_FAVORITES_KEY = 'ourMemories.photoFavorites.v1';
+let galleryFilter = 'all';
+let shunGalleryFilter = 'all';
+
+function getPhotoFavorites(){
+  try { return JSON.parse(localStorage.getItem(PHOTO_FAVORITES_KEY) || '[]'); }
+  catch { return []; }
+}
+function isPhotoFavorite(id){ return getPhotoFavorites().includes(id); }
+function togglePhotoFavorite(id){
+  const current = new Set(getPhotoFavorites());
+  if(current.has(id)) current.delete(id); else current.add(id);
+  localStorage.setItem(PHOTO_FAVORITES_KEY, JSON.stringify([...current]));
+  renderAlbum();
+  renderStoryGalleries();
+  const p = photos.find(x=>x.id===id);
+  if(p) openPhoto(id);
+}
+function normalizedPhotoCategory(p){
+  if(p.galleryCategory) return p.galleryCategory;
+  const text = `${p.title||''} ${p.description||''} ${p.src||''} ${(p.tags||[]).join(' ')}`;
+  if(/卡皮|kapi/i.test(text)) return 'kapi';
+  if(/漂亮小舜|shun_pretty/i.test(text)) return 'shun';
+  return 'memory';
+}
+function storySnippet(p){
+  return p.subtitle || p.description || p.story || '這張照片先替那一天保留一個位置。';
+}
+function photoStoryCard(p, cls=''){
+  return `<button class="photo-tile story-photo-tile ${cls}" data-photo="${p.id}">
+    <div class="photo-tile-image">
+      <img src="${assetUrl(p.src)}" alt="${p.title}">
+      ${isPhotoFavorite(p.id) ? '<span class="favorite-badge">★</span>' : ''}
+    </div>
+    <b>${p.title}</b>
+    <small>${storySnippet(p)}</small>
+  </button>`;
+}
+function bindPhotoTiles(root=document){
+  root.querySelectorAll?.('[data-photo]').forEach(b=>b.onclick=()=>openPhoto(b.dataset.photo));
+}
+function setGalleryFilter(filter){
+  galleryFilter = filter;
+  document.querySelectorAll('[data-gallery-filter]').forEach(btn=>btn.classList.toggle('active', btn.dataset.galleryFilter===filter));
+  renderAlbum();
+}
+function setShunGalleryFilter(filter){
+  shunGalleryFilter = filter;
+  document.querySelectorAll('[data-shun-filter]').forEach(btn=>btn.classList.toggle('active', btn.dataset.shunFilter===filter));
+  renderStoryGalleries();
+}
+function renderStoryGalleries(){
+  const kapiRoot = $('#kapiStoryGrid');
+  if(kapiRoot){
+    const list = photos.filter(p=>normalizedPhotoCategory(p)==='kapi').slice().reverse().slice(0,16);
+    kapiRoot.innerHTML = list.length ? list.map(p=>photoStoryCard(p,'story-strip-card')).join('') : '<div class="empty-card">卡皮照片之後會出現在這裡。</div>';
+    bindPhotoTiles(kapiRoot);
+  }
+  const shunRoot = $('#shunStoryGrid');
+  if(shunRoot){
+    let list = photos.filter(p=>normalizedPhotoCategory(p)==='shun').slice().reverse();
+    if(shunGalleryFilter!=='all') list = list.filter(p=>p.series===shunGalleryFilter || (p.tags||[]).includes(shunGalleryFilter));
+    shunRoot.innerHTML = list.slice(0,30).map(p=>photoStoryCard(p,'story-strip-card')).join('');
+    bindPhotoTiles(shunRoot);
+  }
 }
 
+function renderAlbum(){
+  const filters = $('#galleryFilters');
+  if(filters && !filters.dataset.bound){
+    filters.dataset.bound='1';
+    filters.querySelectorAll('[data-gallery-filter]').forEach(btn=>{
+      btn.onclick=()=>setGalleryFilter(btn.dataset.galleryFilter);
+    });
+  }
+  const shunFilters = $('#shunGalleryFilters');
+  if(shunFilters && !shunFilters.dataset.bound){
+    shunFilters.dataset.bound='1';
+    shunFilters.querySelectorAll('[data-shun-filter]').forEach(btn=>{
+      btn.onclick=()=>setShunGalleryFilter(btn.dataset.shunFilter);
+    });
+  }
+
+  let list = photos.slice().reverse();
+  if(galleryFilter==='favorite') list = list.filter(p=>isPhotoFavorite(p.id));
+  else if(galleryFilter!=='all') list = list.filter(p=>normalizedPhotoCategory(p)===galleryFilter);
+
+  $('#photoCount').textContent=`${list.length} photos`;
+  $('#albumGrid').innerHTML = list.length
+    ? list.map(p=>photoStoryCard(p)).join('')
+    : `<div class="empty-card">這個分類目前還沒有照片。</div>`;
+  bindPhotoTiles($('#albumGrid'));
+  renderStoryGalleries();
+}
 
 async function cloudSelect(table){
   if(!db) return null;
@@ -658,7 +747,9 @@ async function deleteKapiRecord(id){
 }
 
 function renderKapiCarousel(){
-  const list = kapiCarouselPhotos.length ? kapiCarouselPhotos : [{src:'images/photo0032.webp', title:'卡皮', caption:'卡皮輪播圖'}];
+  const richKapi = photos.filter(p=>normalizedPhotoCategory(p)==='kapi').slice().reverse().slice(0,8).map(p=>({src:p.src,title:p.title,caption:p.subtitle||p.description||''}));
+  const list = [...richKapi, ...kapiCarouselPhotos].filter((p,i,arr)=>arr.findIndex(x=>x.src===p.src)===i);
+  if(!list.length) list.push({src:'images/photo0032.webp', title:'卡皮', caption:'卡皮輪播圖'});
   kapiCarouselIndex = 0;
   return `<div class="kapi-carousel" data-carousel-count="${list.length}">
     ${list.map((p,i)=>`<div class="kapi-slide ${i===0?'active':''}" data-kapi-slide="${i}">
@@ -947,12 +1038,45 @@ function openEvent(id){
   $('#modal').showModal();
 }
 function openPhoto(id){
-  const p=photos.find(x=>x.id===id); const ev=events.find(e=>e.id===p.eventId);
-  const m=p.metadata;
-  $('#modalContent').innerHTML=`<img class="modal-img" src="${assetUrl(p.src)}" alt="${p.title}"><div class="modal-body"><div class="badge-row"><span class="badge">${p.rank}</span><span class="badge">${p.date||'日期待補'}</span></div><h2>${p.title}</h2><p>${ev?.summary||p.description}</p><div class="meta-grid">
-    <div class="meta"><b>原始尺寸</b>${m.originalSize}</div><div class="meta"><b>網站尺寸</b>${m.webSize}</div><div class="meta"><b>方向</b>${m.orientation}</div><div class="meta"><b>比例</b>${m.aspectRatio}</div><div class="meta"><b>EXIF時間</b>${m.exifDateTime}</div><div class="meta"><b>檔案壓縮</b>${Math.round(m.originalBytes/1024)}KB → ${Math.round(m.webpBytes/1024)}KB</div>
-  </div></div>`;
+  const p=photos.find(x=>x.id===id);
+  if(!p) return;
+  const ev=events.find(e=>e.id===p.eventId);
+  const m=p.metadata || {};
+  const index = photos.findIndex(x=>x.id===id);
+  const prev = photos[(index - 1 + photos.length) % photos.length];
+  const next = photos[(index + 1) % photos.length];
+  const tags = (p.tags||[]).filter(t=>t!=='照片');
+  const story = p.story || ev?.summary || p.description || '這張照片先替那一天保留一個位置，故事之後可以慢慢補上。';
+  const subtitle = p.subtitle || p.description || '';
+  const categoryLabel = normalizedPhotoCategory(p)==='kapi' ? '🦎 卡皮' : normalizedPhotoCategory(p)==='shun' ? '🌸 小舜' : '❤️ 回憶';
+
+  $('#modalContent').innerHTML=`
+    <div class="photo-story-hero">
+      <img class="modal-img" src="${assetUrl(p.src)}" alt="${p.title}">
+      <button type="button" class="photo-favorite-button ${isPhotoFavorite(p.id)?'active':''}" onclick="togglePhotoFavorite('${p.id}')">${isPhotoFavorite(p.id)?'★ 已收藏':'☆ 收藏'}</button>
+    </div>
+    <div class="modal-body photo-story-body">
+      <div class="badge-row">
+        <span class="badge">${categoryLabel}</span>
+        ${p.series?`<span class="badge">${p.series}</span>`:''}
+        <span class="badge">${p.date||'日期待補'}</span>
+      </div>
+      <p class="photo-story-code">${p.storyCode||p.id}</p>
+      <h2>${p.title}</h2>
+      ${subtitle ? `<h3 class="photo-story-subtitle">${subtitle}</h3>` : ''}
+      <section class="photo-story-section">
+        <span>📖 小故事</span>
+        <p>${story}</p>
+      </section>
+      ${p.note ? `<section class="photo-story-section"><span>💭 小備註</span><p>${p.note}</p></section>` : ''}
+      ${tags.length ? `<div class="photo-story-tags">${tags.map(t=>`<span>#${t}</span>`).join('')}</div>` : ''}
+      <div class="photo-story-nav">
+        <button type="button" onclick="openPhoto('${prev.id}')">← 上一張</button>
+        <button type="button" onclick="openPhoto('${next.id}')">下一張 →</button>
+      </div>
+    </div>`;
   $('#modal').showModal();
+  bindImageFallbacks($('#modalContent'));
 }
 
 /* =========================
@@ -1461,7 +1585,10 @@ function getCycleLength(records){
 }
 
 function getPrettyShunMemory(){
-  const photo = pickFromDate(shunPrettyPhotos, todayISO(), 31) || shunCutePhotos[0];
+  const richShun = photos.filter(p=>normalizedPhotoCategory(p)==='shun' && p.series==='漂亮小舜')
+    .map(p=>({src:p.src,title:p.title,caption:p.subtitle||p.description||''}));
+  const pool = [...richShun, ...shunPrettyPhotos];
+  const photo = pickFromDate(pool, todayISO(), 31) || shunCutePhotos[0];
   const compliment = pickFromDate(shunPrettyCompliments, todayISO(), 57) || '小舜就是這麼漂亮又可愛，看看你多幸運。';
   return {photo, compliment};
 }
@@ -1957,9 +2084,11 @@ function renderFlashback(ev){
     ${ph ? `<img class="feature-img" src="${assetUrl(ph.src)}" alt="${ev.title}">` : `<div class="feature-symbol"><span>${eventIcon(ev)}</span><b>${isDialogueEvent(ev)?'LINE MEMORY':'TEXT MEMORY'}</b></div>`}
     <div class="feature-body">
       <div class="badge-row"><span class="badge">${ev.rank||'memory'}</span><span class="badge">${ev.category||'回憶'}</span></div>
-      <h3>${ev.title}</h3><p>${ev.summary||''}</p>
-      ${(ev.chatFragments||[]).slice(0,2).map(x=>`<div class="story">${x}</div>`).join('')}
+      <h3>${ph?.title || ev.title}</h3>
+      <p>${ph?.subtitle || ev.summary || ''}</p>
+      ${ph?.story ? `<div class="story flashback-story">${ph.story}</div>` : (ev.chatFragments||[]).slice(0,2).map(x=>`<div class="story">${x}</div>`).join('')}
     </div>`;
+  $('#flashbackCard').onclick = ph ? ()=>openPhoto(ph.id) : null;
   bindImageFallbacks($('#flashbackCard'));
 }
 

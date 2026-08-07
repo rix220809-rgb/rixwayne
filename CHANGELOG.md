@@ -1,5 +1,13 @@
 # Changelog
 
+## V10.7
+- Memory Story gallery with only three core content families: couple memories, Shun, Kapi.
+- 41 new photos from 2026-08 update.
+- Rich subtitles, stories, tags and favorites.
+- Shun Food remains a tag/series rather than a separate navigation section.
+- Day 2 catch-up for a missed Day 1 period popup.
+
+
 ## V10.6.1
 - Added permanent period_cycles migration.
 - Fixed starting and ending active period cycles.

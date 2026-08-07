@@ -1,8 +1,8 @@
 /* Our Memories V10.6 — Today Brief Engine */
 (() => {
-  const VERSION = '10.6.0';
+  const VERSION = '10.7.0';
   const TEXT_URL = `data/today_brief_texts.json?v=${VERSION}`;
-  const DAY_KEY_PREFIX = 'ourMemories.todayBrief.seen.v10.6';
+  const DAY_KEY_PREFIX = 'ourMemories.todayBrief.seen.v10.7';
   let textLibrary = null;
   let currentQueue = [];
   let currentIndex = 0;
@@ -65,19 +65,23 @@
         ? await getCycleEngineState()
         : (typeof getRecordedPeriodState === 'function' ? await getRecordedPeriodState() : null);
 
-      if(state?.active && Number(state.day) === 1){
+      if(state?.active && Number(state.day) >= 1 && Number(state.day) <= 2){
         const mood = typeof getDailyAngryPhoto === 'function' ? getDailyAngryPhoto() : null;
-        briefs.push(buildBrief({
-          key:`period-start-${today}`,
+        const cycleStart = state.start || today;
+        const brief = buildBrief({
+          key:`period-start-${cycleStart}`,
           type:'period_start',
           priority:100,
           emoji:'🌸',
           image:mood?.src,
-          vars:{day:1},
-          fallbackTitle:'🚨 小舜警報 Lv.MAX',
-          fallbackBody:['小舜今天正式進入經期模式。','今日建議：多一點耐心，少一點大道理。'],
+          vars:{day:state.day},
+          fallbackTitle: Number(state.day) === 1 ? '🚨 小舜警報 Lv.MAX' : '🚨 昨天漏掉的小舜警報',
+          fallbackBody: Number(state.day) === 1
+            ? ['小舜今天正式進入經期模式。','今日建議：多一點耐心，少一點大道理。']
+            : ['本次經期已經開始，昨天的 Day 1 警報沒有成功顯示。','系統今天補播一次，之後不會再重複。'],
           fallbackTask:'今天多照顧小舜一點。'
-        }));
+        });
+        if(Number(state.day) === 1 || force || !isSeen(brief)) briefs.push(brief);
         return briefs;
       }
 

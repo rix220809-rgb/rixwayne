@@ -28,7 +28,13 @@
       ],
       "aiSceneHint": "名義前的起點／鏡子自拍"
     },
-    "featured": true
+    "featured": true,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "名義前的起點／鏡子自拍",
+    "story": "你們認識後的重要合照起點。它會被放進 Legendary 回憶，作為整個 Our Memories 的序章。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0002",
@@ -59,7 +65,13 @@
       ],
       "aiSceneHint": "一起抽到喜歡的排球少年菅原學長"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "一起抽到喜歡的排球少年菅原學長",
+    "story": "一起抽到喜歡的排球少年菅原學長，從動漫收藏變成共同回憶。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0003",
@@ -90,7 +102,13 @@
       ],
       "aiSceneHint": "第一次一起去畫畫，共同創作的約會"
     },
-    "featured": true
+    "featured": true,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "第一次一起去畫畫，共同創作的約會",
+    "story": "第一次兩個人去畫畫，這是共同創作型約會的起點。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0004",
@@ -121,7 +139,13 @@
       ],
       "aiSceneHint": "聚餐時張懷跑來唱歌的回憶"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "聚餐時張懷跑來唱歌的回憶",
+    "story": "張懷在舜寶聚餐時跑來唱歌，是朋友與戀人交會的熱鬧時刻。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0005",
@@ -152,7 +176,13 @@
       ],
       "aiSceneHint": "第一次一起嘗試滑板"
     },
-    "featured": true
+    "featured": true,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "第一次一起嘗試滑板",
+    "story": "第一次一起溜滑板，把身體記憶也放進你們的戀愛遊戲。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0006",
@@ -183,7 +213,13 @@
       ],
       "aiSceneHint": "和芬恩、靈驗、家宏一起聽 Daniel Caesar"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "和芬恩、靈驗、家宏一起聽 Daniel Caesar",
+    "story": "一起聽 Daniel Caesar，也和芬恩、靈驗、家宏一起共享音樂現場。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0007",
@@ -214,7 +250,13 @@
       ],
       "aiSceneHint": "第一次跟小舜家人見面，台南療癒之旅"
     },
-    "featured": true
+    "featured": true,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "第一次跟小舜家人見面，台南療癒之旅",
+    "story": "台南療癒之旅，第一次跟小舜家人見面，是關係裡非常重要的里程碑。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0008",
@@ -245,7 +287,13 @@
       ],
       "aiSceneHint": "第一次一起去貓咖"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "第一次一起去貓咖",
+    "story": "第一次一起去貓咖，動物與約會一起收藏。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0009",
@@ -276,7 +324,13 @@
       ],
       "aiSceneHint": "張懷陪小舜聽 Deca Joins"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "張懷陪小舜聽 Deca Joins",
+    "story": "張懷陪小舜聽 Deca Joins，音樂成為你們的共同場景。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0010",
@@ -307,7 +361,13 @@
       ],
       "aiSceneHint": "交往 100 天的紀念"
     },
-    "featured": true
+    "featured": true,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "交往 100 天的紀念",
+    "story": "在一起 100 天，從此變成網站裡的一個紀念節點。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0011",
@@ -338,7 +398,13 @@
       ],
       "aiSceneHint": "小舜去看 NANA 展覽"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "小舜去看 NANA 展覽",
+    "story": "小舜去看 NANA 展覽，動漫與展覽記憶被放進相簿。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0012",
@@ -369,7 +435,13 @@
       ],
       "aiSceneHint": "蕭小舜在張懷家留下的小貼紙"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "蕭小舜在張懷家留下的小貼紙",
+    "story": "小舜在張懷家貼的貼紙，像是把自己偷偷放進對方生活裡。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0013",
@@ -400,7 +472,13 @@
       ],
       "aiSceneHint": "你們名義上的第一張合照"
     },
-    "featured": true
+    "featured": true,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "你們名義上的第一張合照",
+    "story": "名義上的第一張合照，是 First Memories 裡的關鍵照片。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0014",
@@ -431,7 +509,13 @@
       ],
       "aiSceneHint": "出去玩時小舜幫張懷拍的形象照"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "出去玩時小舜幫張懷拍的形象照",
+    "story": "小舜幫張懷拍形象照，從戀人也變成彼此的攝影師。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0015",
@@ -462,7 +546,13 @@
       ],
       "aiSceneHint": "第二次約會在海邊幫張懷拍照"
     },
-    "featured": true
+    "featured": true,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "第二次約會在海邊幫張懷拍照",
+    "story": "第二次約會去海邊，小舜幫張懷拍照。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0016",
@@ -493,7 +583,13 @@
       ],
       "aiSceneHint": "張懷真正對蕭小舜傾心的那一天"
     },
-    "featured": true
+    "featured": true,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "張懷真正對蕭小舜傾心的那一天",
+    "story": "張懷真正對蕭小舜傾心的那天，會放進 Love Timeline。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0017",
@@ -524,7 +620,13 @@
       ],
       "aiSceneHint": "偷偷去餐廳請店員幫張懷插蠟燭"
     },
-    "featured": true
+    "featured": true,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "偷偷去餐廳請店員幫張懷插蠟燭",
+    "story": "小舜偷偷去餐廳請店員幫張懷插蠟燭，是生日驚喜事件。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0018",
@@ -555,7 +657,13 @@
       ],
       "aiSceneHint": "1/21 張懷生日"
     },
-    "featured": true
+    "featured": true,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "1/21 張懷生日",
+    "story": "1/21 張懷生日，第一批重要紀念日之一。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0019",
@@ -586,7 +694,13 @@
       ],
       "aiSceneHint": "生日一起完成張懷想拍很久的形象照"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "生日一起完成張懷想拍很久的形象照",
+    "story": "張懷生日，兩個人一起完成他想拍很久的形象照。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0020",
@@ -617,7 +731,13 @@
       ],
       "aiSceneHint": "張懷照顧生病的小舜"
     },
-    "featured": true
+    "featured": true,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "張懷照顧生病的小舜",
+    "story": "張懷照顧生病的小舜，這是照顧與陪伴的回憶。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0021",
@@ -648,7 +768,13 @@
       ],
       "aiSceneHint": "小舜盲腸炎開刀的重要回憶"
     },
-    "featured": true
+    "featured": true,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "小舜盲腸炎開刀的重要回憶",
+    "story": "小舜盲腸炎開刀，屬於人生事件與陪伴系回憶。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0022",
@@ -679,7 +805,13 @@
       ],
       "aiSceneHint": "一起把阪本的日常一番賞整套包下來"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "一起把阪本的日常一番賞整套包下來",
+    "story": "一起把《阪本的日常》一番賞整套包下來，是收藏系大事件。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0023",
@@ -710,7 +842,13 @@
       ],
       "aiSceneHint": "張懷的 Gogoro 與車牌 EPD-2976"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "張懷的 Gogoro 與車牌 EPD-2976",
+    "story": "張懷的車牌 EPD-2976，會成為只有你們知道的細節題。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0024",
@@ -741,7 +879,13 @@
       ],
       "aiSceneHint": "大吵過後仍然一起過情人節"
     },
-    "featured": true
+    "featured": true,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "大吵過後仍然一起過情人節",
+    "story": "大吵過後仍然一起過情人節，不是沒有吵架，而是還願意修復。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0025",
@@ -772,7 +916,13 @@
       ],
       "aiSceneHint": "和秀芬一起拍照"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "和秀芬一起拍照",
+    "story": "跟秀芬一起拍照，把重要人物也放入回憶資料庫。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0026",
@@ -803,7 +953,13 @@
       ],
       "aiSceneHint": "一起去古亭看花花"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "一起去古亭看花花",
+    "story": "一起去古亭看花花，是散步與小約會的溫柔節點。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0027",
@@ -834,7 +990,13 @@
       ],
       "aiSceneHint": "家裡水塔壞掉，被迫去住旅館"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "家裡水塔壞掉，被迫去住旅館",
+    "story": "家裡水塔壞掉，被迫去住旅館，普通事故變成意外小旅行。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0028",
@@ -865,7 +1027,13 @@
       ],
       "aiSceneHint": "一起去買歐拉夫盲盒"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "一起去買歐拉夫盲盒",
+    "story": "一起去買歐拉夫盲盒，是購物與收藏回憶。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0029",
@@ -896,7 +1064,13 @@
       ],
       "aiSceneHint": "張懷送給小舜的七海建人"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "張懷送給小舜的七海建人",
+    "story": "張懷送小舜七海建人，禮物題庫會記住這件事。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0030",
@@ -927,7 +1101,13 @@
       ],
       "aiSceneHint": "小舜幫張懷敷面膜"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "小舜幫張懷敷面膜",
+    "story": "小舜幫張懷敷面膜，居家照顧感十足。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0031",
@@ -958,7 +1138,13 @@
       ],
       "aiSceneHint": "和小玫見面"
     },
-    "featured": false
+    "featured": false,
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "和小玫見面",
+    "story": "跟小玫見面，新增朋友人物回憶。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "PH-0032",
@@ -992,7 +1178,13 @@
       ],
       "aiSceneHint": "你們的寵物守宮：卡皮"
     },
-    "featured": true
+    "featured": true,
+    "galleryCategory": "kapi",
+    "series": "Kapi Diary",
+    "subtitle": "你們的寵物守宮：卡皮",
+    "story": "卡皮是你們的寵物，一隻守宮。從 v4 起加入寵物頁與寵物題庫。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0033",
@@ -1012,7 +1204,13 @@
       "exifDateTime": "2026-05-11",
       "originalBytes": null,
       "webpBytes": 213090
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "吵到要分手最後哭著要和好哇哇哇｡ﾟヽ(ﾟ´Д`)ﾉﾟ｡",
+    "story": "吵到要分手最後哭著要和好哇哇哇｡ﾟヽ(ﾟ´Д`)ﾉﾟ｡",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0034",
@@ -1032,7 +1230,13 @@
       "exifDateTime": "2026-05-11",
       "originalBytes": null,
       "webpBytes": 399110
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "張懷最有自信唱歌的部分。",
+    "story": "張懷最有自信唱歌的部分。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0035",
@@ -1052,7 +1256,13 @@
       "exifDateTime": "2026-03-05",
       "originalBytes": null,
       "webpBytes": 77360
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "超憨ㄉ張懷寶ლ（╹ε╹ლ）",
+    "story": "超憨ㄉ張懷寶ლ（╹ε╹ლ）",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0036",
@@ -1072,7 +1282,13 @@
       "exifDateTime": "待補",
       "originalBytes": null,
       "webpBytes": 93616
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "張懷跟他喜歡的毛帽最後一張合照（還是我們第一次約會買ㄉ）",
+    "story": "張懷跟他喜歡的毛帽最後一張合照（還是我們第一次約會買ㄉ）",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0037",
@@ -1092,7 +1308,13 @@
       "exifDateTime": "待補",
       "originalBytes": null,
       "webpBytes": 160058
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "張懷帶飯糰公主去飯糰神社⛩️",
+    "story": "張懷帶飯糰公主去飯糰神社⛩️",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0038",
@@ -1112,7 +1334,13 @@
       "exifDateTime": "待補",
       "originalBytes": null,
       "webpBytes": 155744
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "飯糰公主剛張懷去日本玩🇯🇵",
+    "story": "飯糰公主剛張懷去日本玩🇯🇵",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0039",
@@ -1132,7 +1360,13 @@
       "exifDateTime": "待補",
       "originalBytes": null,
       "webpBytes": 96946
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "每天睡超醜任務（1/N)",
+    "story": "每天睡超醜任務（1/N)",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0040",
@@ -1152,7 +1386,13 @@
       "exifDateTime": "待補",
       "originalBytes": null,
       "webpBytes": 154000
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "Theresa帶小舜小懷去他前公司限定景觀咖啡廳！",
+    "story": "Theresa帶小舜小懷去他前公司限定景觀咖啡廳！",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0041",
@@ -1172,7 +1412,13 @@
       "exifDateTime": "2026-06-10",
       "originalBytes": null,
       "webpBytes": 207254
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "去吃好吃ㄉ漢堡🍔",
+    "story": "去吃好吃ㄉ漢堡🍔",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0042",
@@ -1192,7 +1438,13 @@
       "exifDateTime": "2026-06-11",
       "originalBytes": null,
       "webpBytes": 228976
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "猜猜看這是哪間泰式料理呀！",
+    "story": "猜猜看這是哪間泰式料理呀！",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0043",
@@ -1212,7 +1464,13 @@
       "exifDateTime": "2026-06-16",
       "originalBytes": null,
       "webpBytes": 61456
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "跟小舜打架被打倒的張懷（遜爆了）",
+    "story": "跟小舜打架被打倒的張懷（遜爆了）",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0044",
@@ -1232,7 +1490,13 @@
       "exifDateTime": "2026-02-13",
       "originalBytes": null,
       "webpBytes": 167196
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "先大吵一架然後再和可愛ㄉ愛茉包水餃",
+    "story": "先大吵一架然後再和可愛ㄉ愛茉包水餃",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0045",
@@ -1252,7 +1516,13 @@
       "exifDateTime": "2026-02-13",
       "originalBytes": null,
       "webpBytes": 117608
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "張懷送給他最愛ㄉ兩個女人花(´,,•ω•,,)♡",
+    "story": "張懷送給他最愛ㄉ兩個女人花(´,,•ω•,,)♡",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0046",
@@ -1272,7 +1542,13 @@
       "exifDateTime": "2026-06-27",
       "originalBytes": null,
       "webpBytes": 314774
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "第一次嘗試Y2K（算是有成功）",
+    "story": "第一次嘗試Y2K（算是有成功）",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0047",
@@ -1292,7 +1568,13 @@
       "exifDateTime": "2026-06-28",
       "originalBytes": null,
       "webpBytes": 218536
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "小舜失眠啦！跟一直擠他睡覺的懷寶拍照(｡ŏ_ŏ)",
+    "story": "小舜失眠啦！跟一直擠他睡覺的懷寶拍照(｡ŏ_ŏ)",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0048",
@@ -1312,7 +1594,13 @@
       "exifDateTime": "2026-07-04",
       "originalBytes": null,
       "webpBytes": 257080
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "張懷一直說很好吃的南門飯店（確實不錯）",
+    "story": "張懷一直說很好吃的南門飯店（確實不錯）",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0049",
@@ -1332,7 +1620,13 @@
       "exifDateTime": "2026-07-06",
       "originalBytes": null,
       "webpBytes": 145510
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "去飯店住！泡澡泡澡🛁",
+    "story": "去飯店住！泡澡泡澡🛁",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0050",
@@ -1352,7 +1646,13 @@
       "exifDateTime": "2026-07-09",
       "originalBytes": null,
       "webpBytes": 171990
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "睡覺直接給小舜位置睡掉（poor小舜）",
+    "story": "睡覺直接給小舜位置睡掉（poor小舜）",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0051",
@@ -1372,7 +1672,13 @@
       "exifDateTime": "2026-07-09",
       "originalBytes": null,
       "webpBytes": 84122
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "某天張懷長針眼小舜為了二次確認是不是針眼就拍了照",
+    "story": "某天張懷長針眼小舜為了二次確認是不是針眼就拍了照",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0052",
@@ -1392,7 +1698,13 @@
       "exifDateTime": "2026-03-16",
       "originalBytes": null,
       "webpBytes": 132546
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "去買了睡覺歐拉夫！超口愛心臟爆擊(´,,•ω•,,)♡",
+    "story": "去買了睡覺歐拉夫！超口愛心臟爆擊(´,,•ω•,,)♡",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0053",
@@ -1412,7 +1724,13 @@
       "exifDateTime": "2026-03-30",
       "originalBytes": null,
       "webpBytes": 387764
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "小舜：這段感情都我在扛，衛生紙也是。",
+    "story": "小舜：這段感情都我在扛，衛生紙也是。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0054",
@@ -1432,7 +1750,13 @@
       "exifDateTime": "2026-04-02",
       "originalBytes": null,
       "webpBytes": 56318
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "我們在比超靠近不笑比賽（超好笑哈）",
+    "story": "我們在比超靠近不笑比賽（超好笑哈）",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0055",
@@ -1452,7 +1776,13 @@
       "exifDateTime": "2026-04-21",
       "originalBytes": null,
       "webpBytes": 126112
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "Real舜小寶寶👼",
+    "story": "Real舜小寶寶👼",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0056",
@@ -1472,7 +1802,13 @@
       "exifDateTime": "2026-04-21",
       "originalBytes": null,
       "webpBytes": 241118
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "Real懷小寶寶👶",
+    "story": "Real懷小寶寶👶",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0057",
@@ -1492,7 +1828,13 @@
       "exifDateTime": "2026-04-27",
       "originalBytes": null,
       "webpBytes": 145982
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "去印度料理店畫畫很荒謬但很有趣（懷Ver.)",
+    "story": "去印度料理店畫畫很荒謬但很有趣（懷Ver.)",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0058",
@@ -1512,7 +1854,13 @@
       "exifDateTime": "2026-04-27",
       "originalBytes": null,
       "webpBytes": 92540
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "去印度料理店畫畫很荒謬但很有趣（舜Ver.)",
+    "story": "去印度料理店畫畫很荒謬但很有趣（舜Ver.)",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0059",
@@ -1532,7 +1880,13 @@
       "exifDateTime": "2026-05-28",
       "originalBytes": null,
       "webpBytes": 55092
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "回台南去奇美博物館寄信給自己📮",
+    "story": "回台南去奇美博物館寄信給自己📮",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0060",
@@ -1552,7 +1906,13 @@
       "exifDateTime": "2026-06-22",
       "originalBytes": null,
       "webpBytes": 64356
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "在玩轉圈圈不能拍到對方遊戲",
+    "story": "在玩轉圈圈不能拍到對方遊戲",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0061",
@@ -1572,7 +1932,13 @@
       "exifDateTime": "2026-07-05",
       "originalBytes": null,
       "webpBytes": 202818
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "舜寶跟顏紫去探懷的班（奇怪怎麼每次都是跟顏紫）",
+    "story": "舜寶跟顏紫去探懷的班（奇怪怎麼每次都是跟顏紫）",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0062",
@@ -1592,7 +1958,13 @@
       "exifDateTime": "待補",
       "originalBytes": null,
       "webpBytes": 94148
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "舜寶只是想炫耀他有跟蛋堡合照（´◔ ₃ ◔`)",
+    "story": "舜寶只是想炫耀他有跟蛋堡合照（´◔ ₃ ◔`)",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0063",
@@ -1612,7 +1984,13 @@
       "exifDateTime": "2026-01-24",
       "originalBytes": null,
       "webpBytes": 90448
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "去探懷的班試穿動物方城市ㄉ童裝（懷不買給我嗚嗚ＱＱ）",
+    "story": "去探懷的班試穿動物方城市ㄉ童裝（懷不買給我嗚嗚ＱＱ）",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0064",
@@ -1632,7 +2010,13 @@
       "exifDateTime": "待補",
       "originalBytes": null,
       "webpBytes": 190576
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "Double小飯糰合照🍙",
+    "story": "Double小飯糰合照🍙",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0065",
@@ -1652,7 +2036,13 @@
       "exifDateTime": "待補",
       "originalBytes": null,
       "webpBytes": 105102
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "去貓咖跟一堆貓貓工作嘻嘻ฅ^•ﻌ•^ฅ",
+    "story": "去貓咖跟一堆貓貓工作嘻嘻ฅ^•ﻌ•^ฅ",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0066",
@@ -1672,7 +2062,13 @@
       "exifDateTime": "2025-12-31",
       "originalBytes": null,
       "webpBytes": 242200
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "幫張懷拍帥照（芬恩送給張懷ㄉ生日禮物）",
+    "story": "幫張懷拍帥照（芬恩送給張懷ㄉ生日禮物）",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0067",
@@ -1692,7 +2088,13 @@
       "exifDateTime": "2026-01-27",
       "originalBytes": null,
       "webpBytes": 144390
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "住在張懷家的好時光（那時候沒事做好爽(≖ᴗ≖๑)",
+    "story": "住在張懷家的好時光（那時候沒事做好爽(≖ᴗ≖๑)",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0068",
@@ -1712,7 +2114,13 @@
       "exifDateTime": "2026-04-16",
       "originalBytes": null,
       "webpBytes": 251202
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "小舜好廚藝(๑´ڡ`๑)！",
+    "story": "小舜好廚藝(๑´ڡ`๑)！",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0069",
@@ -1732,7 +2140,13 @@
       "exifDateTime": "2026-05-27",
       "originalBytes": null,
       "webpBytes": 278322
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "帥氣舜直接投籃拿下兩隻大娃",
+    "story": "帥氣舜直接投籃拿下兩隻大娃",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0070",
@@ -1753,7 +2167,13 @@
       "exifDateTime": "",
       "originalBytes": 663884,
       "webpBytes": 249000
-    }
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "坐榻榻米聊天真是太棒了！東西又很好吃՞⸝⸝ᵒ̴̶̷ 𓈞 ᵒ̴̶̷⸝⸝՞",
+    "story": "坐榻榻米聊天真是太棒了！東西又很好吃՞⸝⸝ᵒ̴̶̷ 𓈞 ᵒ̴̶̷⸝⸝՞",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0071",
@@ -1774,7 +2194,13 @@
       "exifDateTime": "",
       "originalBytes": 3700896,
       "webpBytes": 153328
-    }
+    },
+    "galleryCategory": "kapi",
+    "series": "Kapi Diary",
+    "subtitle": "卡皮跟爸爸一起躺著看手機的可愛日常。",
+    "story": "卡皮跟爸爸一起躺著看手機的可愛日常。",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0072",
@@ -1795,7 +2221,13 @@
       "exifDateTime": "",
       "originalBytes": 488376,
       "webpBytes": 111468
-    }
+    },
+    "galleryCategory": "kapi",
+    "series": "Kapi Diary",
+    "subtitle": "唷呼！有夠口愛(ृ´͈ ᵕ `͈ ृ )",
+    "story": "唷呼！有夠口愛(ृ´͈ ᵕ `͈ ृ )",
+    "homepage": true,
+    "favorite": false
   },
   {
     "id": "P-0073",
@@ -1816,6 +2248,1455 @@
       "exifDateTime": "",
       "originalBytes": 645902,
       "webpBytes": 201732
+    },
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "subtitle": "談開之後留下的合照，和解成功紀念。",
+    "story": "談開之後留下的合照，和解成功紀念。",
+    "homepage": true,
+    "favorite": false
+  },
+  {
+    "id": "PH-0074",
+    "eventId": "",
+    "storyCode": "M031",
+    "title": "突然想畫畫的一天",
+    "subtitle": "一起完成的畫布",
+    "description": "一起完成的畫布",
+    "story": "那天心情突然有點不好，突然很想畫畫。結果小懷二話不說就陪我一起 Go！最後我們兩個都完成了一幅自己的作品，而且偷偷說一句——小懷真的畫得很好耶。",
+    "src": "images/memory_m031.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "tags": [
+      "照片",
+      "畫畫",
+      "一起創作",
+      "陪伴",
+      "回憶"
+    ],
+    "featured": true,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/memory_m031.webp",
+      "originalSize": "1536 × 1038",
+      "webSize": "1536 × 1038",
+      "orientation": "橫式",
+      "aspectRatio": 1.48,
+      "originalBytes": 566252,
+      "webpBytes": 176160,
+      "originalFile": "3AF3C3D4-2732-466A-AAF1-1B72EFA91DDB.jpeg",
+      "displayFile": "memory_m031.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0075",
+    "eventId": "",
+    "storyCode": "M032",
+    "title": "超有自信先生",
+    "subtitle": "一直很有自信的懷",
+    "description": "一直很有自信的懷",
+    "story": "每次看到小懷這個表情，都覺得他好像在說：「我知道我很帥。」……嫌棄臉。",
+    "src": "images/memory_m032.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "tags": [
+      "照片",
+      "懷寶",
+      "日常",
+      "搞笑",
+      "偷拍"
+    ],
+    "featured": true,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/memory_m032.webp",
+      "originalSize": "1536 × 1038",
+      "webSize": "1536 × 1038",
+      "orientation": "橫式",
+      "aspectRatio": 1.48,
+      "originalBytes": 468355,
+      "webpBytes": 111270,
+      "originalFile": "EC8A5A16-2FED-4F3A-B282-E45C1C5F61D3.jpeg",
+      "displayFile": "memory_m032.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0076",
+    "eventId": "",
+    "storyCode": "M033",
+    "title": "等人的小舜",
+    "subtitle": "明明只是坐著，也是一張回憶",
+    "description": "明明只是坐著，也是一張回憶",
+    "story": "明明只是坐在旁邊等人，還是很有自己的樣子。這種沒有特別安排、只是被留下來的瞬間，反而很適合放進回憶裡。",
+    "src": "images/memory_m033.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "tags": [
+      "照片",
+      "小舜",
+      "底片",
+      "日常"
+    ],
+    "featured": true,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/memory_m033.webp",
+      "originalSize": "1536 × 1038",
+      "webSize": "1536 × 1038",
+      "orientation": "橫式",
+      "aspectRatio": 1.48,
+      "originalBytes": 612918,
+      "webpBytes": 204948,
+      "originalFile": "DE299161-66B5-42E8-A49D-896351B3FBE5.jpeg",
+      "displayFile": "memory_m033.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0077",
+    "eventId": "",
+    "storyCode": "M034",
+    "title": "投籃贏來的新朋友",
+    "subtitle": "以後就是我們的朋友們",
+    "description": "以後就是我們的朋友們",
+    "story": "小舜去夜市投籃，居然真的把娃娃帶回家了！從今天開始，這些新朋友正式加入我們。以後就是我跟小懷的朋友們啦 ❀.𖥔 ݁ ˖",
+    "src": "images/memory_m034.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "tags": [
+      "照片",
+      "夜市",
+      "娃娃",
+      "約會",
+      "新朋友"
+    ],
+    "featured": true,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/memory_m034.webp",
+      "originalSize": "1536 × 1038",
+      "webSize": "1536 × 1038",
+      "orientation": "橫式",
+      "aspectRatio": 1.48,
+      "originalBytes": 714380,
+      "webpBytes": 300770,
+      "originalFile": "FCD17B57-494D-4648-9F04-506924507639.jpeg",
+      "displayFile": "memory_m034.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0078",
+    "eventId": "",
+    "storyCode": "M035",
+    "title": "舊～舊餐廳約會",
+    "subtitle": "小懷一直玩手機",
+    "description": "小懷一直玩手機",
+    "story": "一起去舊～舊餐廳約會。餐廳很好、氣氛也很好，只是有人一直玩手機。先記一筆。",
+    "src": "images/memory_m035.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "tags": [
+      "照片",
+      "約會",
+      "餐廳",
+      "懷寶",
+      "玩手機警告"
+    ],
+    "featured": true,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/memory_m035.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 3654318,
+      "webpBytes": 151808,
+      "originalFile": "5CFEB63A-C09C-43F2-A865-99FA6B5B4A8F.jpeg",
+      "displayFile": "memory_m035.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0079",
+    "eventId": "",
+    "storyCode": "M036",
+    "title": "喔！小姐哩賊～🎵",
+    "subtitle": "今天相親對象扣分",
+    "description": "今天相親對象扣分",
+    "story": "來舊舊的餐廳約會，今天的相親對象先扣個五分。（原因你懂。）",
+    "src": "images/memory_m036.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "tags": [
+      "照片",
+      "今天很好笑",
+      "漂亮小舜",
+      "扣分事件"
+    ],
+    "featured": true,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/memory_m036.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 3675769,
+      "webpBytes": 224020,
+      "originalFile": "D6E358AD-B3A7-4ABC-B0B0-13789283A41A.jpeg",
+      "displayFile": "memory_m036.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0080",
+    "eventId": "",
+    "storyCode": "M037",
+    "title": "好順利看到煙火啦！",
+    "subtitle": "一起看煙火",
+    "description": "一起看煙火",
+    "story": "好順利好順利看到煙火了呀！真的好漂亮。能一起站在那裡看到，就已經是很值得留下來的一晚。🌸",
+    "src": "images/memory_m037.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "tags": [
+      "照片",
+      "煙火",
+      "約會",
+      "一起看",
+      "回憶"
+    ],
+    "featured": true,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/memory_m037.webp",
+      "originalSize": "4608 × 3456",
+      "webSize": "1600 × 1200",
+      "orientation": "橫式",
+      "aspectRatio": 1.333,
+      "originalBytes": 3671012,
+      "webpBytes": 277690,
+      "originalFile": "A3074C1B-08CE-4ECF-BEAC-E356E6D8E873.jpeg",
+      "displayFile": "memory_m037.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0081",
+    "eventId": "",
+    "storyCode": "M038",
+    "title": "每次都要拍一張",
+    "subtitle": "我們的車牌固定儀式",
+    "description": "我們的車牌固定儀式",
+    "story": "每次繳機車停車費，一定都要拍一張車牌。這已經變成我們的固定流程了。因為我們第一張合照，其實就是一張車牌。每拍一次，都像在默默記錄我們又一起走過了一天。🛵",
+    "src": "images/memory_m038.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "tags": [
+      "照片",
+      "停車",
+      "固定儀式",
+      "生活碎片",
+      "第一張合照"
+    ],
+    "featured": true,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/memory_m038.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 3653581,
+      "webpBytes": 150218,
+      "originalFile": "52DE1D4B-4A21-4D59-93D2-FC9BCAC39D66.jpeg",
+      "displayFile": "memory_m038.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0082",
+    "eventId": "",
+    "storyCode": "M039",
+    "title": "小懷又吃不飽",
+    "subtitle": "復古咖啡廳約會",
+    "description": "復古咖啡廳約會",
+    "story": "今天去了一間復古咖啡廳。餐點很好吃、氣氛也很舒服，唯一的問題就是——小懷又吃不飽。",
+    "src": "images/memory_m039.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "tags": [
+      "照片",
+      "咖啡廳",
+      "約會",
+      "吃不飽",
+      "美食"
+    ],
+    "featured": true,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/memory_m039.webp",
+      "originalSize": "1024 × 1536",
+      "webSize": "1024 × 1536",
+      "orientation": "直式",
+      "aspectRatio": 0.667,
+      "originalBytes": 659225,
+      "webpBytes": 242348,
+      "originalFile": "8A3B66F9-7A4C-4E64-B985-42706751FD1B.jpeg",
+      "displayFile": "memory_m039.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0083",
+    "eventId": "",
+    "storyCode": "M040",
+    "title": "起床去約會啦！",
+    "subtitle": "臉很腫嗚嗚",
+    "description": "臉很腫嗚嗚",
+    "story": "早上起床要去約會啦！雖然臉很腫嗚嗚 (⚲□⚲)，但還是要出門留下今天的照片。",
+    "src": "images/memory_m040.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "tags": [
+      "照片",
+      "漂亮小舜",
+      "約會日",
+      "日常"
+    ],
+    "featured": true,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/memory_m040.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 3760737,
+      "webpBytes": 178806,
+      "originalFile": "76EE5E9A-F871-4EE9-AD87-F52C36DD2FE3.jpeg",
+      "displayFile": "memory_m040.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0084",
+    "eventId": "",
+    "storyCode": "M041",
+    "title": "張小懷送花花ܸ⁺˳✿⏦۠₊",
+    "subtitle": "根本故意的！",
+    "description": "根本故意的！",
+    "story": "某人突然送我一束花花。看起來很浪漫……但我嚴重懷疑你根本就是故意的！因為你趁我去門市的時候送我，想要讓大家稱讚你。",
+    "src": "images/memory_m041.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "tags": [
+      "照片",
+      "漂亮小舜",
+      "收到花花",
+      "根本故意的"
+    ],
+    "featured": true,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/memory_m041.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 3021107,
+      "webpBytes": 134500,
+      "originalFile": "ED575899-7DF0-45A4-924A-7997798D5C4A.jpeg",
+      "displayFile": "memory_m041.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0085",
+    "eventId": "",
+    "storyCode": "M042",
+    "title": "今天也是大小眼小懷",
+    "subtitle": "眼睛又一大一小",
+    "description": "眼睛又一大一小",
+    "story": "張小懷今天的兩隻眼睛又各過各的。左邊一個狀態、右邊另一個狀態，但本人依然非常有自信。",
+    "src": "images/memory_m042.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "tags": [
+      "照片",
+      "懷寶",
+      "大小眼",
+      "日常",
+      "搞笑"
+    ],
+    "featured": true,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/memory_m042.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 3215670,
+      "webpBytes": 212058,
+      "originalFile": "3B478E43-6FC7-4C43-9933-C5513BC8B209.jpeg",
+      "displayFile": "memory_m042.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0086",
+    "eventId": "",
+    "storyCode": "M043",
+    "title": "當我看不出來是不是！",
+    "subtitle": "半年快樂！",
+    "description": "半年快樂！",
+    "story": "半年快樂！！張小懷本來想偷偷套路我，結果反而被我套路回去了。哼！我早就知道你在暗示我要送什麼了，把我當笨蛋是不是！！我才是最聰明的那個～",
+    "src": "images/memory_m043.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "tags": [
+      "照片",
+      "半年快樂",
+      "禮物交換",
+      "套路王"
+    ],
+    "featured": true,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/memory_m043.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 3371556,
+      "webpBytes": 227308,
+      "originalFile": "DD80AE5A-2378-4791-836A-169BB9FB66BF.jpeg",
+      "displayFile": "memory_m043.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0087",
+    "eventId": "",
+    "storyCode": "M044",
+    "title": "花花不是這樣拍的啦",
+    "subtitle": "終於肯拍了",
+    "description": "終於肯拍了",
+    "story": "小懷心情不好，所以包花花給他。叫他拍照的時候死不拍，現在好啦，肚子痛才要跟花花拍。這張一定要留下來。",
+    "src": "images/memory_m044.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "tags": [
+      "照片",
+      "花花",
+      "懷寶",
+      "日常"
+    ],
+    "featured": true,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/memory_m044.webp",
+      "originalSize": "1024 × 1536",
+      "webSize": "1024 × 1536",
+      "orientation": "直式",
+      "aspectRatio": 0.667,
+      "originalBytes": 679525,
+      "webpBytes": 268784,
+      "originalFile": "1BB67963-EBCA-4076-A745-2B12B167BDA1.jpeg",
+      "displayFile": "memory_m044.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0088",
+    "eventId": "",
+    "storyCode": "M045",
+    "title": "今日限定：鯊魚小舜",
+    "subtitle": "心情不好就去 IKEA",
+    "description": "心情不好就去 IKEA",
+    "story": "心情不好的小舜去 IKEA 當鯊魚。沒有什麼複雜的道理，先把自己變成鯊魚，心情就有機會好一點。",
+    "src": "images/memory_m045.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "tags": [
+      "照片",
+      "IKEA",
+      "鯊魚小舜",
+      "療癒日常"
+    ],
+    "featured": true,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/memory_m045.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 3355272,
+      "webpBytes": 319980,
+      "originalFile": "128F6C9F-1DB6-4DAE-ACB2-2F78A4CABE7A.jpeg",
+      "displayFile": "memory_m045.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0089",
+    "eventId": "",
+    "storyCode": "M046",
+    "title": "這家真的很好吃！",
+    "subtitle": "懷舊日本料理",
+    "description": "懷舊日本料理",
+    "story": "懷舊日本料理！好吃好吃～小舜很會挑ㄅ！這種吃完會想再來一次的餐廳，很適合直接收進約會回憶。",
+    "src": "images/memory_m046.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "tags": [
+      "照片",
+      "約會",
+      "日本料理",
+      "小舜推薦"
+    ],
+    "featured": true,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/memory_m046.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 3507467,
+      "webpBytes": 225632,
+      "originalFile": "08F4E67D-2F0F-42D5-9520-2735BD09A36C.jpeg",
+      "displayFile": "memory_m046.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0090",
+    "eventId": "",
+    "storyCode": "M047",
+    "title": "今天是情侶裝日",
+    "subtitle": "張小懷爽死了都",
+    "description": "張小懷爽死了都",
+    "story": "情侶裝ㄉ偶們。表面上看起來還算冷靜，但張小懷到底有多開心，照片已經全部說完了。",
+    "src": "images/memory_m047.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "memory",
+    "series": "小舜×懷寶回憶",
+    "tags": [
+      "照片",
+      "情侶裝",
+      "今日穿搭",
+      "約會"
+    ],
+    "featured": true,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/memory_m047.webp",
+      "originalSize": "1152 × 1536",
+      "webSize": "1152 × 1536",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 439457,
+      "webpBytes": 131394,
+      "originalFile": "775F24DF-B3DB-4E58-A209-1C3AF090954F.jpeg",
+      "displayFile": "memory_m047.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0091",
+    "eventId": "",
+    "storyCode": "K001",
+    "title": "卡皮來找小舜啦",
+    "subtitle": "媽媽！",
+    "description": "媽媽！",
+    "story": "卡皮今天跑來找小舜。到底是在撒嬌、想靠近，還是其實在等吃的，只有卡皮本人知道。",
+    "src": "images/kapi_new_k001.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "kapi",
+    "series": "Kapi Diary",
+    "tags": [
+      "照片",
+      "卡皮",
+      "媽媽",
+      "貼貼"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/kapi_new_k001.webp",
+      "originalSize": "1536 × 1152",
+      "webSize": "1536 × 1152",
+      "orientation": "橫式",
+      "aspectRatio": 1.333,
+      "originalBytes": 545506,
+      "webpBytes": 178634,
+      "originalFile": "826CEE87-EE4C-4DF8-964A-AEBB44762C14.jpeg",
+      "displayFile": "kapi_new_k001.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0092",
+    "eventId": "",
+    "storyCode": "K002",
+    "title": "爸爸在看什麼？",
+    "subtitle": "一起滑手機",
+    "description": "一起滑手機",
+    "story": "爸爸滑手機，卡皮也湊過去一起看。這種什麼都要參一腳的小日常，就是卡皮的家庭活動。",
+    "src": "images/kapi_new_k002.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "kapi",
+    "series": "Kapi Diary",
+    "tags": [
+      "照片",
+      "卡皮",
+      "爸爸",
+      "一起滑手機"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/kapi_new_k002.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 3764636,
+      "webpBytes": 150076,
+      "originalFile": "1F3ED1DF-DBB5-4319-B138-638CFC0C29C5.jpeg",
+      "displayFile": "kapi_new_k002.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0093",
+    "eventId": "",
+    "storyCode": "K003",
+    "title": "今晚支持哪一隊？⚽",
+    "subtitle": "卡皮也看足球",
+    "description": "卡皮也看足球",
+    "story": "今天卡皮一起看足球。牠到底看不看得懂不重要，重要的是姿勢看起來非常投入。",
+    "src": "images/kapi_new_k003.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "kapi",
+    "series": "Kapi Diary",
+    "tags": [
+      "照片",
+      "卡皮",
+      "足球",
+      "一起看球"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/kapi_new_k003.webp",
+      "originalSize": "1536 × 1152",
+      "webSize": "1536 × 1152",
+      "orientation": "橫式",
+      "aspectRatio": 1.333,
+      "originalBytes": 521080,
+      "webpBytes": 140142,
+      "originalFile": "5F070F23-D285-426D-8DB4-5E89D3A67BC1.jpeg",
+      "displayFile": "kapi_new_k003.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0094",
+    "eventId": "",
+    "storyCode": "K004",
+    "title": "終於團聚了！",
+    "subtitle": "坂本一家",
+    "description": "坂本一家",
+    "story": "大坂本、小坂本，還有卡皮。今天全員到齊，看起來居然毫無違和感。",
+    "src": "images/kapi_new_k004.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "kapi",
+    "series": "Kapi Diary",
+    "tags": [
+      "照片",
+      "卡皮",
+      "坂本",
+      "全員集合"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/kapi_new_k004.webp",
+      "originalSize": "1024 × 1536",
+      "webSize": "1024 × 1536",
+      "orientation": "直式",
+      "aspectRatio": 0.667,
+      "originalBytes": 595547,
+      "webpBytes": 203524,
+      "originalFile": "DDA0A877-DB4E-425B-88E4-9DB5435D4B5B.jpeg",
+      "displayFile": "kapi_new_k004.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0095",
+    "eventId": "",
+    "storyCode": "S001",
+    "title": "小舜食堂｜今天也煮很多",
+    "subtitle": "份量抓得很有誠意",
+    "description": "份量抓得很有誠意",
+    "story": "小舜煮飯的日常。每次站在廚房忙一輪，最後桌上總會出現比預計更多的份量。",
+    "src": "images/shun_food_s001.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "小舜食堂",
+    "tags": [
+      "照片",
+      "小舜食堂",
+      "料理",
+      "生活日常"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_food_s001.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 3466694,
+      "webpBytes": 239956,
+      "originalFile": "92907E12-4A54-4CE4-9774-C7761B73E129.jpeg",
+      "displayFile": "shun_food_s001.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0096",
+    "eventId": "",
+    "storyCode": "S002",
+    "title": "小舜食堂｜暖暖的一餐",
+    "subtitle": "家裡的飯最好吃",
+    "description": "家裡的飯最好吃",
+    "story": "熱熱的主菜配白飯，沒有複雜行程，就是一起坐下來吃飯。",
+    "src": "images/shun_food_s002.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "小舜食堂",
+    "tags": [
+      "照片",
+      "小舜食堂",
+      "料理",
+      "生活日常"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_food_s002.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 4161213,
+      "webpBytes": 189930,
+      "originalFile": "2C740F18-AF02-4DBC-A5F6-8ECADA208A81.jpeg",
+      "displayFile": "shun_food_s002.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0097",
+    "eventId": "",
+    "storyCode": "S003",
+    "title": "小舜食堂｜靈感料理",
+    "subtitle": "冰箱有什麼就做什麼",
+    "description": "冰箱有什麼就做什麼",
+    "story": "小舜料理的核心精神：看家裡有什麼，再想辦法把它們變成一餐。",
+    "src": "images/shun_food_s003.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "小舜食堂",
+    "tags": [
+      "照片",
+      "小舜食堂",
+      "料理",
+      "生活日常"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_food_s003.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 3315442,
+      "webpBytes": 183504,
+      "originalFile": "A1D11744-18CE-4878-8942-36D953381AB2.jpeg",
+      "displayFile": "shun_food_s003.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0098",
+    "eventId": "",
+    "storyCode": "S004",
+    "title": "小舜食堂｜咖哩日",
+    "subtitle": "今天是咖哩的勝利",
+    "description": "今天是咖哩的勝利",
+    "story": "咖哩一上桌就很有家的感覺，而且最適合一起慢慢吃。",
+    "src": "images/shun_food_s004.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "小舜食堂",
+    "tags": [
+      "照片",
+      "小舜食堂",
+      "料理",
+      "生活日常"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_food_s004.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 4017921,
+      "webpBytes": 324802,
+      "originalFile": "94BB0B91-99C9-4E95-9304-12EF77C11A62.jpeg",
+      "displayFile": "shun_food_s004.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0099",
+    "eventId": "",
+    "storyCode": "S005",
+    "title": "小舜食堂｜早餐盤",
+    "subtitle": "起床也要好好吃飯",
+    "description": "起床也要好好吃飯",
+    "story": "把早餐準備好、坐下來慢慢吃，普通的一天就從這裡開始。",
+    "src": "images/shun_food_s005.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "小舜食堂",
+    "tags": [
+      "照片",
+      "小舜食堂",
+      "料理",
+      "生活日常"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_food_s005.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 3099696,
+      "webpBytes": 163990,
+      "originalFile": "647C77FB-B4FE-4D8D-BD60-C485DBABB2AA.jpeg",
+      "displayFile": "shun_food_s005.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0100",
+    "eventId": "",
+    "storyCode": "S006",
+    "title": "小舜食堂｜今天吃麵",
+    "subtitle": "看起來有沒有很厲害",
+    "description": "看起來有沒有很厲害",
+    "story": "小舜自己煮的麵食日。拍完照才可以正式開動。",
+    "src": "images/shun_food_s006.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "小舜食堂",
+    "tags": [
+      "照片",
+      "小舜食堂",
+      "料理",
+      "生活日常"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_food_s006.webp",
+      "originalSize": "1024 × 1536",
+      "webSize": "1024 × 1536",
+      "orientation": "直式",
+      "aspectRatio": 0.667,
+      "originalBytes": 576224,
+      "webpBytes": 191960,
+      "originalFile": "F535A73D-961B-4C9E-A3D3-39DD192474BE.jpeg",
+      "displayFile": "shun_food_s006.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0101",
+    "eventId": "",
+    "storyCode": "S007",
+    "title": "小舜食堂｜暖暖配飯",
+    "subtitle": "今天有乖乖吃飯",
+    "description": "今天有乖乖吃飯",
+    "story": "不是餐廳的大菜，但就是會讓人想記住的家常晚餐。",
+    "src": "images/shun_food_s007.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "小舜食堂",
+    "tags": [
+      "照片",
+      "小舜食堂",
+      "料理",
+      "生活日常"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_food_s007.webp",
+      "originalSize": "1024 × 1536",
+      "webSize": "1024 × 1536",
+      "orientation": "直式",
+      "aspectRatio": 0.667,
+      "originalBytes": 680390,
+      "webpBytes": 255752,
+      "originalFile": "E56BC0AF-5A85-441E-8BA0-23FFD7AAA9AA.jpeg",
+      "displayFile": "shun_food_s007.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0102",
+    "eventId": "",
+    "storyCode": "S008",
+    "title": "小舜食堂｜炒飯時間",
+    "subtitle": "一鍋解決今天",
+    "description": "一鍋解決今天",
+    "story": "炒飯就是很可靠。香香的一鍋，端上桌就知道今天不會餓。",
+    "src": "images/shun_food_s008.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "小舜食堂",
+    "tags": [
+      "照片",
+      "小舜食堂",
+      "料理",
+      "生活日常"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_food_s008.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 4077645,
+      "webpBytes": 262150,
+      "originalFile": "2F23678F-C9FC-431E-A4A1-967D7753BDAA.jpeg",
+      "displayFile": "shun_food_s008.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0103",
+    "eventId": "",
+    "storyCode": "S009",
+    "title": "小舜食堂｜兩人份晚餐",
+    "subtitle": "一起吃才是重點",
+    "description": "一起吃才是重點",
+    "story": "小舜把一桌飯菜準備好，兩個人的碗也一起擺好。這就是生活感本人。",
+    "src": "images/shun_food_s009.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "小舜食堂",
+    "tags": [
+      "照片",
+      "小舜食堂",
+      "料理",
+      "生活日常"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_food_s009.webp",
+      "originalSize": "1024 × 1536",
+      "webSize": "1024 × 1536",
+      "orientation": "直式",
+      "aspectRatio": 0.667,
+      "originalBytes": 548956,
+      "webpBytes": 169482,
+      "originalFile": "4F27E517-F8FF-48A0-B844-BD3FFA94F878.jpeg",
+      "displayFile": "shun_food_s009.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0104",
+    "eventId": "",
+    "storyCode": "S010",
+    "title": "小舜食堂｜今日餐桌",
+    "subtitle": "今天晚餐完成",
+    "description": "今天晚餐完成",
+    "story": "不一定每一餐都需要特別的名字，有一起吃完就很值得留下。",
+    "src": "images/shun_food_s010.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "小舜食堂",
+    "tags": [
+      "照片",
+      "小舜食堂",
+      "料理",
+      "生活日常"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_food_s010.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 3337757,
+      "webpBytes": 306574,
+      "originalFile": "0804DA61-F4B8-48DD-B5C9-C821A8A5ED53.jpeg",
+      "displayFile": "shun_food_s010.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0105",
+    "eventId": "",
+    "storyCode": "P001",
+    "title": "畫畫完成的小舜",
+    "subtitle": "作品也要一起入鏡",
+    "description": "作品也要一起入鏡",
+    "story": "那天留下的不只有畫，還有完成作品後的小舜。底片把那個瞬間收得很好。",
+    "src": "images/shun_new_p001.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "漂亮小舜",
+    "tags": [
+      "照片",
+      "漂亮小舜",
+      "小舜",
+      "照片日記"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_new_p001.webp",
+      "originalSize": "1536 × 1038",
+      "webSize": "1536 × 1038",
+      "orientation": "橫式",
+      "aspectRatio": 1.48,
+      "originalBytes": 524773,
+      "webpBytes": 150956,
+      "originalFile": "A6190C26-890B-4C68-AFC8-B558BA2A7B86.jpeg",
+      "displayFile": "shun_new_p001.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0106",
+    "eventId": "",
+    "storyCode": "P002",
+    "title": "今天有點酷的小舜",
+    "subtitle": "鏡頭靠近也沒在怕",
+    "description": "鏡頭靠近也沒在怕",
+    "story": "很近、很直接的一張。不是特別擺拍，反而把當下的表情完整留下來。",
+    "src": "images/shun_new_p002.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "漂亮小舜",
+    "tags": [
+      "照片",
+      "漂亮小舜",
+      "小舜",
+      "照片日記"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_new_p002.webp",
+      "originalSize": "1536 × 1038",
+      "webSize": "1536 × 1038",
+      "orientation": "橫式",
+      "aspectRatio": 1.48,
+      "originalBytes": 491882,
+      "webpBytes": 140398,
+      "originalFile": "FA887A6E-A282-44E2-92C0-E987A9A5BA10.jpeg",
+      "displayFile": "shun_new_p002.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0107",
+    "eventId": "",
+    "storyCode": "P003",
+    "title": "今日收藏：小舜",
+    "subtitle": "一起把喜歡的東西抱回家",
+    "description": "一起把喜歡的東西抱回家",
+    "story": "有公仔、有唱片，也有一張屬於今天的紀念照。",
+    "src": "images/shun_new_p003.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "漂亮小舜",
+    "tags": [
+      "照片",
+      "漂亮小舜",
+      "小舜",
+      "照片日記"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_new_p003.webp",
+      "originalSize": "1536 × 1038",
+      "webSize": "1536 × 1038",
+      "orientation": "橫式",
+      "aspectRatio": 1.48,
+      "originalBytes": 654334,
+      "webpBytes": 256992,
+      "originalFile": "097513CA-4B55-43A6-84F4-978E02081784.jpeg",
+      "displayFile": "shun_new_p003.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0108",
+    "eventId": "",
+    "storyCode": "P004",
+    "title": "Love 手勢小舜",
+    "subtitle": "今天也要比一個愛心",
+    "description": "今天也要比一個愛心",
+    "story": "很簡單的一個動作，但放進照片裡就會變成只屬於那天的小標記。",
+    "src": "images/shun_new_p004.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "漂亮小舜",
+    "tags": [
+      "照片",
+      "漂亮小舜",
+      "小舜",
+      "照片日記"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_new_p004.webp",
+      "originalSize": "1152 × 1536",
+      "webSize": "1152 × 1536",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 621391,
+      "webpBytes": 191640,
+      "originalFile": "61DE9D6F-810E-4C3B-BCC8-A24B6EF4FA58.jpeg",
+      "displayFile": "shun_new_p004.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0109",
+    "eventId": "",
+    "storyCode": "P005",
+    "title": "回頭看鏡頭的小舜",
+    "subtitle": "自然的最好看",
+    "description": "自然的最好看",
+    "story": "沒有很用力擺拍，只是回頭看了一眼。這種照片最像真正的日常。",
+    "src": "images/shun_new_p005.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "漂亮小舜",
+    "tags": [
+      "照片",
+      "漂亮小舜",
+      "小舜",
+      "照片日記"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_new_p005.webp",
+      "originalSize": "864 × 1536",
+      "webSize": "864 × 1536",
+      "orientation": "直式",
+      "aspectRatio": 0.562,
+      "originalBytes": 467295,
+      "webpBytes": 148472,
+      "originalFile": "26A86CF4-1D91-4494-9B51-C8C79CDEFCE8.jpeg",
+      "displayFile": "shun_new_p005.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0110",
+    "eventId": "",
+    "storyCode": "P006",
+    "title": "夜晚穿搭小舜",
+    "subtitle": "今天走一個很有個性的路線",
+    "description": "今天走一個很有個性的路線",
+    "story": "夜裡、閃光燈、很有個性的穿搭。這張很適合收進漂亮小舜圖鑑。",
+    "src": "images/shun_new_p006.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "漂亮小舜",
+    "tags": [
+      "照片",
+      "漂亮小舜",
+      "小舜",
+      "照片日記"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_new_p006.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 3104931,
+      "webpBytes": 120416,
+      "originalFile": "BDAB50CF-A249-4F5E-A39E-79429FB29184.jpeg",
+      "displayFile": "shun_new_p006.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0111",
+    "eventId": "",
+    "storyCode": "P007",
+    "title": "星球飲料小舜",
+    "subtitle": "飲料漂亮，人也漂亮",
+    "description": "飲料漂亮，人也漂亮",
+    "story": "拿到一杯很有存在感的飲料，當然要先拍完一輪再喝。",
+    "src": "images/shun_new_p007.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "漂亮小舜",
+    "tags": [
+      "照片",
+      "漂亮小舜",
+      "小舜",
+      "照片日記"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_new_p007.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 3336159,
+      "webpBytes": 243022,
+      "originalFile": "1A4392F8-AF54-4340-BD61-92EBCE76A28D.jpeg",
+      "displayFile": "shun_new_p007.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0112",
+    "eventId": "",
+    "storyCode": "P008",
+    "title": "盪鞦韆的小舜",
+    "subtitle": "有花花也要盪一下",
+    "description": "有花花也要盪一下",
+    "story": "晚上公園、花、鞦韆。很普通的地方，拍起來卻像一張小小的電影劇照。",
+    "src": "images/shun_new_p008.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "漂亮小舜",
+    "tags": [
+      "照片",
+      "漂亮小舜",
+      "小舜",
+      "照片日記"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_new_p008.webp",
+      "originalSize": "1024 × 1536",
+      "webSize": "1024 × 1536",
+      "orientation": "直式",
+      "aspectRatio": 0.667,
+      "originalBytes": 674498,
+      "webpBytes": 264266,
+      "originalFile": "F676355F-5A5D-4788-A634-EB13A56775F0.jpeg",
+      "displayFile": "shun_new_p008.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0113",
+    "eventId": "",
+    "storyCode": "P009",
+    "title": "今天也是有個性的小舜",
+    "subtitle": "看旁邊也很好看",
+    "description": "看旁邊也很好看",
+    "story": "有時候最好看的照片，不是看鏡頭的那一張。",
+    "src": "images/shun_new_p009.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "漂亮小舜",
+    "tags": [
+      "照片",
+      "漂亮小舜",
+      "小舜",
+      "照片日記"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_new_p009.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 2385912,
+      "webpBytes": 132336,
+      "originalFile": "D01C89B5-5674-4E55-919F-BFB3E4FBBA69.jpeg",
+      "displayFile": "shun_new_p009.webp",
+      "exifDateTime": "未提供／待補"
+    }
+  },
+  {
+    "id": "PH-0114",
+    "eventId": "",
+    "storyCode": "P010",
+    "title": "底片感小舜",
+    "subtitle": "把今天留在一張照片裡",
+    "description": "把今天留在一張照片裡",
+    "story": "很有青春相簿感的一張。不是為了完美，只是想把今天留住。",
+    "src": "images/shun_new_p010.webp",
+    "date": "",
+    "rank": "memory",
+    "galleryCategory": "shun",
+    "series": "漂亮小舜",
+    "tags": [
+      "照片",
+      "漂亮小舜",
+      "小舜",
+      "照片日記"
+    ],
+    "featured": false,
+    "homepage": true,
+    "favorite": false,
+    "metadata": {
+      "src": "images/shun_new_p010.webp",
+      "originalSize": "3456 × 4608",
+      "webSize": "1200 × 1600",
+      "orientation": "直式",
+      "aspectRatio": 0.75,
+      "originalBytes": 3378094,
+      "webpBytes": 268040,
+      "originalFile": "4075CA53-2A16-4F57-BCBA-1F3E1FDAB6D8.jpeg",
+      "displayFile": "shun_new_p010.webp",
+      "exifDateTime": "未提供／待補"
     }
   }
 ]
