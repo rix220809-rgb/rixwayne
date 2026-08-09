@@ -1,4 +1,4 @@
-const APP_VERSION = '10.7.2';
+const APP_VERSION = '10.7.3';
 const START_DATE = '2026-01-09';
 const KAPI_BIRTHDAY = '04/19';
 const SUPABASE_URL = 'https://hcrrqcqmhszllrnaqzin.supabase.co';
@@ -601,8 +601,11 @@ function normalizedPhotoCategory(p){
   return 'memory';
 }
 function storySnippet(p){
-  return p.subtitle || p.description || p.story || '這張照片先替那一天保留一個位置。';
+  const title=(p.title||'').trim();
+  const candidates=[p.subtitle,p.description,p.story].map(x=>(x||'').trim()).filter(Boolean);
+  return candidates.find(x=>x!==title) || '這張照片先替那一天保留一個位置。';
 }
+
 function photoStoryCard(p, cls=''){
   return `<button class="photo-tile story-photo-tile ${cls}" data-photo="${p.id}">
     <div class="photo-tile-image">
@@ -1075,8 +1078,12 @@ function openPhoto(id){
   const prev = photos[(index - 1 + photos.length) % photos.length];
   const next = photos[(index + 1) % photos.length];
   const tags = (p.tags||[]).filter(t=>t!=='照片');
-  const story = p.story || ev?.summary || p.description || '這張照片先替那一天保留一個位置，故事之後可以慢慢補上。';
-  const subtitle = p.subtitle || p.description || '';
+  const rawStory = p.story || ev?.summary || p.description || '這張照片先替那一天保留一個位置，故事之後可以慢慢補上。';
+  const rawSubtitle = p.subtitle || p.description || '';
+  const subtitle = rawSubtitle.trim() === (p.title||'').trim() ? '' : rawSubtitle;
+  const story = rawStory.trim() === (p.title||'').trim() || rawStory.trim() === subtitle.trim()
+    ? (p.originalCaption ? `${p.originalCaption}。這張照片把那一天的重點好好留了下來。` : '這張照片把那一天的重點好好留了下來。')
+    : rawStory;
   const categoryLabel = normalizedPhotoCategory(p)==='kapi' ? '🦎 卡皮' : normalizedPhotoCategory(p)==='shun' ? '🌸 小舜' : '❤️ 回憶';
 
   $('#modalContent').innerHTML=`

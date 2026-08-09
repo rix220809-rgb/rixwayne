@@ -1,5 +1,14 @@
 # Changelog
 
+## V10.7.3
+- Fixed two-stage daily-question notification deduplication.
+- Added active-period-aware automatic next pill cycle on period Day 5.
+- Added Day 4 pill UI state: next round starts tomorrow.
+- Cleaned duplicate photo title/subtitle/story copy and preserved original captions.
+- Added defensive UI rendering against repeated story fields.
+- Added notification Cron schedule template.
+
+
 ## V10.7.2
 - Corrected Pretty Shun P001–P010 captions/stories to match the actual photos.
 - Fixed the home “查看其他回憶” button by routing through `showTab('album')`.

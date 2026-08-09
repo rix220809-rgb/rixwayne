@@ -283,88 +283,89 @@ async function setPillCycleStartFromUI(){
   }
 }
 
+async function ensureAutoPillCycleStart(startDate){
+  if(!isISODate(startDate)) throw new Error('自動服藥起始日格式錯誤');
+  const payload = { start_date:startDate, note:'由經期 Day 5 自動建立' };
+  if(db){
+    const {data,error}=await db.from('pill_cycles')
+      .upsert({...payload,space_id:CLOUD_SPACE_ID},{onConflict:'space_id,start_date'})
+      .select().single();
+    if(error) throw error;
+    return normalizePillCycleRows([data])[0];
+  }
+  const rows=loadJSON(PILL_CYCLE_LOCAL_KEY,[]);
+  const rest=rows.filter(row=>(row.start_date||row.start)!==startDate);
+  rest.unshift({id:Date.now(),start:startDate,note:payload.note,created_at:new Date().toISOString()});
+  saveJSON(PILL_CYCLE_LOCAL_KEY,rest.slice(0,50));
+  return normalizePillCycleRows(rest)[0];
+}
+
 async function getPillEngineState(){
   const today = todayISO();
-  const pillCycles = await getPillCycles();
-  const explicit = pillCycles
+  let pillCycles = await getPillCycles();
+  let explicit = pillCycles
     .filter(row => isISODate(row.start) && dayDiff(today, row.start) >= 0)
     .sort((a,b) => b.start.localeCompare(a.start))[0] || null;
 
-  let pillStart = explicit?.start || null;
-  let source = explicit ? 'pill_cycles' : 'period_fallback';
-  let periodDay = null;
-  let cycle = explicit;
+  const periodState = await getCycleEngineState();
+  const activePeriod = periodState.active || null;
+  const periodDay = periodState.day || null;
+  const scheduledStart = activePeriod ? addDaysISO(activePeriod.start, 4) : null;
+  const explicitBelongsToCurrentPeriod = !!(explicit && activePeriod && explicit.start >= activePeriod.start);
 
-  // 相容舊資料：尚未設定實際服藥日時，才暫時使用最近經期 Day 5。
-  if(!pillStart){
-    const cycles = await getPeriodCycles();
-    const latestPeriod = cycles
-      .filter(c => isISODate(c.start) && dayDiff(today, c.start) >= 0)
-      .sort((a,b) => b.start.localeCompare(a.start))[0] || null;
-
-    if(!latestPeriod){
+  // 新經期已開始、上一輪避孕藥已完成時，下一輪改由本次經期 Day 5 接手。
+  if(activePeriod && !explicitBelongsToCurrentPeriod){
+    if(periodDay !== null && periodDay < 5){
       return {
-        status:'waiting',
+        status: periodDay === 4 ? 'preparing' : 'waiting_next',
         pillDay:null,
-        periodDay:null,
-        pillStart:null,
-        source:'none',
-        cycle:null,
+        periodDay,
+        pillStart:scheduledStart,
+        source:'period_pending',
+        cycle:activePeriod,
         shouldRemind:false,
-        title:'尚未設定服藥週期',
-        detail:'請在下方輸入本輪實際開始吃藥的日期。'
+        title: periodDay === 4 ? '明天開始新一輪' : '等待下一輪開始',
+        detail: periodDay === 4
+          ? `依本次經期紀錄，明天 ${fmt(scheduledStart)} 為 Day 5，將自動開啟新一輪服藥提醒。`
+          : `本次經期 Day ${periodDay}；預計 ${fmt(scheduledStart)} 起進入下一輪。`
       };
     }
 
-    periodDay = dayDiff(today, latestPeriod.start) + 1;
-    pillStart = addDaysISO(latestPeriod.start, 4);
-    cycle = latestPeriod;
+    if(periodDay !== null && periodDay >= 5 && scheduledStart){
+      explicit = await ensureAutoPillCycleStart(scheduledStart);
+      pillCycles = await getPillCycles();
+    }
   }
 
-  const pillDay = dayDiff(today, pillStart) + 1;
-
-  if(pillDay < 1){
+  if(!explicit){
     return {
-      status:'waiting',
-      pillDay:null,
-      periodDay,
-      pillStart,
-      source,
-      cycle,
-      shouldRemind:false,
-      title:'本輪尚未開始',
-      detail:`預定 ${fmt(pillStart)} 為避孕藥 Day 1。`
+      status:'waiting', pillDay:null, periodDay, pillStart:scheduledStart,
+      source:scheduledStart?'period_pending':'none', cycle:activePeriod,
+      shouldRemind:false, title:'尚未設定服藥週期',
+      detail:scheduledStart ? `預計 ${fmt(scheduledStart)} 為下一輪 Day 1。` : '等待下一次經期或手動設定實際服藥 Day 1。'
     };
   }
 
+  const pillStart = explicit.start;
+  const pillDay = dayDiff(today, pillStart) + 1;
+
   if(pillDay >= 1 && pillDay <= 28){
     return {
-      status:'reminding',
-      pillDay,
-      periodDay,
-      pillStart,
-      source,
-      cycle,
-      shouldRemind:true,
+      status:'reminding', pillDay, periodDay, pillStart,
+      source: explicit.note === '由經期 Day 5 自動建立' ? 'period_auto' : 'pill_cycles',
+      cycle:explicit, shouldRemind:true,
       title:`避孕藥第 ${pillDay}/28 天`,
       detail:`本輪 Day 1：${fmt(pillStart)}。今晚 21:00 提醒；實際服用仍以醫師與藥袋指示為準。`
     };
   }
 
   return {
-    status:'completed',
-    pillDay:28,
-    actualDay:pillDay,
-    periodDay,
-    pillStart,
-    source,
-    cycle,
-    shouldRemind:false,
+    status:'completed', pillDay:28, actualDay:pillDay, periodDay, pillStart,
+    source:'pill_cycles', cycle:explicit, shouldRemind:false,
     title:'本輪 28 天提醒已完成',
-    detail:`本輪從 ${fmt(pillStart)} 開始，已完成 28 天；等待你設定下一輪實際服藥開始日。`
+    detail:`本輪從 ${fmt(pillStart)} 開始，已完成 28 天；等待下一次經期進入 Day 5，或手動設定下一輪開始日。`
   };
 }
-
 async function startCycleFromUI(){
   const date = $('#periodLogDate')?.value || todayISO();
   const button = $('#periodCycleStartBtn');
@@ -634,31 +635,19 @@ function openPillCycleModal(){
 
 function pillStatusCopy(state){
   if(state.status === 'reminding'){
-    return {
-      title:`Day ${state.pillDay} / 28`,
-      status:state.pillDay === 28 ? '今天最後一天' : `剩餘 ${28-state.pillDay} 天`,
-      note:'今晚 21:00 提醒',
-      tone:'active'
-    };
+    return {title:`Day ${state.pillDay} / 28`,status:state.pillDay===28?'今天最後一天':`剩餘 ${28-state.pillDay} 天`,note:'今晚 21:00 提醒',tone:'active'};
   }
-
+  if(state.status === 'preparing'){
+    return {title:'下一輪準備中',status:'明天開始新一輪',note:state.pillStart?`預計 ${fmt(state.pillStart)}`:'',tone:'preparing'};
+  }
+  if(state.status === 'waiting_next'){
+    return {title:'下一輪準備中',status:`經期 Day ${state.periodDay}`,note:state.pillStart?`預計 ${fmt(state.pillStart)} 開始`:'',tone:'preparing'};
+  }
   if(state.status === 'completed'){
-    return {
-      title:'本輪已完成',
-      status:'等待下一輪開始',
-      note:state.pillStart ? `${fmt(state.pillStart)}－${fmt(addDaysISO(state.pillStart,27))}` : '',
-      tone:'completed'
-    };
+    return {title:'本輪已完成',status:'等待下一輪經期',note:state.pillStart?`${fmt(state.pillStart)}－${fmt(addDaysISO(state.pillStart,27))}`:'',tone:'completed'};
   }
-
-  return {
-    title:'尚未設定',
-    status:'設定實際服藥 Day 1',
-    note:'設定後開始計算 28 天提醒',
-    tone:'waiting'
-  };
+  return {title:'尚未設定',status:'等待下一輪開始',note:state.pillStart?`預計 ${fmt(state.pillStart)}`:'',tone:'waiting'};
 }
-
 async function renderPeriod(){
   const info = await getPeriodPrediction();
   const state = await getCycleEngineState();
@@ -726,7 +715,7 @@ async function renderPeriod(){
 
           <div class="pill-status-meta">
             <div>
-              <small>實際開始日</small>
+              <small>${['preparing','waiting_next'].includes(pillState.status) ? '預計開始日' : '實際開始日'}</small>
               <strong>${pillState.pillStart ? fmt(pillState.pillStart) : '尚未設定'}</strong>
             </div>
             <button type="button" class="pill-edit-btn" id="openPillCycleModal">修改開始日期</button>
@@ -798,7 +787,7 @@ async function renderDashboard(){
   const today = todayISO();
   const pillState = await getPillEngineState();
   const pillStatus = {
-    icon: pillState.status === 'paused' ? '⏸️' : '💊',
+    icon: pillState.status === 'preparing' ? '⏳' : '💊',
     title: pillState.title,
     detail: pillState.detail
   };
@@ -826,7 +815,7 @@ async function renderDashboard(){
       title:pillStatus.title,
       value:pillState.status === 'reminding'
         ? `${pillState.pillDay}/28`
-        : (pillState.status === 'paused' ? `Day ${pillState.periodDay}` : '—'),
+        : (pillState.status === 'preparing' ? '明天' : (pillState.status === 'waiting_next' ? `Day ${pillState.periodDay}` : '—')),
       detail:pillStatus.detail,
       tab:'period'
     },
