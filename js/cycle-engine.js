@@ -1,4 +1,5 @@
 
+const PILL_CYCLE_DAYS = 21;
 /* Our Memories V10.6.1 — Cycle Record Hotfix */
 const PERIOD_CYCLE_LOCAL_KEY = 'ourMemories.periodCycles.v10.2';
 const PILL_CYCLE_LOCAL_KEY = 'ourMemories.pillCycles.v10.5.2';
@@ -349,21 +350,21 @@ async function getPillEngineState(){
   const pillStart = explicit.start;
   const pillDay = dayDiff(today, pillStart) + 1;
 
-  if(pillDay >= 1 && pillDay <= 28){
+  if(pillDay >= 1 && pillDay <= PILL_CYCLE_DAYS){
     return {
       status:'reminding', pillDay, periodDay, pillStart,
       source: explicit.note === '由經期 Day 5 自動建立' ? 'period_auto' : 'pill_cycles',
       cycle:explicit, shouldRemind:true,
-      title:`避孕藥第 ${pillDay}/28 天`,
+      title:`避孕藥第 ${pillDay}/${PILL_CYCLE_DAYS} 天`,
       detail:`本輪 Day 1：${fmt(pillStart)}。今晚 21:00 提醒；實際服用仍以醫師與藥袋指示為準。`
     };
   }
 
   return {
-    status:'completed', pillDay:28, actualDay:pillDay, periodDay, pillStart,
+    status:'completed', pillDay:PILL_CYCLE_DAYS, actualDay:pillDay, periodDay, pillStart,
     source:'pill_cycles', cycle:explicit, shouldRemind:false,
-    title:'本輪 28 天提醒已完成',
-    detail:`本輪從 ${fmt(pillStart)} 開始，已完成 28 天；等待下一次經期進入 Day 5，或手動設定下一輪開始日。`
+    title:`本輪 ${PILL_CYCLE_DAYS} 天提醒已完成`,
+    detail:`本輪從 ${fmt(pillStart)} 開始，已完成 ${PILL_CYCLE_DAYS} 天；等待下一次經期進入 Day 5，或手動設定下一輪開始日。`
   };
 }
 async function startCycleFromUI(){
@@ -635,7 +636,7 @@ function openPillCycleModal(){
 
 function pillStatusCopy(state){
   if(state.status === 'reminding'){
-    return {title:`Day ${state.pillDay} / 28`,status:state.pillDay===28?'今天最後一天':`剩餘 ${28-state.pillDay} 天`,note:'今晚 21:00 提醒',tone:'active'};
+    return {title:`Day ${state.pillDay} / ${PILL_CYCLE_DAYS}`,status:state.pillDay===PILL_CYCLE_DAYS?'今天最後一天':`剩餘 ${PILL_CYCLE_DAYS-state.pillDay} 天`,note:'今晚 21:00 提醒',tone:'active'};
   }
   if(state.status === 'preparing'){
     return {title:'下一輪準備中',status:'明天開始新一輪',note:state.pillStart?`預計 ${fmt(state.pillStart)}`:'',tone:'preparing'};
@@ -644,7 +645,7 @@ function pillStatusCopy(state){
     return {title:'下一輪準備中',status:`經期 Day ${state.periodDay}`,note:state.pillStart?`預計 ${fmt(state.pillStart)} 開始`:'',tone:'preparing'};
   }
   if(state.status === 'completed'){
-    return {title:'本輪已完成',status:'等待下一輪經期',note:state.pillStart?`${fmt(state.pillStart)}－${fmt(addDaysISO(state.pillStart,27))}`:'',tone:'completed'};
+    return {title:'本輪已完成',status:'等待下一輪經期',note:state.pillStart?`${fmt(state.pillStart)}－${fmt(addDaysISO(state.pillStart,PILL_CYCLE_DAYS-1))}`:'',tone:'completed'};
   }
   return {title:'尚未設定',status:'等待下一輪開始',note:state.pillStart?`預計 ${fmt(state.pillStart)}`:'',tone:'waiting'};
 }
@@ -814,7 +815,7 @@ async function renderDashboard(){
       icon:pillStatus.icon,
       title:pillStatus.title,
       value:pillState.status === 'reminding'
-        ? `${pillState.pillDay}/28`
+        ? `${pillState.pillDay}/${PILL_CYCLE_DAYS}`
         : (pillState.status === 'preparing' ? '明天' : (pillState.status === 'waiting_next' ? `Day ${pillState.periodDay}` : '—')),
       detail:pillStatus.detail,
       tab:'period'

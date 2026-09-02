@@ -1,6 +1,6 @@
 /* Our Memories V10.6 — Today Brief Engine */
 (() => {
-  const VERSION = '10.7.3';
+  const VERSION = '10.7.4';
   const TEXT_URL = `data/today_brief_texts.json?v=${VERSION}`;
   const DAY_KEY_PREFIX = 'ourMemories.todayBrief.seen.v10.7';
   let textLibrary = null;

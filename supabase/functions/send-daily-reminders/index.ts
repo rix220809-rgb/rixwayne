@@ -3,6 +3,7 @@ import { JWT } from "npm:google-auth-library@9.15.1";
 
 const SPACE_ID = "shun-wayne-kapi-period";
 const SITE_URL = "https://rix220809-rgb.github.io/rixwayne/";
+const PILL_CYCLE_DAYS = 21;
 const OWNERS = ["蕭小舜", "懷寶"];
 const TIME_ZONE = "Asia/Taipei";
 type Mode = "period" | "daily_question" | "pill" | "special_event" | "milestone";
@@ -329,12 +330,12 @@ Deno.serve(async (req) => {
     }
 
     if (mode === "pill" && pillStartDate && pillDay !== null) {
-      if (pillDay >= 1 && pillDay <= 28) {
+      if (pillDay >= 1 && pillDay <= PILL_CYCLE_DAYS) {
         for (const owner of OWNERS) {
           notices.push({
             owner,
             type: `pill_day_${pillStartDate}_${pillDay}`,
-            title: `💊 21:00 避孕藥提醒｜第 ${pillDay}/28 天`,
+            title: `💊 21:00 避孕藥提醒｜第 ${pillDay}/${PILL_CYCLE_DAYS} 天`,
             body: owner === "懷寶"
               ? `本輪從 ${pillStartDate} 起算，今天是小舜避孕藥第 ${pillDay} 天，記得提醒她依醫師與藥袋指示服藥。`
               : `本輪從 ${pillStartDate} 起算，今天是第 ${pillDay} 天，記得依醫師與藥袋指示服藥。`,

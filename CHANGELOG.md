@@ -1,5 +1,18 @@
 # Changelog
 
+## V10.7.5
+- 更新 M048、M049、M051 的標題、小標與故事。
+- 保留使用者原始補充文案於 `originalCaption`。
+- V10.7.4 的 21 天避孕藥週期與通知邏輯不變。
+- 更新 PWA cache/version 至 10.7.5，避免照片文案仍顯示舊快取。
+
+
+## V10.7.4
+- Correct pill reminder duration from 28 days to 21 days across UI and Edge Function.
+- Stop pill push reminders after Day 21.
+- Add five new memory/Kapi photos with distinct title, subtitle, and story copy.
+- Add optional SQL to correct the historical July pill-cycle start from 2026-07-06 to 2026-07-13 under the 21-day rule.
+
 ## V10.7.3
 - Fixed two-stage daily-question notification deduplication.
 - Added active-period-aware automatic next pill cycle on period Day 5.
