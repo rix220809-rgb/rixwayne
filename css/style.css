@@ -1265,3 +1265,9 @@ body.today-brief-open{overflow:hidden}
     width:250px;
   }
 }
+
+
+/* ===== V10.7.6 Period Backdate ===== */
+.period-date-quick-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:12px 0 4px}
+.period-date-quick-actions button{border:1px solid var(--line);border-radius:16px;padding:11px;background:rgba(255,255,255,.10);color:var(--ink);font-weight:850}
+.cycle-modal-note{display:block;color:var(--muted);line-height:1.55;margin-top:8px}

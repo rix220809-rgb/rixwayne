@@ -1,6 +1,6 @@
 
 const PILL_CYCLE_DAYS = 21;
-/* Our Memories V10.6.1 — Cycle Record Hotfix */
+/* Our Memories V10.7.6 — Period Backdate Fix */
 const PERIOD_CYCLE_LOCAL_KEY = 'ourMemories.periodCycles.v10.2';
 const PILL_CYCLE_LOCAL_KEY = 'ourMemories.pillCycles.v10.5.2';
 const PERIOD_CYCLE_MAX_OPEN_DAYS = 14;
@@ -70,6 +70,7 @@ async function getActivePeriodCycle(){
 }
 
 async function createPeriodCycle(startDate=todayISO()){
+  validatePeriodStartDate(startDate);
   const current = await getActivePeriodCycle();
   if(current){
     throw new Error(`目前已有從 ${fmt(current.start)} 開始、尚未結束的經期。`);
@@ -112,6 +113,83 @@ async function createPeriodCycle(startDate=todayISO()){
   cycles.unshift(record);
   saveJSON(PERIOD_CYCLE_LOCAL_KEY, cycles.slice(0,100));
   return record;
+}
+
+
+function validatePeriodStartDate(startDate){
+  if(!isISODate(startDate)) throw new Error('請選擇正確的經期開始日期。');
+  const diff = dayDiff(todayISO(), startDate);
+  if(diff < 0) throw new Error('經期開始日不能晚於今天。');
+  if(diff > PERIOD_CYCLE_MAX_OPEN_DAYS) throw new Error(`目前最多可回溯 ${PERIOD_CYCLE_MAX_OPEN_DAYS} 天。`);
+  return startDate;
+}
+
+async function syncAutoPillCycleAfterPeriodStartChange(oldStart, newStart){
+  if(!db || !isISODate(oldStart) || !isISODate(newStart) || oldStart === newStart) return;
+  const oldAutoStart = addDaysISO(oldStart, 4);
+  const newAutoStart = addDaysISO(newStart, 4);
+  const {data, error} = await db
+    .from('pill_cycles')
+    .select('*')
+    .eq('space_id', CLOUD_SPACE_ID)
+    .eq('start_date', oldAutoStart)
+    .eq('note', '由經期 Day 5 自動建立')
+    .maybeSingle();
+  if(error){
+    console.warn('auto pill cycle lookup failed while changing period start', error);
+    return;
+  }
+  if(!data) return; // 手動設定過的服藥週期不動。
+
+  const {error:updateError} = await db
+    .from('pill_cycles')
+    .update({start_date:newAutoStart})
+    .eq('id', data.id)
+    .eq('space_id', CLOUD_SPACE_ID);
+  if(updateError){
+    console.warn('auto pill cycle resync failed; keeping existing pill cycle', updateError);
+  }
+}
+
+async function updateActivePeriodCycleStart(startDate){
+  validatePeriodStartDate(startDate);
+  const current = await getActivePeriodCycle();
+  if(!current) throw new Error('目前沒有進行中的經期。');
+  if(current.start === startDate) return current;
+
+  // 若已有本次經期的每日紀錄，開始日不能改到紀錄日期之後。
+  if(db && !String(current.id).startsWith('local-')){
+    const {data:logs, error:logsError} = await db
+      .from('period_daily_logs')
+      .select('log_date')
+      .eq('space_id', CLOUD_SPACE_ID)
+      .eq('cycle_id', current.id)
+      .order('log_date', {ascending:true})
+      .limit(1);
+    if(!logsError && logs?.[0]?.log_date && dayDiff(logs[0].log_date, startDate) < 0){
+      throw new Error(`開始日不能晚於已登記的 ${fmt(logs[0].log_date)} 狀況紀錄。`);
+    }
+
+    const {data, error} = await db
+      .from('period_cycles')
+      .update({start_date:startDate, updated_at:new Date().toISOString()})
+      .eq('id', current.id)
+      .eq('space_id', CLOUD_SPACE_ID)
+      .select()
+      .single();
+    if(error) throw error;
+    await syncAutoPillCycleAfterPeriodStartChange(current.start, startDate);
+    const updated = normalizeCycleRows([data])[0];
+    const cached = loadJSON(PERIOD_CYCLE_LOCAL_KEY, []);
+    saveJSON(PERIOD_CYCLE_LOCAL_KEY, cached.map(item => String(item.id) === String(current.id) ? updated : item));
+    return updated;
+  }
+
+  const cached = loadJSON(PERIOD_CYCLE_LOCAL_KEY, []);
+  const target = cached.find(item => String(item.id) === String(current.id));
+  if(target) target.start = startDate;
+  saveJSON(PERIOD_CYCLE_LOCAL_KEY, cached);
+  return {...current, start:startDate};
 }
 
 async function endPeriodCycle(endDate=todayISO()){
@@ -367,28 +445,78 @@ async function getPillEngineState(){
     detail:`本輪從 ${fmt(pillStart)} 開始，已完成 ${PILL_CYCLE_DAYS} 天；等待下一次經期進入 Day 5，或手動設定下一輪開始日。`
   };
 }
+function openPeriodStartModal(){
+  const existing = window.__cycleEngineLastState?.active || null;
+  const initial = existing?.start || $('#periodLogDate')?.value || todayISO();
+  const minDate = addDaysISO(todayISO(), -PERIOD_CYCLE_MAX_OPEN_DAYS);
+  const modal = document.createElement('div');
+  modal.className = 'cycle-modal-backdrop';
+  modal.id = 'periodStartModal';
+  modal.innerHTML = `
+    <div class="cycle-modal" role="dialog" aria-modal="true" aria-labelledby="periodStartModalTitle">
+      <button type="button" class="cycle-modal-close" aria-label="關閉">×</button>
+      <div class="cycle-modal-icon">🩸</div>
+      <h3 id="periodStartModalTitle">${existing ? '修改本次經期開始日' : '登記本次經期開始日'}</h3>
+      <p>${existing ? '如果當天忘記登記，可以把 Day 1 改回真正開始的日期。' : '預設今天，也可以快速選昨天或回溯補登。'}</p>
+      <div class="period-date-quick-actions">
+        <button type="button" data-period-date="yesterday">昨天</button>
+        <button type="button" data-period-date="today">今天</button>
+      </div>
+      <label class="cycle-modal-field">
+        <span>經期 Day 1</span>
+        <input id="periodStartModalDate" type="date" value="${initial}" min="${minDate}" max="${todayISO()}">
+      </label>
+      <small class="cycle-modal-note">最多可回溯 ${PERIOD_CYCLE_MAX_OPEN_DAYS} 天，不能選未來日期。</small>
+      <div class="cycle-modal-actions">
+        <button type="button" class="ghost-inline" data-period-action="cancel">取消</button>
+        <button type="button" data-period-action="save">${existing ? '儲存修改' : '確認開始經期'}</button>
+      </div>
+    </div>`;
+  document.body.appendChild(modal);
+
+  const input = modal.querySelector('#periodStartModalDate');
+  const close = ()=>modal.remove();
+  modal.querySelector('.cycle-modal-close')?.addEventListener('click', close);
+  modal.querySelector('[data-period-action="cancel"]')?.addEventListener('click', close);
+  modal.addEventListener('click', e=>{ if(e.target === modal) close(); });
+  modal.querySelector('[data-period-date="today"]')?.addEventListener('click', ()=>{ input.value = todayISO(); });
+  modal.querySelector('[data-period-date="yesterday"]')?.addEventListener('click', ()=>{ input.value = addDaysISO(todayISO(), -1); });
+
+  modal.querySelector('[data-period-action="save"]')?.addEventListener('click', async e=>{
+    const button = e.currentTarget;
+    const date = input.value;
+    button.disabled = true;
+    button.textContent = '儲存中…';
+    try{
+      validatePeriodStartDate(date);
+      if(existing){
+        await updateActivePeriodCycleStart(date);
+        toast(`已將本次經期 Day 1 修改為 ${fmt(date)}`);
+      }else{
+        await createPeriodCycle(date);
+        if($('#periodLogHas')) $('#periodLogHas').value = 'yes';
+        toast(`已將 ${fmt(date)} 設為本次經期 Day 1`);
+      }
+      if($('#periodLogDate') && dayDiff($('#periodLogDate').value || todayISO(), date) < 0){
+        $('#periodLogDate').value = date;
+      }
+      close();
+      await renderPeriod();
+      await renderDashboard();
+      if(!existing && date === todayISO()){
+        setTimeout(() => window.showTodayBrief?.({force:true, onlyTypes:['period_start']}), 350);
+      }
+    }catch(error){
+      console.error('period start date save failed', error);
+      toast(error?.message || '無法儲存經期開始日');
+      button.disabled = false;
+      button.textContent = existing ? '儲存修改' : '確認開始經期';
+    }
+  });
+}
+
 async function startCycleFromUI(){
-  const date = $('#periodLogDate')?.value || todayISO();
-  const button = $('#periodCycleStartBtn');
-  if(button){ button.disabled = true; button.textContent = '建立中…'; }
-  try{
-    await createPeriodCycle(date);
-    if($('#periodLogHas')) $('#periodLogHas').value = 'yes';
-    const latestCycle = await getActivePeriodCycle();
-    const localOnly = String(latestCycle?.id || '').startsWith('local-');
-    toast(localOnly
-      ? `已將 ${fmt(date)} 設為第 1 天（目前暫存於此裝置）`
-      : `已將 ${fmt(date)} 設為本次經期第 1 天`
-    );
-    await renderPeriod();
-    await renderDashboard();
-    setTimeout(() => window.showTodayBrief?.({force:true, onlyTypes:['period_start']}), 350);
-  }catch(e){
-    console.error('start cycle failed', e);
-    toast(e?.message || '無法開始經期');
-  }finally{
-    if(button){ button.disabled = false; button.textContent = '🩸 今天開始經期'; }
-  }
+  openPeriodStartModal();
 }
 
 async function endCycleFromUI(){
@@ -413,7 +541,7 @@ async function savePeriodDailyLog(){
   const button = $('#periodDailyLogBtn');
   const state = await getCycleEngineState();
   if(!state.active){
-    toast('請先按「今天開始經期」，再儲存當天狀況。');
+    toast('請先登記本次經期開始日，再儲存當天狀況。');
     return;
   }
 
@@ -543,6 +671,7 @@ async function getPeriodPrediction(){
 }
 
 async function renderCycleControls(state){
+  window.__cycleEngineLastState = state;
   const panel = $('#cycleStatusPanel');
   const badge = $('#cycleStatusBadge');
   const startBtn = $('#periodCycleStartBtn');
@@ -555,7 +684,7 @@ async function renderCycleControls(state){
     if(panel) panel.innerHTML = `
       <div class="cycle-big-day"><b>Day ${state.day}</b><span>本次經期進行中</span></div>
       <div class="cycle-meta"><span>開始日 ${fmt(state.active.start)}</span><span>尚未結束</span></div>`;
-    if(startBtn) startBtn.disabled = true;
+    if(startBtn){ startBtn.disabled = false; startBtn.textContent = '✏️ 修改開始日期'; }
     if(endBtn) endBtn.disabled = false;
     if(hint) hint.textContent = `目前是本次經期 Day ${state.day}，每天儲存只會更新狀況，不會重設 Day 1。`;
     if(dailyBtn) dailyBtn.disabled = false;
@@ -564,9 +693,9 @@ async function renderCycleControls(state){
     if(panel) panel.innerHTML = state.nextStart
       ? `<div class="cycle-big-day"><b>${fmt(state.nextStart)}</b><span>下次預估開始日</span></div>`
       : `<div class="cycle-big-day"><b>待開始</b><span>按下開始按鈕建立新週期</span></div>`;
-    if(startBtn) startBtn.disabled = false;
+    if(startBtn){ startBtn.disabled = false; startBtn.textContent = '🩸 登記經期開始日'; }
     if(endBtn) endBtn.disabled = true;
-    if(hint) hint.textContent = '目前沒有進行中的經期；請先按「今天開始經期」。';
+    if(hint) hint.textContent = '目前沒有進行中的經期；請先登記本次經期開始日。';
     if(dailyBtn) dailyBtn.disabled = true;
   }
 }
